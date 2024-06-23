@@ -1,0 +1,2828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java OOP</title>
+    
+    <!-- bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css custom link -->
+    <link rel="stylesheet" href="../../assets/single/single-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="grid-single">
+            <!-- Aside box -->
+            <div class="aside bg-light">
+                <div class="aside-content">
+                    <ul class="list-unstyled">
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Pengenalan Class Dan Object</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(2)">Constructor</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(3)">Method</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(4)">Encapsulation</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(5)">Method Getter Dan Setter</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(6)">Static Keyword</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(7)">Inheritance</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(8)">Overloading Methods</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(9)">Overriding Methods</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(10)">Super (Inheritance)</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(11)">Subclass Constructor</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(12)">Polymorphism</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(13)">Abstraksi</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(14)">ArrayList Part 1</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(15)">ArrayList Part 2</button> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main box -->
+            <div class="main">
+                <!-- Show aside box -->
+                <div class="show-aside"><i class="fas fa-bars"></i></div>
+
+                <!-- Resize font -->
+                <div class="resize-font"><i class="fas fa-font"></i></div>
+                <div class="box-size">
+                    <div class="item-size translateX" onclick="resizeFont(18)">lg</div>
+                    <div class="item-size translateX" onclick="resizeFont(16)">md</div>
+                    <div class="item-size translateX" onclick="resizeFont(14)">sm</div>
+                    <div class="item-size translateX" onclick="resizeFont(12)">xm</div>
+                </div>
+                
+                <div class="main-content">
+                    <div class="logo">
+                        <img src="../assets/img/java.jpg" style="max-width: 500px;" alt="">
+                    </div>
+
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Pengenalan Class Dan Object</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. Class</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Class adalah kumpulan variabel, method, dan konstruktor yang digunakan untuk mendefinisikan objek yang akan dibuat</p> 
+                                        <ul style="list-style: circle;">
+                                            <li><h6>Atribut</h6> <p>Atribut adalah variabel yang menyimpan data dalam objek</p></li>
+                                            <li><h6>Method</h6> <p>Method adalah fungsi atau prosedur yang melakukan tugas tertentu pada objek</p></li>
+                                            <li><h6>Konstruktor</h6> <p>Konstruktor adalah sebuah metode khusus dalam sebuah class yang digunakan untuk menginisialisasi objek dari class tersebut</p></li>
+                                        </ul>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Hero {
+
+        // variabel
+        String name;
+        double health;
+
+        // konstruktor
+        Player(String nameHero, double healthHero){
+            this.name = nameHero;
+            this.health = healthHero;
+        }
+
+        // method
+        void display(){
+            System.out.println("Name : " + this.name);
+            System.out.println("Health : " + this.health);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. Object</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Object, di sisi lain, adalah instansi atau realisasi dari class. Dengan menggunakan class sebagai blueprint, kita dapat membuat banyak objek dengan atribut dan metode yang sama tetapi nilai yang berbeda</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Main {
+        public static void main(String[] args) {
+            
+            // membuat object
+            Hero hero1 = new Hero("ucup", 100);
+            Hero hero2 = new Hero("otong", 80);
+
+            // menampilkan object dengan method 
+            hero1.display();
+            hero2.display();
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Mendefinisikan object -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Mendefinisikan object</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. Cara Biasa</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Cara ini dilakukan dengan kita membuat object dan mendefinisikan object secara terpisah</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Hero {
+
+        // variabel
+        String name;
+        double health;
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            
+            // membuat object
+            Hero hero1 = new Hero();
+            Hero hero2 = new Hero();
+
+            // mendefinisikan object
+            hero1.name = "ucup";
+            hero1.health = 100;
+
+            hero2.name = "otong";
+            hero2.health = 80;
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. Konstruktor</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Konstruktor memungkinkan kita untuk mendefinisikan object saat object dibuat. Konstruktor memudahkan kita untuk mendefinisikan object yang banyak dengan singkat</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Hero {
+
+        // variabel 
+        String name;
+        double health;
+
+        // konstruktor
+        Hero(String nameHero, double healthHero){
+            this.name = nameHero;
+            this.health = healthHero;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            
+            // object dengan konstructor
+            Hero hero1 = new Hero("ucup", 100);
+            Hero hero2 = new Hero("otong", 80);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Menampilkan object -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Menampilkan object</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. Cara Biasa</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Cara ini dilakukan dengan menuliskan perintah <i>System.out.println(...)</i> dan diisi dengan object yang ingin ditampilkan</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Hero {
+        String name;
+        double health;
+
+        Hero(String nameHero, double healthHero){
+            this.name = nameHero;
+            this.health = healthHero;
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            
+            Hero hero1 = new Hero("ucup", 100);
+            Hero hero2 = new Hero("otong", 80);
+
+            // menampilkan object
+            System.out.println("Name : " + hero1.name);
+            System.out.println("Health : " + hero1.health);
+
+            System.out.println("Name : " + hero2.name);
+            System.out.println("Health : " + hero2.health);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. Dengan Method</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Cara ini memudahkan kita untuk manampilkan object, cara ini dilakukan dengan membuat method di dalam class, dan dipanggil setelah object</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Hero {
+        String name;
+        double health;
+
+        Hero(String nameHero, double healthHero){
+            this.name = nameHero;
+            this.health = healthHero;
+        }
+
+        // method
+        void display(){
+            System.out.println("Name : " + this.name);
+            System.out.println("Health : " + this.health);
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            
+            // dengan konstructor
+            Hero hero1 = new Hero("ucup", 100);
+            Hero hero2 = new Hero("otong", 80);
+
+            // menampilkan object dengan method
+            hero1.display();
+            hero2.display();
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Constructor</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                Konstruktor adalah suatu fungsi atau method yang pertama kali dipanggil saat object dibuat. Konstruktor adalah metode khusus yang digunakan untuk menginisialisasi objek yang baru dibuat. Konstruktor memiliki nama yang sama dengan nama kelasnya dan tidak mengembalikan nilai apapun.
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Karakteristik -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Karakteristik</h5>
+                            <div class="teks">
+                                Konstruktor pada Java memiliki beberapa karakteristik yang penting 
+                                <ul style="list-style: circle;">
+                                    <li>Konstruktor harus memiliki nama yang sama dengan nama kelas tempat ia didefinisikan.</li>
+                                    <li> Konstruktor tidak memiliki tipe pengembalian, termasuk void. Sebagai gantinya, mereka digunakan untuk menginisialisasi objek.</li>
+                                    <li>Konstruktor dipanggil secara otomatis saat objek baru dibuat dengan menggunakan operator "new".</li>
+                                    <li>Konstruktor juga dapat memiliki parameter untuk menerima nilai awal yang akan digunakan dalam proses inisialisasi objek.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Konstruktor -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Konstruktor</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. Membuat konstruktor</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    class Hero {
+        String name;
+        double health;
+
+        // konstruktor tanpa parameter
+        Hero(){
+            name = "ucup";
+            health = 100;
+        }
+
+        // konstruktor dengan parameter
+        Hero(String name, double health) {
+            this.name = name;
+            this.health = health;
+        }
+    }   
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. Kelas tanpa konstruktor</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+        
+    class Hero {
+        String name;
+        double health;
+    }
+
+
+    // class Main
+        
+    public class Main {
+        public static void main(String[] args) {
+
+            Hero hero1 = new Hero();
+            hero1.name = "ucup";
+            hero1.health = 100;
+
+            System.out.println(hero1.name);
+            System.out.println(hero1.health);
+        }
+    }
+    
+
+    // hasil
+        
+    ucup
+    100.0
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">3. Kelas dengan konstruktor</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+        
+    class Hero {
+        String name;
+        double health;
+
+        Hero(String nameHero, double healthHero) {
+            this.name = nameHero;
+            this.health = healthHero;
+        }
+    }
+
+    
+    // class Main
+        
+    public class Main {
+        public static void main(String[] args) {
+
+            Hero hero1 = new Hero("ucup", 100);
+
+            System.out.println(hero1.name);
+            System.out.println(hero1.health);
+        }
+    }
+
+
+    // hasil
+        
+    ucup
+    100.0
+                                        </pre>
+                
+                                        Kelas dengan konstruktor memungkinkan kita untuk mendefinisikan nilai variabel pada saat object dibuat 
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Fungsi Konstruktor -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Fungsi Konstruktor</h5>
+                            <div class="teks">
+                                Konstruktor memiliki banyak fungsi, seperti menampilkan tulisan, menampilkan nilai variabel, melakukan operasi aritmatika, dan masih banyak lagi. 
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. Menampilkan tulisan</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Teks
+        
+    class Teks {
+        Teks() {
+            System.out.println("Ini adalah konstruktor");
+        }
+    }
+
+
+    // class Main
+        
+    public class Main {
+        public static void main(String[] args) {
+
+            Teks teks1 = new Teks();
+        }
+    }
+
+
+    // hasil
+        
+    Ini adalah konstruktor 
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. Menampilkan variabel</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+        
+    class Hero {
+        String name;
+        double health;
+
+        Hero(String name, double health) {
+            this.name = name;
+            this.health = health;
+
+            System.out.println("Name : " + this.name);
+            System.out.println("Health : " + this.health);
+        }
+    }
+
+
+    // class Main
+        
+    public class Main {
+        public static void main(String[] args) {
+
+            Hero hero1 = new Hero("ucup", 100);
+        }
+    }
+
+
+    // hasil
+        
+    Name : ucup
+    Health : 100.0 
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">3. Operasi aritmatika</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Penjumlahan
+        
+    class Penjumlahan {
+        int nilai1;
+        int nilai2;
+        int hasil;
+
+        Penjumlahan(int bil1, int bil2) {
+            this.nilai1 = bil1;
+            this.nilai2 = bil2;
+            this.hasil = this.nilai1 + this.nilai2;
+
+            System.out.println("Hasil dari " + this.nilai1 + " + " + this.nilai2 + " = " + this.hasil);
+        }
+    }
+
+
+    // class Main
+        
+    public class Main {
+        public static void main(String[] args) {
+
+            Penjumlahan hasilJumlah1 = new Penjumlahan(100, 50);
+        }
+    }
+    
+
+    // hasil
+        
+    Hasil dari 100 + 50 = 150
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Method</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                Method adalah sebuah fungsi yang bisa diberikan kepada objek, dan nantinya objek tersebut akan melakukan perintah yang ada di dalam fungsi tersebut.
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Method -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Method</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Untuk membuat metode dalam Java, Anda perlu mendeklarasikannya di dalam kelas menggunakan sintaks berikut</p>
+                                    </dd>
+                                    <dd>
+                                        <pre class="card bg-light codeB">
+                                                
+    modifier return_type namaMethod(parameter) {    
+        // Blok kode
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <ul style="list-style: circle;">
+                                    <li>Modifier mengontrol aksesibilitas dan sifat lainnya dari metode (misalnya, <i>public, private, protected</i>).</li>
+                                    <li>Return type adalah tipe data dari nilai yang dikembalikan oleh metode. Jika metode tidak mengembalikan nilai, gunakan kata kunci <i>void</i>.</li>
+                                    <li>Nama metode adalah nama yang digunakan untuk memanggil metode.</li>
+                                    <li>Parameter (opsional) adalah nilai yang diterima oleh metode untuk digunakan di dalamnya.</li>
+                                </ul>
+                
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                                
+    public void display() {
+        System.out.println("Name : " + this.name);
+        System.out.println("Health : " + this.health);
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Memanggil Method -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Memanggil Method</h5>
+                            <div class="teks">
+                                Untuk memanggil method di java, masuk kedalam class Main, ketik nama objek. diikuti dengan nama method dan parameter jika ada. contoh
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                                
+    objek.method(); // memanggil method tanpa parameter
+    objek.method(nilai); // memanggil method dengan parameter
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Pengembalian Nilai -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Pengembalian Nilai</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Jika method mengembalikan nilai, anda perlu menggunakan kata kunci <i>return</i> di dalam blok kode untuk mengembalikan nilai tersebut</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                                
+    public int tambah(int a, int b) {
+        return a + b;
+    }
+                                        </pre>
+                                    </dd>
+                                    <dd>
+                                        <p>anda dapat menggunakan nilai yang dikembalikan dari method ini dalam bagian lain dari program anda. </p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Jenis Method -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Jenis Method</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">Method tanpa return dan tanpa parameter</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    void show() {
+        System.out.println("Nama : " + this.nama);
+        System.out.println("NIM : " + this.NIM);
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">Method tanpa return dan dengan parameter</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    void setNama(String nama) {
+        this.nama = nama;
+    }
+    void setNIM(String NIM) {
+        this.NIM = NIM;
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">Method dengan return dan tanpa parameter</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    String getName() {
+        return this.name;
+    }
+    String getNIM() {
+        return this.NIM;
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">Method dengan return dan dengan parameter</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    String sayHi(String pesan) {
+        return pesan + ", perkenalkan nama saya " + this.nama;
+    }
+                                        </pre>
+                                    </dd>
+                                </dl> 
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Melakukan operasi aritmatika dari dua bilangan 
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Math
+                
+    class Math {
+
+        // method 
+        int jumlah(int bil1, int bil2) {
+            return bil1 + bil2;
+        }
+
+        int kurang(int bil1, int bil2) {
+            return bil1 - bil2;
+        }
+
+        int kali(int bil1, int bil2) {
+            return bil1 * bil2;
+        }
+
+        int bagi(int bil1, int bil2) {
+            return bil1 / bil2;
+        }
+    }
+    
+
+    // class Main
+                
+    public class Main {
+        public static void main(String[] args) {
+
+            Math case1 = new Math();
+
+            System.out.println(case1.jumlah(124, 20));
+            System.out.println(case1.kurang(27, 14));
+            System.out.println(case1.kali(17, 21));
+            System.out.println(case1.bagi(144, 12));
+        }
+    }
+    
+
+    // hasil
+                
+    144
+    13
+    357
+    12
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Source Code -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Source Code</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Mahasiswa
+
+    class Mahasiswa {
+        // variabel
+        String nama;
+        String NIM;
+
+        // konstruktor
+        Mahasiswa(Srting nama, String NIM) {
+            this.nama = nama;
+            this.NIM = NIM;
+        }
+
+        // 1. method tanpa return dan tanpa parameter
+        void show() {
+            System.out.println("Nama : " + this.nama);
+            System.out.println("NIM : " + this.NIM);
+        }
+
+        // 2. method tanpa return dan dengan parameter
+        void setNama(String nama) {
+            this.nama = nama;
+        }
+        void setNIM(String NIM) {
+            this.NIM = NIM;
+        }
+
+        // 3. method dengan return tapi tidak ada parameter
+        String getName() {
+            return this.name;
+        }
+        String getNIM() {
+            return this.NIM;
+        }
+
+        // 4. method dengan return dan dengan parameter
+        String sayHi(String pesan) {
+            return pesan + ", perkenalkan nama saya " + this.nama;
+        }
+    }
+
+
+    // class Main
+        
+    public class Main {
+        public static void main(String[] args) {
+
+            Mahasiswa mahasiswa1 = new Mahasiswa("ucup", "12345678");
+
+            // method 1 menampilkan isi variabel dari objek
+            mahasiswa1.show();
+
+            // method 2 mengganti nilai variabel (setter)
+            mahasiswa1.setName("tutung");
+            mahasiswa1.setNIM("87654321");
+            mahasiswa1.show();
+
+            // method 3 menampilkan nilai variabel yang ditentukan (getter)
+            System.out.println(mahasiswa1.getName());
+            System.out.println(mahasiswa1.getNIM());
+
+            // method 4 mengembalikan data dan menampilkan nilai variabel
+            String halo = mahasiswa1.sayHi("selamat pagi");
+            System.out.println(halo);
+        }
+    }
+    
+
+    // hasil
+        
+    Nama : ucup
+    NIM : 12345678
+    Nama : tutung
+    NIM : 87654321
+    tutung
+    87654321
+    selamat pagi, perkenalkan nama saya tutung
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Encapsulation</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                Encapsulation adalah salah satu konsep dalam pemrograman berorientasi objek yang menggabungkan data (atribut) dan metode (fungsi) yang berhubungan dalam sebuah kelas, dan membatasi akses langsung ke data tersebut dari luar kelas. Hal ini dilakukan dengan menggunakan pengaturan aksesibilitas yang ditentukan dengan kata kunci seperti  <i>private, public, atau protected.</i>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Kata Kunci -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Kata Kunci</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. private</h6>
+                                    </dt>
+                                    <dd>
+                                        Ketika suatu anggota (atribut atau metode) dinyatakan sebagai "private", maka anggota tersebut hanya dapat diakses atau dimodifikasi oleh kode di dalam kelas itu sendiri, dan tidak dapat diakses oleh kode di kelas lain.
+                                    </dd>
+                                    <dd>
+                                        Berikut fungsi keyword private 
+                                        <ul style="list-style: circle;">
+                                            <li>Menyembunyikan implementasi internal suatu kelas dari pengguna eksternal.</li>
+                                            <li>Mencegah perubahan yang tidak terkontrol.</li>
+                                            <li>Membatasi akses langsung ke data dalam sebuah objek.</li>
+                                            <li>Membantu dalam menjaga integritas data dengan membatasi akses langsung ke atribut.</li>
+                                        </ul>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    class Player {
+        private String name;
+        private double health;
+
+        Player(String name, double health) {
+            this.name = name;
+            this.health = health;
+        }
+    }
+                                        </pre>
+                                        <i>variabel <i>name</i> dan <i>health</i> tidak bisa di akses class lain</i>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. public</h6>
+                                    </dt>
+                                    <dd>
+                                        Ketika suatu anggota (atribut atau metode) dinyatakan sebagai "public", maka anggota tersebut dapat diakses dan digunakan oleh kode di dalam kelas itu sendiri maupun oleh kode di kelas lain.
+                                    </dd>
+                                    <dd>
+                                        Berikut fungsi keyword public 
+                                        <ul style="list-style: circle;">
+                                            <li>Memungkinkan suatu anggota (atribut atau metode) dapat diakses dari dalam kelas itu sendiri maupun dari kelas lain.</li>
+                                            <li>Memungkinkan akses langsung ke atribut dari luar kelas, sehingga atribut tersebut dapat dibaca atau dimodifikasi langsung oleh kode di kelas lain.</li>
+                                            <li>Memungkinkan kelas lain untuk menggunakan kelas yang dideklarasikan sebagai "public" sebagai tipe data, objek, atau sebagai dasar untuk pewarisan.</li>
+                                        </ul>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Car {
+        public String brand;
+        public String model;
+
+        public void startEngine() {
+            // Implementasi untuk memulai mesin mobil
+            // ...
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Car myCar = new Car();
+            myCar.brand = "Toyota";
+            myCar.model = "Camry";
+            myCar.startEngine();
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">3. protected</h6>
+                                    </dt>
+                                    <dd>
+                                        Ketika suatu anggota dinyatakan sebagai <i>protected</i>, anggota tersebut dapat diakses oleh kode di dalam kelas itu sendiri, oleh kelas-kelas turunan (subclass), dan oleh kelas-kelas dalam paket yang sama.
+                                    </dd>
+                                    <dd>
+                                        Berikut fungsi keyword protected
+                                        <ul style="list-style: circle;">
+                                            <li>Memungkinkan anggota suatu kelas dapat diakses oleh kelas turunan (subclass).</li>
+                                            <li>Memungkinkan anggota suatu kelas dapat diakses oleh kelas-kelas dalam paket yang sama.</li>
+                                        </ul>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    public class Animal {
+        protected String name;
+
+        protected void sleep() {
+            System.out.println("Animal is sleeping");
+        }
+    }
+
+    public class Cat extends Animal {
+        public void play() {
+            System.out.println("Cat is playing");
+        }
+
+        public void printName() {
+            System.out.println("Name: " + name);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Method Getter Dan Setter</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                Getter dan setter adalah metode atau fungsi yang digunakan untuk mengakses (getter) dan memperbarui (setter) nilai properti (variabel) dalam suatu objek.
+                
+                                <dl>
+                                    <dt><h6 class="h6">Getter</h6></dt>
+                                    <dd>
+                                        Getter adalah metode yang digunakan untuk mengakses (membaca) nilai properti dari suatu objek. Biasanya, nama getter dimulai dengan prefiks "get" diikuti dengan nama properti yang ingin diakses. Getter tidak menerima argumen dan mengembalikan nilai dari properti yang diakses.
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt><h6 class="h6">Setter</h6></dt>
+                                    <dd>
+                                        Setter adalah metode yang digunakan untuk memperbarui (menulis) nilai properti suatu objek. Nama setter biasanya dimulai dengan prefiks "set" diikuti dengan nama properti yang ingin diubah. Setter menerima argumen yang merupakan nilai baru yang akan diberikan kepada properti.
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Person
+                
+    public class Person {
+        private String name;
+        private int age;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            if (age >= 0) {
+                this.age = age;
+            } else {
+                System.out.println("Usia tidak valid.");
+            }
+        }
+    }
+    
+
+    // class Main
+                
+    public class Main {
+        public static void main(String[] args) {
+            Person person = new Person();
+            person.setName("John");
+            person.setAge(25);
+
+            System.out.println("Name: " + person.getName());
+            System.out.println("Age: " + person.getAge());
+        }
+    }
+    
+
+    // hasil
+                
+    Name: John
+    Age: 25                  
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Static Keyword</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                Kata kunci "static" digunakan untuk menyatakan bahwa suatu anggota kelas (baik metode atau variabel) terkait dengan kelas itu sendiri, bukan dengan instance atau objek kelas tersebut. Artinya, anggota "static" dapat diakses langsung melalui kelas tanpa harus membuat instance atau objek dari kelas tersebut.
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Fungsi Static Keyword -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Fungsi Static Keyword</h5>
+                            <div class="teks">
+                                Penggunaan kata kunci "static" memiliki beberapa fungsi utama 
+                                <ul style="list-style: circle;">
+                                    <li><h6>Metode Static</h6> <p>Ketika sebuah metode dideklarasikan sebagai "static", maka metode tersebut dapat dipanggil langsung melalui kelas tanpa harus membuat objek dari kelas tersebut.</p></li>
+                                    <li><h6>Variabel Static</h6> <p>Ketika sebuah variabel dideklarasikan sebagai "static", maka variabel tersebut menjadi milik kelas, bukan milik setiap objek yang dibuat dari kelas tersebut.</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Berikut adalah contoh penggunaan kata kunci "static" dalam Java OOP 
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class ContohKelas
+                
+    public class ContohKelas {
+        // Variabel static
+        public static int jumlahObjek = 0;
+
+        // Metode static
+        public static void cetakJumlahObjek() {
+            System.out.println("Jumlah objek: " + jumlahObjek);
+        }
+
+        public ContohKelas() {
+            // Menginkrementasi jumlah objek setiap kali objek baru dibuat
+            jumlahObjek++;
+        }
+
+        public static void main(String[] args) {
+            // Memanggil metode static tanpa membuat objek
+            ContohKelas.cetakJumlahObjek();
+
+            // Membuat beberapa objek
+            ContohKelas objek1 = new ContohKelas();
+            ContohKelas objek2 = new ContohKelas();
+
+            // Memanggil metode static setelah objek dibuat
+            ContohKelas.cetakJumlahObjek();
+        }
+    }
+
+
+    // Penjelasan
+    -> Dalam contoh di atas, kelas ContohKelas yang memiliki variabel static jumlahObjek untuk menghitung jumlah objek yang telah dibuat.
+    -> Metode cetakJumlahObjek() adalah metode static yang mencetak nilai variabel static tersebut.
+    -> Dalam metode main(), kita dapat memanggil metode cetakJumlahObjek() langsung melalui kelas tanpa harus membuat objek terlebih dahulu. Setiap kali objek ContohKelas dibuat, nilai jumlahObjek akan ditingkatkan, dan hasilnya akan dicetak menggunakan metode static cetakJumlahObjek().
+    
+
+    // Hasil
+                
+    Jumlah objek: 0
+    Jumlah objek: 2
+    
+
+    // Penjelasan
+    -> Pada baris pertama, metode cetakJumlahObjek() dipanggil tanpa membuat objek terlebih dahulu. Karena belum ada objek yang dibuat, nilai jumlahObjek masih 0, dan hasilnya dicetak sebagai "Jumlah objek: 0".
+    -> Kemudian, pada baris berikutnya, dua objek ContohKelas dibuat dengan menggunakan sintaks new ContohKelas(). Setiap kali objek dibuat, konstruktor akan dipanggil, dan dalam konstruktor, nilai jumlahObjek akan ditingkatkan.
+    -> Setelah objek-objek dibuat, metode cetakJumlahObjek() dipanggil lagi. Kali ini, karena sudah ada dua objek yang dibuat sebelumnya, nilai jumlahObjek menjadi 2, dan hasilnya dicetak sebagai "Jumlah objek: 2".
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Inheritance</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                Inheritance memungkinkan Anda untuk membuat kelas baru berdasarkan kelas yang ada. Kelas baru ini akan mewarisi atribut dan metode dari kelas yang ada, sehingga memungkinkan untuk membangun hierarki kelas. Dalam Java, pewarisan dilakukan dengan menggunakan kata kunci <u>extends</u>.
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Berikut contoh penerapan inheritance pada java OOP 
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                    
+    package Latihan_18;
+
+    // inheritance adalah hubungan is_a
+
+    // super class, parent class, base class
+    class Hero{
+        String name;
+        
+        // method
+        void display(){
+            System.out.println("Name : " + this.name);
+        }
+    }
+
+    // subclass, child class, derived class
+    class HeroStrength extends Hero{
+        // kosong
+    }
+
+    class HeroIntelligent extends Hero{
+        // kosong
+    }
+
+    public class Main {
+        public static void main(String[] args){
+            Hero hero1 = new Hero();
+            hero1.name = "ucup";
+            hero1.display();
+            
+            HeroStrength hero2 = new HeroStrength();
+            hero2.name = "otong";
+            hero2.display();
+            
+            HeroIntelligent hero3 = new HeroIntelligent();
+            hero3.name = "Michael";
+            hero3.display();
+        }   
+    }
+
+                        
+    // Penjelasan
+    -> class Hero adalah kelas yang mewarisi, bisa disebut juga sebagai super class, parent class, base class.
+    -> class HeroStrength dan HeroIntelligent adalah kelas yang diwarisi, bisa juga disebut sebagai subclass, child class, derived class.
+    -> dengan keyword extends diikuti dengan nama class (parent class), maka sebuah class akan memiliki atribut (variabel dan method) dari parent class.
+    -> dengan begitu, object yang dibuat dari class HeroStrength dan HeroIntelligent, yaitu hero2 dan hero3 dia juga memiliki variabel String name dan method display().
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Source Code -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Source Code</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+        
+    package Latihan_18;
+
+    // inheritance adalah hubungan is_a
+
+    // super class, parent class, base class
+    class Hero{
+        String name;
+        
+        // method
+        void display(){
+            System.out.println("Name : " + this.name);
+        }
+    }
+
+    // subclass, child class, derived class
+    class HeroStrength extends Hero{
+        // kosong
+    }
+
+    class HeroIntelligent extends Hero{
+        // kosong
+    }
+
+    public class Main {
+        public static void main(String[] args){
+            Hero hero1 = new Hero();
+            hero1.name = "ucup";
+            hero1.display();
+            
+            HeroStrength hero2 = new HeroStrength();
+            hero2.name = "otong";
+            hero2.display();
+            
+            HeroIntelligent hero3 = new HeroIntelligent();
+            hero3.name = "Michael";
+            hero3.display();
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Overloading Methods</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Overloading pada Java OOP adalah konsep di mana sebuah kelas memiliki beberapa metode dengan nama yang sama tetapi memiliki parameter yang berbeda. Dalam overloading, nama metode tetap sama, tetapi tipe, urutan, atau jumlah parameter berbeda. Ini memungkinkan pemanggilan metode dengan nama yang sama tetapi dengan argumen yang berbeda untuk menghasilkan perilaku yang berbeda.</p>
+                                <p>Java memungkinkan overloading metode untuk memberikan fleksibilitas dalam pemrograman, karena Anda dapat menggunakan nama metode yang sama untuk melakukan tugas yang berbeda tergantung pada argumen yang diberikan. Misalnya, Anda dapat memiliki metode "hitungLuas()" yang menghitung luas persegi dan metode "hitungLuas()" yang menghitung luas lingkaran.</p>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Contoh sederhana overloading metode dalam Java 
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Calculator
+                
+    public class Calculator {
+        public int add(int a, int b) {
+            return a + b;
+        }
+
+        public double add(double a, double b) {
+            return a + b;
+        }
+
+        public int add(int a, int b, int c) {
+            return a + b + c;
+        }
+    }
+    
+
+    // Penjelasan
+    -> Dalam contoh di atas, kelas Calculator memiliki tiga metode add() yang merupakan contoh overloading.
+    -> Metode pertama menerima dua parameter integer dan mengembalikan hasil penjumlahan integer.
+    -> Metode kedua menerima dua parameter double dan mengembalikan hasil penjumlahan double.
+    -> Metode ketiga menerima tiga parameter integer dan mengembalikan hasil penjumlahan ketiga parameter tersebut.
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <p>Anda dapat memanggil metode-metode ini dengan cara yang berbeda tergantung pada jenis dan jumlah argumen yang Anda berikan</p>
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Main
+                
+    Calculator calculator = new Calculator();
+    int result1 = calculator.add(2, 3);          // Memanggil add(int, int)
+    double result2 = calculator.add(2.5, 3.7);   // Memanggil add(double, double)
+    int result3 = calculator.add(2, 3, 4);       // Memanggil add(int, int, int)
+    
+    -> Dalam hal ini, metode yang sesuai akan dipilih berdasarkan jenis dan jumlah argumen yang Anda berikan saat memanggil metode.
+    -> Ini memberikan kemampuan yang lebih besar untuk menyesuaikan fungsionalitas metode sesuai dengan kebutuhan Anda.
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Overriding Methods</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Overriding adalah konsep di mana sebuah subclass mengganti implementasi dari metode yang telah didefinisikan dalam superclassnya. Dengan overriding, subclass memiliki kemampuan untuk memberikan implementasi khusus untuk metode yang sama yang telah didefinisikan dalam superclass.</p>
+                
+                                <p>Untuk melakukan overriding dalam Java, metode di subclass harus memiliki nama, tipe pengembalian (return type), dan parameter yang sama dengan metode yang akan di-override di superclass. Kata kunci <u>@Override</u> dapat digunakan di atas metode di subclass untuk memberi tahu kompiler bahwa kita bermaksud untuk melakukan overriding.</p>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Berikut adalah contoh penggunaan overriding dalam Java OOP 
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                        
+    class Animal {
+        public void makeSound() {
+            System.out.println("The animal makes a sound.");
+        }
+    }
+
+    class Cat extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Meow!");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal animal = new Animal();
+            animal.makeSound();
+
+            Cat cat = new Cat();
+            cat.makeSound();
+        }
+    }
+    
+
+    // Penjelasan
+    -> Pada contoh di atas, kelas Cat merupakan subclass dari Animal.
+    -> Metode makeSound() pada kelas Animal di-override di kelas Cat untuk memberikan implementasi yang berbeda.
+    -> Ketika metode makeSound() dipanggil pada objek Animal, outputnya adalah "The animal makes a sound."
+    -> Sedangkan ketika metode tersebut dipanggil pada objek Cat, outputnya adalah "Meow!".
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Source Code -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Source Code</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+                            
+    package Latihan_19;
+
+    public class Hero {
+        String name;
+        
+        void display(){
+            System.out.println("Hero name : " + this.name);
+        }
+    }
+    
+
+    // class HeroStrength
+        
+    package Latihan_19;
+
+    public class HeroStrength extends Hero{
+        double defencePower;
+        
+        //overriding methods
+        void display(){
+            System.out.println("\nHero Strength");
+            System.out.println("Hero Name : " + this.name);
+            System.out.println("Defence Power : " + this.defencePower);
+        }
+    }
+    
+
+    // class HeroIntelligent
+        
+    package Latihan_19;
+
+    public class HeroIntelligent extends Hero {
+        // kosong
+    }
+    
+
+    // class Main
+        
+    package Latihan_19;
+
+    public class Main {
+        public static void main(String [] args){
+            Hero hero1 = new Hero();
+            hero1.name = "Saitama";
+            // hero1.HeroStrength = gak ada;
+            hero1.display();
+            
+            HeroStrength hero2 = new HeroStrength();
+            hero2.name = "Mountain Lady";
+            hero2.defencePower = 100;
+            hero2.display();
+        }
+    }
+    
+
+    // hasil
+
+    Hero name : Saitama
+
+    Hero Strength
+    Hero Name : Mountain Lady
+    Defence Power : 100.0
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Super (Inheritance)</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                Dalam bahasa Java, <u>super</u> adalah kata kunci yang digunakan dalam pemrograman berorientasi objek (OOP) untuk merujuk ke kelas induk atau superclass dari sebuah kelas. Kata kunci <u>super</u> digunakan untuk mengakses anggota kelas induk, seperti metode atau variabel, dari dalam kelas turunan atau subclass.
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Berikut adalah contoh penggunaan super dan this pada java OOP 
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+                
+    package Latihan_20;
+
+    public class Hero {
+        String name = "Class Hero";
+        
+        void display(){
+            System.out.println("Ini adalah " + this.name);
+        }
+        
+        void dummyMethod(){
+            System.out.println("Method ini ada di superclass");
+        }
+    }
+    
+
+    // class HeroStrength
+                                
+    package Latihan_20;
+
+    // this.name akan mengakses atribut name kalau ada di kelas ini
+    // jika tidak ada maka akan mengakses atribut name dari superclass
+
+    // super.name akan selalu mengakses atribut superclass
+
+    // this.dummyMethod() akan menampilkan method kalau ada di kelas ini
+    // jika tidak maka akan mengakses method dari superclass
+
+    // super.dummyMethod() akan selalu mengakses method superclass
+
+    public class HeroStrength extends Hero {
+        String name = "Class Strength";
+        
+        void display(){
+            System.out.println("Ini adalah " + this.name);
+            this.dummyMethod();
+        }
+        
+        void displaySuper(){
+            System.out.println("Ini adalah " + super.name);
+            super.dummyMethod();
+        }
+        
+        void dummyMethod(){
+            System.out.println("Method ini ada di subclass");
+        }
+    }
+    
+
+    // class Main
+                
+    package Latihan_20;
+
+    public class Main {
+        public static void main(String[] args){
+            Hero hero1 = new Hero();
+            HeroStrength hero2 = new HeroStrength();
+            
+            hero1.display();
+            hero2.display();
+            hero2.displaySuper();
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Source Code -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Source Code</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+        
+    package Latihan_20;
+
+    public class Hero {
+        String name = "Class Hero";
+        
+        void display(){
+            System.out.println("Ini adalah " + this.name);
+        }
+        
+        void dummyMethod(){
+            System.out.println("Method ini ada di superclass");
+        }
+    }
+    
+
+    // class HeroStrength
+
+    package Latihan_20;
+
+    // this.name akan mengakses atribut name kalau ada di kelas ini
+    // jika tidak ada maka akan mengakses atribut name dari superclass
+
+    // super.name akan selalu mengakses atribut superclass
+
+    // this.dummyMethod() akan menampilkan method kalau ada di kelas ini
+    // jika tidak maka akan mengakses method dari superclass
+
+    // super.dummyMethod() akan selalu mengakses method superclass
+
+    public class HeroStrength extends Hero {
+        String name = "Class Strength";
+        
+        void display(){
+            System.out.println("Ini adalah " + this.name);
+            this.dummyMethod();
+        }
+        
+        void displaySuper(){
+            System.out.println("Ini adalah " + super.name);
+            super.dummyMethod();
+        }
+        
+        void dummyMethod(){
+            System.out.println("Method ini ada di subclass");
+        }
+    }
+    
+
+    // class Main
+        
+    package Latihan_20;
+
+    public class Main {
+        public static void main(String[] args){
+            Hero hero1 = new Hero();
+            HeroStrength hero2 = new HeroStrength();
+            
+            hero1.display();
+            hero2.display();
+            hero2.displaySuper();
+        }
+    }
+
+
+    // hasil
+        
+    Ini adalah Class Hero
+    Ini adalah Class Strength
+    Method ini ada di subclass
+    Ini adalah Class Hero
+    Method ini ada di superclass
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Subclass Constructor</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Subclass konstruktor adalah konstruktor yang didefinisikan di dalam kelas anak (subclass) yang diwariskan dari kelas induk (superclass). Konstruktor digunakan untuk membuat objek dari kelas tersebut. Berikut cara membuat subclass konstruktor</p>
+                                <ul style="list-style: circle;">
+                                    <li>Ketik nama konstruktor sesuai nama subclassnya</li>
+                                    <li>Beri parameter sama dengan superclassnya, boleh ditambahkan parameter baru</li>
+                                    <li>parameter yang sama dengan yang ada di superclass harus dimasukan kedalam keyword <u>super()</u></li>
+                                    <li>parameter yang baru dibuat di assign ke variabel global subclass tersebut</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Berikut adalah contoh penggunaan subclass konstruktor dalam Java OOP 
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+                                    
+    package Latihan_21;
+
+    public class Hero{
+        // attribute
+        String name;
+        double defencePower;
+        
+        // constructor
+        Hero(String name, double defencePower){
+            this.name = name;
+            this.defencePower = defencePower;
+        }
+        
+        Hero(String name){
+            this.name = name;
+        }
+        
+        // methods
+        void display(){
+            System.out.println("Hero name : " + this.name + ", Defence : " + this.defencePower);
+        }
+    }
+
+
+    // class HeroStrength
+                
+    package Latihan_21;
+
+    // subclass
+    public class HeroStrength extends Hero {
+        
+        // constructor
+        HeroStrength(String name, double defencePower){
+            super(name, defencePower);
+        }
+        
+        HeroStrength(String name){
+            super(name);
+        }
+    }
+
+
+    // class Main
+                
+    package Latihan_21;
+
+    public class Main {
+        public static void main(String[] args){
+            Hero hero1 = new Hero("Esmeralda", 10);
+            hero1.display();
+            
+            HeroStrength hero2 = new HeroStrength("ucup", 10);
+            hero2.display();
+            
+            HeroStrength hero3 = new HeroStrength("otong");
+            hero3.display();
+        }
+    }
+
+
+    // hasil
+                
+    Hero name : Esmeralda, Defence : 10.0
+    Hero name : ucup, Defence : 10.0
+    Hero name : otong, Defence : 0.0
+    
+
+    // Penjelasan
+    -> Hero() adalah konstruktor dari kelas induk (superclass).
+    -> HeroStrength() adalah konstruktor dari kelas anak (subclass).
+    -> HeroStrength() mewarisi konstruktor dari superclass, inilah yang disebut subclass constructor.
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Source Code -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Source Code</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+                            
+    package Latihan_21;
+
+    public class Hero{
+        // attribute
+        String name;
+        double defencePower;
+        
+        // constructor
+        Hero(String name, double defencePower){
+            this.name = name;
+            this.defencePower = defencePower;
+        }
+        
+        Hero(String name){
+            this.name = name;
+        }
+        
+        // methods
+        void display(){
+            System.out.println("Hero name : " + this.name + ", Defence : " + this.defencePower);
+        }
+    }
+    
+
+    // class HeroStrength
+        
+    package Latihan_21;
+
+    // subclass
+    public class HeroStrength extends Hero {
+        
+        // constructor
+        HeroStrength(String name, double defencePower){
+            super(name, defencePower);
+        }
+        
+        HeroStrength(String name){
+            super(name);
+        }
+    }
+    
+
+    // class Main
+        
+    package Latihan_21;
+
+    public class Main {
+        public static void main(String[] args){
+            Hero hero1 = new Hero("Esmeralda", 10);
+            hero1.display();
+            
+            HeroStrength hero2 = new HeroStrength("ucup", 10);
+            hero2.display();
+            
+            HeroStrength hero3 = new HeroStrength("otong");
+            hero3.display();
+        }
+    }
+    
+
+    // hasil
+                            
+    Hero name : Esmeralda, Defence : 10.0
+    Hero name : ucup, Defence : 10.0
+    Hero name : otong, Defence : 0.0
+                                        </pre>
+                                    </dd>
+                                </dl>   
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Polymorphism</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Polymorphism memungkinkan objek untuk memiliki banyak bentuk. Dalam Java, ini dapat dicapai melalui penggunaan konsep overloading dan overriding. Overloading adalah membuat metode dengan nama yang sama tetapi dengan parameter yang berbeda, sedangkan overriding adalah mengimplementasikan kembali metode yang telah didefinisikan dalam kelas induk.</p>
+                                <p>Polymorphism adalah konsep di mana suatu objek dapat merujuk pada objek dari berbagai tipe yang berbeda dan masih dapat berperilaku sesuai dengan jenis objek yang dirujuk. Dalam konteks Java, terdapat dua jenis polimorfisme: polimorfisme statis (compile-time) dan polimorfisme dinamis (runtime).</p>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                Berikut adalah contoh sederhana polymorphism
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                    
+    class Hewan {
+        public void suara() {
+            System.out.println("Hewan membuat suara...");
+        }
+    }
+
+    class Kucing extends Hewan {
+        @Override
+        public void suara() {
+            System.out.println("Meong!");
+        }
+    }
+
+    class Anjing extends Hewan {
+        @Override
+        public void suara() {
+            System.out.println("Guk guk!");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Hewan hewan1 = new Kucing();
+            Hewan hewan2 = new Anjing();
+            
+            hewan1.suara(); // Output: Meong!
+            hewan2.suara(); // Output: Guk guk!
+        }
+    }
+    
+    
+    // Penjelasan
+    -> Pada contoh di atas, terdapat tiga kelas: Hewan, Kucing, dan Anjing.
+    -> Ketiga kelas ini memiliki metode suara() yang di-override.
+    -> Dalam metode main(), objek hewan1 dan hewan2 dideklarasikan sebagai objek tipe Hewan, tetapi merujuk pada objek Kucing dan Anjing secara berturut-turut.
+    -> Ketika metode suara() dipanggil pada kedua objek, JVM (Java Virtual Machine) akan memilih implementasi yang sesuai berdasarkan jenis objek yang dirujuk (polimorfisme dinamis).
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Source Code -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Source Code</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // class Hero
+            
+    package Latihan_23;
+
+    public class Hero {
+        String name;
+        
+        Hero(String name){
+            this.name = name;
+        }
+        
+        void display(){
+            System.out.println("\nName \t: " + this.name);
+        }
+        
+        void attack(Hero enemy){
+            System.out.println("Menyerang");
+        }
+    }
+    
+    
+    // class HeroStrength
+            
+    package Latihan_23;
+
+    public class HeroStrength extends Hero {
+        String type = "Strength";
+        
+        HeroStrength(String name){
+            super(name);
+        }
+        
+        @Override
+        void display(){
+            super.display();
+            System.out.println("Type \t: " + this.type);
+        }
+    }
+    
+
+    // class HeroIntelligent
+            
+    package Latihan_23;
+
+    public class HeroIntel extends Hero {
+        String type = "Intel";
+        
+        HeroIntel(String name){
+            super(name);
+        }
+        
+        @Override
+        void display(){
+            super.display();
+            System.out.println("Type \t: " + this.type);
+        }
+    }
+    
+
+    // class HeroAgility
+            
+    package Latihan_23;
+
+    public class HeroAgility extends Hero {
+        String type = "Agility";
+        
+        HeroAgility(String name){
+            super(name);
+        }
+        
+        @Override
+        void display(){
+            super.display();
+            System.out.println("Type \t: " + this.type);
+        }
+        
+        void showoff(){
+            System.out.println("Saya hero Agility!!");
+        }
+    }
+    
+
+    // class Main
+            
+    package Latihan_23;
+
+    public class Main {
+        public static void main(String[] args){
+            Hero hero1 = new Hero("ucup");
+            HeroStrength hero2 = new HeroStrength("otong");
+            
+            hero1.display();
+            hero2.display();
+            
+            // Polymorphic
+            Hero hero3 = new HeroAgility("Maria");
+            hero3.display();
+            
+            HeroAgility hero4 = new HeroAgility("Mahmud");
+            hero4.display();
+            hero4.showoff();
+            
+            // tidak bisa
+            // HeroIntel hero4 = new Hero("Mahmud");
+            // hero4.display();
+            
+            // Array list
+            Hero[] kumpulanHero = new Hero[4];
+            kumpulanHero[0] = hero1;
+            kumpulanHero[1] = hero2;
+            kumpulanHero[2] = hero3;
+            
+            kumpulanHero[0].display();
+            kumpulanHero[1].display();
+            kumpulanHero[2].display();
+            
+            // method calls
+            // kumpulanHero[3].showoff(); ini tidak bisa karena .showoff() tidak ada di class Hero
+            hero4.showoff();
+            
+            // aplikasi
+            hero1.attack(hero2);
+            hero1.attack(hero3);
+            hero1.attack(hero4);
+        }
+    }
+    
+
+    // hasil
+            
+    Name 	: ucup
+
+    Name 	: otong
+    Type 	: Strength
+
+    Name 	: Maria
+    Type 	: Agility
+
+    Name 	: Mahmud
+    Type 	: Agility
+    Saya hero Agility!!
+
+    Name 	: ucup
+
+    Name 	: otong
+    Type 	: Strength
+
+    Name 	: Maria
+    Type 	: Agility
+    Saya hero Agility!!
+    Menyerang
+    Menyerang
+    Menyerang
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Abstraksi</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Abstract class (kelas abstrak) adalah sebuah kelas yang tidak dapat diinstansiasi (tidak dapat membuat objek langsung dari kelas tersebut). Abstract class digunakan sebagai kerangka dasar untuk kelas-kelas turunan (subclasses) yang lebih spesifik.</p>
+                                <p>Sebuah abstract class mungkin berisi implementasi (kode) dan/atau metode-metode abstrak. Metode abstrak adalah metode yang dideklarasikan tanpa memiliki implementasi di dalam abstract class. Kelas turunan yang mewarisi dari abstract class harus memberikan implementasi untuk semua metode abstrak yang dideklarasikan dalam abstract class tersebut.</p>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                <p>Abstract class digunakan untuk memodelkan konsep umum yang bisa diwarisi oleh kelas-kelas turunannya. Misalnya, jika kita memiliki kelas "Hewan" sebagai abstract class, kita dapat mendefinisikan metode abstrak "makan" di dalamnya. Kemudian, kelas-kelas turunan seperti "Kucing" dan "Anjing" dapat mewarisi abstract class "Hewan" dan memberikan implementasi yang spesifik untuk metode "makan" sesuai dengan perilaku masing-masing hewan tersebut.</p>
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                    
+    abstract class Hewan {
+        public abstract void makan();
+    }
+
+    class Kucing extends Hewan {
+        public void makan() {
+            System.out.println("Kucing sedang makan ikan.");
+        }
+    }
+
+    class Anjing extends Hewan {
+        public void makan() {
+            System.out.println("Anjing sedang makan daging.");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Hewan hewan1 = new Kucing();
+            Hewan hewan2 = new Anjing();
+            
+            hewan1.makan(); // Output: Kucing sedang makan ikan.
+            hewan2.makan(); // Output: Anjing sedang makan daging.
+        }
+    }
+    
+
+    // Penjelasan
+    -> Dalam contoh di atas, abstract class Hewan memiliki metode abstrak makan().
+    -> Kelas Kucing dan Anjing mewarisi Hewan dan memberikan implementasi khusus untuk metode makan().
+    -> Pada saat eksekusi, kita membuat objek "hewan1" dan "hewan2" dengan tipe data Hewan, namun menggunakan instansiasi kelas Kucing dan Anjing.
+    -> Ketika memanggil metode makan() pada objek-objek tersebut, akan mencetak hasil yang sesuai dengan implementasi yang diberikan di kelas-kelas turunan.
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">ArrayList Part 1</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>ArrayList dalam Java adalah kelas yang terdapat dalam library java.util yang mengimplementasikan antarmuka List. ArrayList adalah struktur data dinamis yang berbasis pada array yang dapat digunakan untuk menyimpan dan mengelola sekumpulan elemen objek.</p>
+                                <p>Dalam paradigma pemrograman berorientasi objek (OOP), ArrayList adalah sebuah kelas yang memungkinkan kita untuk membuat objek ArrayList yang dapat menyimpan objek-objek dengan tipe data yang sama atau berbeda. ArrayList memungkinkan kita untuk menambahkan, mengakses, mengubah, dan menghapus elemen-elemen dengan mudah.</p>
+                                <p>Dalam ArrayList, elemen-elemennya diindeks secara berurutan dimulai dari indeks 0. ArrayList secara otomatis mengelola ukuran internalnya sesuai dengan jumlah elemen yang ditambahkan atau dihapus, sehingga tidak perlu khawatir tentang ukuran array yang tetap seperti dalam array biasa.</p>
+                                <p>Dengan menggunakan ArrayList, kita dapat melakukan berbagai operasi seperti menambahkan elemen, mengakses elemen, mengubah elemen, menghapus elemen, mencari elemen, menghitung ukuran ArrayList, mengurutkan elemen, dan banyak lagi. ArrayList juga menyediakan metode dan fitur lain seperti pengulangan (iterasi) elemen dengan loop for-each, mengkonversi ArrayList menjadi array, dan menggabungkan dua ArrayList.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">ArrayList Part 2</h2>
+                        
+                        <!-- Fungsi Pada ArrayList -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Fungsi Pada ArrayList</h5>
+                            <div class="teks">
+                                <p>Dengan menggunakan ArrayList dalam Java, Anda dapat melakukan berbagai operasi dan manipulasi data, termasuk</p>
+                                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. Menambahkan elemen</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat menambahkan elemen baru ke ArrayList menggunakan metode <u>add()</u> atau <u>addAll()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class AddElementExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+
+            // Menambahkan elemen baru
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            System.out.println(myArrayList);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. Mengakses elemen</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat mengakses elemen dalam ArrayList menggunakan indeks dengan menggunakan metode <u>get()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class AccessElementExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            // Mengakses elemen menggunakan indeks
+            String element = myArrayList.get(1);
+            System.out.println("Elemen: " + element);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">3. Mengubah elemen</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat mengubah nilai elemen yang ada dalam ArrayList dengan menggunakan metode <u>set()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class UpdateElementExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            // Mengubah elemen pada indeks tertentu
+            myArrayList.set(1, "Pisang");
+
+            System.out.println(myArrayList);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">4. Menghapus elemen</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat menghapus elemen dari ArrayList menggunakan metode <u>remove()</u> dengan indeks atau nilai tertentu.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class RemoveElementExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            // Menghapus elemen menggunakan indeks
+            myArrayList.remove(1);
+
+            System.out.println(myArrayList);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">5. Mencari elemen</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat mencari elemen dalam ArrayList menggunakan metode <u>indexOf()</u> atau <u>contains()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class SearchElementExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            // Mencari indeks elemen menggunakan nilai
+            int index = myArrayList.indexOf("Mangga");
+            System.out.println("Indeks: " + index);
+
+            // Mengecek apakah elemen ada dalam ArrayList
+            boolean contains = myArrayList.contains("Jeruk");
+            System.out.println("Ada dalam ArrayList? " + contains);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">6. Menghitung ukuran ArrayList</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat mengetahui jumlah elemen dalam ArrayList menggunakan metode <u>size()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class ArrayListSizeExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            int size = myArrayList.size();
+            System.out.println("Ukuran ArrayList: " + size);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">7. Menggabungkan ArrayList</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat menggabungkan dua ArrayList menggunakan metode <u>addAll()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+    import java.util.Arrays;
+
+    public class MergeArrayListExample {
+        public static void main(String[] args) {
+            ArrayList< String> list1 = new ArrayList< String>(Arrays.asList("Apel", "Mangga"));
+            ArrayList< String> list2 = new ArrayList< String>(Arrays.asList("Jeruk", "Anggur"));
+
+            // Menggabungkan dua ArrayList
+            list1.addAll(list2);
+
+            System.out.println("Setelah menggabungkan:");
+            System.out.println(list1);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">8. Mengurutkan ArrayList</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat mengurutkan elemen dalam ArrayList menggunakan metode <u>sort()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+    import java.util.Collections;
+        
+    public class SortArrayListExample {
+        public static void main(String[] args) {
+            ArrayList< Integer> numbers = new ArrayList< Integer>();
+            numbers.add(5);
+            numbers.add(2);
+            numbers.add(8);
+            numbers.add(1);
+
+            System.out.println("Sebelum diurutkan:");
+            System.out.println(numbers);
+
+            // Mengurutkan ArrayList
+            Collections.sort(numbers);
+
+            System.out.println("Setelah diurutkan:");
+            System.out.println(numbers);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">9. Mengecek apakah ArrayList kosong</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat memeriksa apakah ArrayList kosong menggunakan metode <u>isEmpty()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class CheckEmptyArrayListExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+
+            // Mengecek apakah ArrayList kosong
+            boolean isEmpty = myArrayList.isEmpty();
+            System.out.println("ArrayList kosong? " + isEmpty);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">10. Menghapus semua elemen dalam ArrayList</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat menghapus semua elemen dari ArrayList menggunakan metode <u>clear()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class ClearArrayListExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            System.out.println("Sebelum menghapus semua elemen:");
+            System.out.println(myArrayList);
+
+            // Menghapus semua elemen dalam ArrayList
+            myArrayList.clear();
+
+            System.out.println("Setelah menghapus semua elemen:");
+            System.out.println(myArrayList);
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">11. Iterasi melalui elemen</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat menggunakan loop for-each untuk melakukan iterasi melalui elemen-elemen dalam ArrayList.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class IterateArrayListExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            System.out.println("Elemen-elemen ArrayList:");
+            for (String element : myArrayList) {
+                System.out.println(element);
+            }
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">12. Mengkonversi ArrayList menjadi array</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda dapat mengonversi ArrayList menjadi array menggunakan metode <u>toArray()</u>.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    import java.util.ArrayList;
+
+    public class ArrayListToArrayExample {
+        public static void main(String[] args) {
+            ArrayList< String> myArrayList = new ArrayList< String>();
+            myArrayList.add("Apel");
+            myArrayList.add("Mangga");
+            myArrayList.add("Jeruk");
+
+            // Mengkonversi ArrayList menjadi array
+            String[] array = myArrayList.toArray(new String[myArrayList.size()]);
+
+            System.out.println("Array hasil konversi:");
+            for (String element : array) {
+                System.out.println(element);
+            }
+        }
+    }
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                                
+                                <p>Selain itu, Anda juga dapat menggunakan metode dan fitur lain yang disediakan oleh antarmuka List yang diimplementasikan oleh ArrayList, seperti menggeser elemen, mengganti elemen, mendapatkan sub daftar, dll.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/single/single-script.js"></script>
+</body>
+</html>

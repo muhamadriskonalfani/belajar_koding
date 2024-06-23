@@ -1,0 +1,3112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD PHP MySQL</title>
+    
+    <!-- bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css custom link -->
+    <link rel="stylesheet" href="../../assets/single/single-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="grid-single">
+            <!-- Aside box -->
+            <div class="aside bg-light">
+                <div class="aside-content">
+                    <ul class="list-unstyled">
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Pendahuluan</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(2)">Latihan CRUD 1</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(3)">Latihan CRUD 2</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(4)">Latihan CRUD 3</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(5)">Latihan Login 1</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(6)">Latihan Login 2</button> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main box -->
+            <div class="main">
+                <!-- Show aside box -->
+                <div class="show-aside"><i class="fas fa-bars"></i></div>
+
+                <!-- Resize font -->
+                <div class="resize-font"><i class="fas fa-font"></i></div>
+                <div class="box-size">
+                    <div class="item-size translateX" onclick="resizeFont(18)">lg</div>
+                    <div class="item-size translateX" onclick="resizeFont(16)">md</div>
+                    <div class="item-size translateX" onclick="resizeFont(14)">sm</div>
+                    <div class="item-size translateX" onclick="resizeFont(12)">xm</div>
+                </div>
+
+                <div class="main-content">
+                    <div class="logo">
+                        <img src="../assets/img/crud.png" style="max-width: 500px;" alt="">
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Pendahuluan</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>CRUD adalah singkatan dari <i>create read update delete</i>. platform yang digunakan adalah website. Website adalah sebuah kumpulan dari beberapa halaman yang saling terhubung dan berisi beberapa fitur dan juga informasi.</p> 
+                                <p>Website ini bisa kita gunakan untuk memproses berbagai data dengan berbagai fitur yang kita inginkan. Seseorang web developer atau pengembang website ketika pertama kali belajar pasti yang akan dilakukan adalah mempelajari konsep dasar dari CRUD. Ketika kita nanti akan mengembangkan program CRUD, kita memiliki 3 komponen dasar yang perlu kita pahami, yaitu</p> 
+                                <ul style="list-style: circle;">
+                                    <li><h6>Data</h6> <p>digunakan untuk berbagai macam proses</p></li>
+                                    <li><h6>Interface</h6> <p>atau tampilan yang bisa dilihat atau diedit untuk memproses suatu data</p></li>
+                                    <li><h6>Proses</h6> <p>pengolahan dari data yang kita miliki dengan menggunakan interface yang sudah disediakan</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Penjelasan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Penjelasan</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt><h6 class="h6">1. Data</h6></dt>
+                                    <dd>
+                                        <p>Data adalah sekumpulan fakta yang belum memiliki fungsi. nantinya data ini akan diolah menjadi informasi</p> 
+                                        <ul style="list-style: circle;">
+                                            <li><h6>Database</h6> <p>tempat penyimpanan data</p></li>
+                                            <li><h6>MySQL</h6> <p>aplikasi yang digunakan untuk mengoperasikan database</p></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <br>
+                
+                                <dl>
+                                    <dt><h6 class="h6">2. Interface</h6></dt>
+                                    <dd>
+                                        <p>Interface adalah sebuah tampilan yang mendeskripsikan apapun yang kita perlukan dalam mengakses data. Dalam tanda kutip tampilan, tampilan yang hanya tampil dan belum bisa memproses apapun. Untuk membuat tampilan atau interface kita akan membutuhkan</p>
+                                        <ul style="list-style: circle;">
+                                            <li><h6>HTML</h6> <p>kerangka dasar dalam membuat sebuah website</p></li>
+                                            <li><h6>CSS</h6> <p>digunakan untuk mempercantik tampilan interface</p></li>
+                                            <li><h6>JavaScript</h6> <p>untuk membuat interface lebih interaktif</p></li>
+                                            <li><h6>Bootstrap 5</h6> <p>kerangka kerja css dan js yang disediakan browser</p></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <br>
+                
+                                <dl>
+                                    <dt><h6 class="h6">3. Proses</h6></dt>
+                                    <dd>
+                                        <p>Setelah punya interface dan data tetapi masih belum terhubung dan belum bisa digunakan, maka kita memerlukan sebuah proses agar data yang ada di dalam database kita bisa diakses melalui interface yang kita miliki.</p> 
+                                        <ul style="list-style: circle;">
+                                            <li><h6>Pemrograman PHP</h6></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Latihan CRUD 1</h2>
+                        
+                        <!-- Hal yang dibutuhkan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Hal yang dibutuhkan</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Bootstrap 5</li>
+                                    <li>Font Awesome</li>
+                                    <li>File Gambar</li>
+                                    <li>4 File .php</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Langkah-Langkah -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Langkah-Langkah</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Membuat Database
+                                        <ul style="list-style: circle;">
+                                            <li>Buat database baru</li>
+                                            <li>Buat tabel baru</li>
+                                        </ul>
+                                    </li>
+                                    <li>Membuat Interface
+                                        <ul style="list-style: circle;">
+                                            <li>koneksi.php</li>
+                                            <li>index.php</li>
+                                            <li>kelola.php</li>
+                                            <li>proses.php</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Database -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Database</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Buat database dengan nama db_sekolah dan tabel dengan nama tb_siswa.</p>
+                                    </dd>
+                                    <dd>
+                                        <h6 class="h6">Membuat database baru</h6>
+                                        <pre class="card bg-light codeB">
+                
+    create database db_sekolah;
+                                        </pre>
+                
+                                        <h6 class="h6">Membuat tabel baru</h6>
+                                        <pre class="card bg-light codeB">
+                                            
+    create table tb_siswa (
+        id_siswa int(11) not null primary key auto_increment,
+        nisn varchar(15),
+        nama_siswa varchar(50),
+        jenis_kelamin varchar(15),
+        foto_siswa varchar(50),
+        alamat varchar(150)
+    );
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Interface -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Interface</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">koneksi.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    &lt;?php
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'db_sekolah';
+
+        $conn = mysqli_connect($host, $user, $pass, $db);
+        if($conn){
+            // echo "Koneksi Berhasil";
+        }
+
+        mysqli_select_db($conn, $db);
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">index.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;?php
+        include 'koneksi.php';
+        session_start();
+
+        $query = "select * from tb_siswa;";
+        $sql = mysqli_query($conn, $query);
+        $no = 0;
+
+    ?>
+
+    &lt;!DOCTYPE html>
+    &lt;html lang="en">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        &lt;!-- Bootstrap -->
+        &lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        &lt;scripx src="bootstrap/js/bootstrap.bundle.min.js">&lt;/script>
+
+        &lt;!-- Font Awesome -->
+        &lt;link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+
+        &lt;title>belajar_crud&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;nav class="navbar bg-light">
+            &lt;div class="container-fluid">
+            &lt;a class="navbar-brand" href="#">
+                CRUD - BS5
+            &lt;/a>
+            &lt;/div>
+        &lt;/nav>
+
+        &lt;div class="container">
+            &lt;!-- Judul -->
+            &lt;h1 class="mt-4">Data Siswa&lt;/h1>
+            &lt;figure>
+                &lt;blockquote class="blockquote">
+                    &lt;p>Berisi data yang telah disimpan di database.&lt;/p>
+                &lt;/blockquote>
+                &lt;figcaption class="blockquote-footer">
+                    CRUD &lt;cite title="Source Title">Create Read Update Delete&lt;/cite>
+                &lt;/figcaption>
+            &lt;/figure>
+
+            &lt;!-- Tombol -->
+            &lt;a href="kelola.php" type="button" class="btn btn-primary mb-3">
+                &lt;i class="fa fa-plus">&lt;/i>
+                Tambah Data
+            &lt;/a>
+
+            &lt;!-- Alert -->
+            &lt;?php
+                if(isset($_SESSION['eksekusi'])):
+            ?>
+                &lt;div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    &lt;strong>
+                    &lt;?php
+                        echo $_SESSION['eksekusi'];
+                    ?>
+                    &lt;/strong>
+                    &lt;button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">&lt;/button>
+                &lt;/div>
+            &lt;?php
+                session_destroy();
+                endif;
+            ?>
+
+            &lt;!-- Tabel Responsive -->
+            &lt;div class="table-responsive">
+                &lt;table class="table align-middle table-bordered table-hover">
+                    &lt;thead>
+                        &lt;tr>
+                            &lt;th>&lt;center>No.&lt;/center>&lt;/th>
+                            &lt;th>NISN&lt;/th>
+                            &lt;th>Nama Siswa&lt;/th>
+                            &lt;th>Jenis Kelamin&lt;/th>
+                            &lt;th>Foto Siswa&lt;/th>
+                            &lt;th>Alamat&lt;/th>
+                            &lt;th>Aksi&lt;/th>
+                        &lt;/tr>
+                    &lt;/thead>
+                    &lt;tbody>
+
+                        &lt;?php
+                            while($result = mysqli_fetch_assoc($sql)){
+                        
+                        ?>
+
+                            &lt;tr>
+                                &lt;td>&lt;center>
+                                    &lt;?php echo ++$no; ?>
+                                &lt;/center>&lt;/td>
+                                &lt;td>
+                                    &lt;?php echo $result['nisn']; ?>
+                                &lt;/td>
+                                &lt;td>
+                                    &lt;?php echo $result['nama_siswa']; ?>
+                                &lt;/td>
+                                &lt;td>
+                                    &lt;?php echo $result['jenis_kelamin']; ?>
+                                &lt;/td>
+                                &lt;td>
+                                    &lt;img src="img/&lt;?php echo $result['foto_siswa']; ?>" style="width: 150px;">
+                                &lt;/td>
+                                &lt;td>
+                                    &lt;?php echo $result['alamat']; ?>
+                                &lt;/td>
+                                &lt;td>
+                                    &lt;a href="kelola.php?ubah=&lt;?php echo $result['id_siswa']; ?>" type="button" class="btn btn-success btn-sm">
+                                        &lt;i class="fa fa-pencil">&lt;/i>
+                                        ubah
+                                    &lt;/a>
+                                    &lt;a href="proses.php?hapus=&lt;?php echo $result['id_siswa']; ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ???')">
+                                        &lt;i class="fa fa-trash">&lt;/i>
+                                        hapus
+                                    &lt;/a>
+                                &lt;/td>
+                            &lt;/tr>
+
+                        &lt;?php
+                            }
+                        ?>
+                        
+                    &lt;/tbody>
+                &lt;/table>
+            &lt;/div>
+        &lt;/div>
+    &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">kelola.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;!DOCTYPE html>
+
+    &lt;?php
+        include 'koneksi.php';
+        session_start();
+
+        $id_siswa = '';
+        $nisn = '';
+        $nama_siswa = '';
+        $jenis_kelamin = '';
+        $alamat = '';
+
+        if(isset($_GET['ubah'])){
+            $id_siswa = $_GET['ubah'];
+
+            $query = "select * from tb_siswa where id_siswa = '$id_siswa';";
+            $sql = mysqli_query($conn, $query);
+
+            $result = mysqli_fetch_assoc($sql);
+
+            $nisn = $result['nisn'];
+            $nama_siswa = $result['nama_siswa'];
+            $jenis_kelamin = $result['jenis_kelamin'];
+            $alamat = $result['alamat'];
+
+            // var_dump($result);
+
+            // die();
+        }
+    ?>
+
+    &lt;html lang="en">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        &lt;!-- Bootstrap -->
+        &lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        &lt;scripx src="bootstrap/js/bootstrap.bundle.min.js">&lt;/script>
+
+        &lt;!-- Font Awesome -->
+        &lt;link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+
+        &lt;title>belajar_crud&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;nav class="navbar bg-light mb-4">
+            &lt;div class="container-fluid">
+            &lt;a class="navbar-brand" href="#">
+                CRUD - BS5
+            &lt;/a>
+            &lt;/div>
+        &lt;/nav>
+        
+        &lt;!-- Form Controls -->
+        &lt;div class="container">
+            &lt;form method="POST" action="proses.php" enctype="multipart/form-data">
+                &lt;input type="hidden" value="&lt;?php echo $id_siswa; ?>" name="id_siswa">
+                &lt;div class="mb-3 row">
+                    &lt;label for="nisn" class="col-sm-2 col-form-label">
+                        NISN
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;input required type="text" name="nisn" class="form-control" id="nisn" placeholder="Ex: 112233" value="&lt;?php echo $nisn; ?>">
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="mb-3 row">
+                    &lt;label for="nama" class="col-sm-2 col-form-label">
+                        Nama Siswa
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;input required type="text" name="nama_siswa" class="form-control" id="nama" placeholder="Alexander" value="&lt;?php echo $nama_siswa; ?>">
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="mb-3 row">
+                    &lt;label for="jkel" class="col-sm-2 col-form-label">
+                        Jenis Kelamin
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;select required id="jkel" name="jenis_kelamin" class="form-select">
+                        &lt;option &lt;?php if($jenis_kelamin == 'Laki-Laki'){echo "selected";} ?> value="Laki-Laki">Laki-Laki&lt;/option>
+                        &lt;option &lt;?php if($jenis_kelamin == 'Perempuan'){echo "selected";} ?> value="Perempuan">Perempuan&lt;/option>
+                        &lt;/select>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="mb-3 row">
+                    &lt;label for="foto" class="col-sm-2 col-form-label">
+                        Foto Siswa
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;input &lt;?php if(!isset($_GET['ubah'])){ echo "required";} ?> class="form-control" type="file" name="foto_siswa" id="foto" accept="image/*">
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="mb-3 row">
+                    &lt;label for="alamat" class="col-sm-2 col-form-label">
+                        Alamat Lengkap
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;textarea required class="form-control" id="alamat" name="alamat" rows="3"> &lt;?php echo $alamat; ?> &lt;/textarea>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="mb-3 row mt-4">
+                    &lt;div class="col">
+                        &lt;?php
+                            if(isset($_GET['ubah'])){
+                        ?>
+                            &lt;button type="submit" name="aksi" value="edit" class="btn btn-primary">
+                                &lt;i class="fa fa-floppy-o" aria-hidden="true">&lt;/i>
+                                Simpan Perubahan
+                            &lt;/button>
+                        &lt;?php
+                            } else {
+                        ?>
+                            &lt;button type="submit" name="aksi" value="add" class="btn btn-primary">
+                                &lt;i class="fa fa-floppy-o" aria-hidden="true">&lt;/i>
+                                Tambahkan
+                            &lt;/button>
+                        &lt;?php
+                            }
+                        ?>
+                        
+                        &lt;a href="index.php" type="button" class="btn btn-danger">
+                            &lt;i class="fa fa-reply" aria-hidden="true">&lt;/i>
+                            Batal
+                        &lt;/a>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/form>
+        &lt;/div>
+    &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">proses.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;?php
+        include 'koneksi.php';
+        session_start();
+
+        if(isset($_POST['aksi'])){
+            if($_POST['aksi']=="add"){
+
+                $nisn = $_POST['nisn'];
+                $nama_siswa = $_POST['nama_siswa'];
+                $jenis_kelamin = $_POST['jenis_kelamin'];
+                $foto = $_FILES['foto_siswa']['name'];
+                $alamat = $_POST['alamat'];
+
+                $dir = "img/";
+                $tmpFile = $_FILES['foto_siswa']['tmp_name'];
+
+                move_uploaded_file($tmpFile, $dir.$foto);
+
+                $query = "insert into tb_siswa values(null, '$nisn', '$nama_siswa', '$jenis_kelamin', '$foto', '$alamat')";
+                $sql = mysqli_query($conn, $query);
+
+                if($sql){
+                    $_SESSION['eksekusi'] = "Data Berhasil Ditambahkan";
+                    header("location: index.php");
+                } else {
+                    echo $query;
+                }
+
+            } else if($_POST['aksi']=="edit"){
+
+                $id_siswa = $_POST['id_siswa'];
+                $nisn = $_POST['nisn'];
+                $nama_siswa = $_POST['nama_siswa'];
+                $jenis_kelamin = $_POST['jenis_kelamin'];
+                $alamat = $_POST['alamat'];
+
+                $queryShow = "select * from tb_siswa where id_siswa = '$id_siswa';";
+                $sqlShow = mysqli_query($conn, $queryShow);
+                $result = mysqli_fetch_assoc($sqlShow);
+
+                if($_FILES['foto_siswa']['name'] == ""){
+                    $foto = $result['foto_siswa'];
+                } else {
+                    $foto = $_FILES['foto_siswa']['name'];
+                    unlink("img/".$result['foto_siswa']);
+                    move_uploaded_file($_FILES['foto_siswa']['tmp_name'], 'img/'.$_FILES['foto_siswa']['name']);
+                }
+
+                $query = "update tb_siswa set nisn = '$nisn', nama_siswa = '$nama_siswa', jenis_kelamin = '$jenis_kelamin', alamat = '$alamat', foto_siswa = '$foto' where id_siswa = '$id_siswa';";
+
+                $sql = mysqli_query($conn, $query);
+
+                if($sql){
+                    $_SESSION['eksekusi'] = "Data Berhasil Diperbarui";
+                    header("location: index.php");
+                } else {
+                    echo $query;
+                }
+            }
+        }
+
+        if(isset($_GET['hapus'])){
+            $id_siswa = $_GET['hapus'];
+
+            $queryShow = "select * from tb_siswa where id_siswa = '$id_siswa';";
+            $sqlShow = mysqli_query($conn, $queryShow);
+            $result = mysqli_fetch_assoc($sqlShow);
+
+            unlink("img/".$result['foto_siswa']);
+            
+            $query = "delete from tb_siswa where id_siswa = '$id_siswa';";
+            $sql = mysqli_query($conn, $query);
+
+            if($sql){
+                $_SESSION['eksekusi'] = "Data Berhasil Dihapus";
+                header("location: index.php");
+            } else {
+                echo $query;
+            }
+        }
+
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Tampilan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="5000">
+                                        <img src="img/latihan_crud1/index.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud1/form_tambah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud1/form_ubah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud1/confirm_hapus.png" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Latihan CRUD 2</h2>
+                        
+                        <!-- Hal yang dibutuhkan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Hal yang dibutuhkan</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Bootstrap 5</li>
+                                    <li>Font Awesome</li>
+                                    <li>4 File .php</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Langkah-Langkah -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Langkah-Langkah</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Membuat Database
+                                        <ul style="list-style: circle;">
+                                            <li>Buat database baru</li>
+                                            <li>Buat tabel baru</li>
+                                        </ul>
+                                    </li>
+                                    <li>Membuat Interface
+                                        <ul style="list-style: circle;">
+                                            <li>koneksi.php</li>
+                                            <li>beranda.php</li>
+                                            <li>form.php</li>
+                                            <li>proses.php</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Database -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Database</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Buat database dengan nama kampus dan tabel dengan nama mahasiswa.</p>
+                                    </dd>
+                                    <dd>
+                                        <h6 class="h6">Membuat database baru</h6>
+                                        <pre class="card bg-light codeB">
+                
+    create database kampus;
+                                        </pre>
+                
+                                        <h6 class="h6">Membuat tabel baru</h6>
+                                        <pre class="card bg-light codeB">
+                                            
+    create table mahasiswa(
+        no int(10) not null primary key auto_increment,
+        nim int(10),
+        nama varchar(20),
+        prodi varchar(20)
+    );
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Interface -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Interface</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">koneksi.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    &lt;?php
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'kampus';
+        
+        $koneksi = mysqli_connect($host, $user, $pass, $db);
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">beranda.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;?php
+        include 'koneksi.php';
+        
+        $query = "select * from mahasiswa;";
+        $sql = mysqli_query($koneksi, $query);
+        $no = 0;
+        
+    ?>
+    
+    &lt;!DOCTYPE html>
+    &lt;html lang="en">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        &lt;!-- Bootstrap -->
+        &lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        &lt;scripx src="bootstrap/js/bootstrap.bundle.min.js">&lt;/script>
+    
+        &lt;!-- Font Awesome -->
+        &lt;link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    
+        &lt;title>belajar_crud&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;nav class="navbar bg-light">
+            &lt;div class="container-fluid">
+                &lt;a class="navbar-brand" href="#">
+                    CRUD - BS5
+                &lt;/a>
+            &lt;/div>
+        &lt;/nav>
+    
+        &lt;div class="container">
+            &lt;!-- Judul -->
+            &lt;h1 class="mt-4">Data Siswa&lt;/h1>
+            &lt;figure>
+                &lt;blockquote class="blockquote">
+                    &lt;p>Berisi data yang telah disimpan di database.&lt;/p>
+                &lt;/blockquote>
+                &lt;figcaption class="blockquote-footer">
+                    CRUD &lt;cite title="Source Title">Create Read Update Delete&lt;/cite>
+                &lt;/figcaption>
+            &lt;/figure>
+    
+            &lt;!-- Tombol -->
+            &lt;a href="form.php" type="button" class="btn btn-primary mb-3">
+                &lt;i class="fa fa-plus">&lt;/i>
+                Tambah Data
+            &lt;/a>
+    
+            &lt;!-- Tabel Responsive -->
+            &lt;div class="table-responsive">
+                &lt;table class="table align-middle table-bordered table-hover">
+                    &lt;thead>
+                        &lt;tr>
+                            &lt;th>&lt;center>No.&lt;/center>&lt;/th>
+                            &lt;th>NIM&lt;/th>
+                            &lt;th>Nama&lt;/th>
+                            &lt;th>Prodi&lt;/th>
+                            &lt;th>Aksi&lt;/th>
+                        &lt;/tr>
+                    &lt;/thead>
+                    &lt;tbody>
+        
+                        &lt;?php
+                            while($result = mysqli_fetch_assoc($sql)){
+                        
+                        ?>
+        
+                        &lt;tr>
+                            &lt;td>&lt;center>
+                                &lt;?php echo ++$no; ?>
+                            &lt;/center>&lt;/td>
+                            &lt;td>
+                                &lt;?php echo $result['nim']; ?>
+                            &lt;/td>
+                            &lt;td>
+                                &lt;?php echo $result['nama']; ?>
+                            &lt;/td>
+                            &lt;td>
+                                &lt;?php echo $result['prodi']; ?>
+                            &lt;/td>
+                            &lt;td>
+                                &lt;a href="form.php?ubah=&lt;?php echo $result['no']; ?>" type="button" class="btn btn-success btn-sm">
+                                    &lt;i class="fa fa-pencil">&lt;/i>
+                                    ubah
+                                &lt;/a>
+                                &lt;a href="proses.php?hapus=&lt;?php echo $result['no']; ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ???')">
+                                    &lt;i class="fa fa-trash">&lt;/i>
+                                    hapus
+                                &lt;/a>
+                            &lt;/td>
+                        &lt;/tr>
+        
+                        &lt;?php
+                            }
+                        ?>
+                        
+                    &lt;/tbody>
+                &lt;/table>
+            &lt;/div>
+        &lt;/div>
+    &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;!DOCTYPE html>
+
+    &lt;?php
+        include 'koneksi.php';
+    
+        $no = '';
+        $nim = '';
+        $nama = '';
+        $prodi = '';
+    
+        if(isset($_GET['ubah'])){
+            $no = $_GET['ubah'];
+        
+            $query = "select * from mahasiswa where no = '$no';";
+            $sql = mysqli_query($koneksi, $query);
+        
+            $result = mysqli_fetch_assoc($sql);
+        
+            $nim = $result['nim'];
+            $nama = $result['nama'];
+            $prodi = $result['prodi'];
+    
+        }
+    ?>
+    
+    &lt;html lang="en">
+    &lt;head>
+        &lt;meta charset="UTF-8">
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        &lt;!-- Bootstrap -->
+        &lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        &lt;scripx src="bootstrap/js/bootstrap.bundle.min.js">&lt;/script>
+    
+        &lt;!-- Font Awesome -->
+        &lt;link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+    
+        &lt;title>belajar_crud&lt;/title>
+    &lt;/head>
+    &lt;body>
+        &lt;nav class="navbar bg-light mb-4">
+            &lt;div class="container-fluid">
+                &lt;a class="navbar-brand" href="#">
+                CRUD - BS5
+                &lt;/a>
+            &lt;/div>
+        &lt;/nav>
+        
+        &lt;!-- Form Controls -->
+        &lt;div class="container">
+            &lt;form method="POST" action="proses.php">
+                &lt;input type="hidden" value="&lt;?php echo $no; ?>" name="no">
+                &lt;div class="mb-3 row">
+                    &lt;label for="nim" class="col-sm-2 col-form-label">
+                        NIM
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;input required type="text" name="nim" class="form-control" id="nim" placeholder="Ex: 112233" value="&lt;?php echo $nim; ?>">
+                    &lt;/div>
+                &lt;/div>
+        
+                &lt;div class="mb-3 row">
+                    &lt;label for="nama" class="col-sm-2 col-form-label">
+                        Nama
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;input required type="text" name="nama" class="form-control" id="nama" placeholder="Alexander" value="&lt;?php echo $nama; ?>">
+                    &lt;/div>
+                &lt;/div>
+        
+                &lt;div class="mb-3 row">
+                    &lt;label for="prodi" class="col-sm-2 col-form-label">
+                        Prodi
+                    &lt;/label>
+                    &lt;div class="col-sm-10">
+                        &lt;input required type="text" name="prodi" class="form-control" id="prodi" placeholder="Alexander" value="&lt;?php echo $prodi; ?>">
+                    &lt;/div>
+                &lt;/div>
+        
+                
+                &lt;div class="mb-3 row mt-4">
+                    &lt;div class="col">
+                    &lt;?php
+                        if(isset($_GET['ubah'])){
+                    ?>
+                        &lt;button type="submit" name="aksi" value="edit" class="btn btn-primary">
+                        &lt;i class="fa fa-floppy-o" aria-hidden="true">&lt;/i>
+                        Simpan Perubahan
+                        &lt;/button>
+                    &lt;?php
+                        } else {
+                    ?>
+                        &lt;button type="submit" name="aksi" value="add" class="btn btn-primary">
+                        &lt;i class="fa fa-floppy-o" aria-hidden="true">&lt;/i>
+                        Tambahkan
+                        &lt;/button>
+                    &lt;?php
+                        }
+                    ?>
+                    
+                    &lt;a href="beranda.php" type="button" class="btn btn-danger">
+                        &lt;i class="fa fa-reply" aria-hidden="true">&lt;/i>
+                        Batal
+                    &lt;/a>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/form>
+        &lt;/div>
+    &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">proses.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;?php
+        include 'koneksi.php';
+
+        if(isset($_POST['aksi'])){
+            if($_POST['aksi']=="add"){
+
+                $nim = $_POST['nim'];
+                $nama = $_POST['nama'];
+                $prodi = $_POST['prodi'];
+
+                $query = "insert into mahasiswa values(null, '$nim', '$nama', '$prodi')";
+                $sql = mysqli_query($koneksi, $query);
+
+                if($sql){
+                    header("location: beranda.php");
+                } else {
+                    echo $query;
+                }
+
+            } else if($_POST['aksi']=="edit"){
+                
+                $no = $_POST['no'];
+                $nim = $_POST['nim'];
+                $nama = $_POST['nama'];
+                $prodi = $_POST['prodi'];
+
+                $queryShow = "select * from mahasiswa where no = '$no';";
+                $sqlShow = mysqli_query($koneksi, $queryShow);
+                $result = mysqli_fetch_assoc($sqlShow);
+
+                $query = "update mahasiswa set nim = '$nim', nama = '$nama', prodi = '$prodi' where no = '$no';";
+
+                $sql = mysqli_query($koneksi, $query);
+
+                header("location: beranda.php");
+            }
+        }
+
+        if(isset($_GET['hapus'])){
+            $no = $_GET['hapus'];
+
+            $queryShow = "select * from mahasiswa where no = '$no';";
+            $sqlShow = mysqli_query($koneksi, $queryShow);
+            $result = mysqli_fetch_assoc($sqlShow);
+            
+            $query = "delete from mahasiswa where no = '$no';";
+            $sql = mysqli_query($koneksi, $query);
+
+            if($sql){
+                header("location: beranda.php");
+            } else {
+                echo $query;
+            }
+        }
+
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Tampilan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="5000">
+                                        <img src="img/latihan_crud2/beranda.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud2/form_tambah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud2/form_ubah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud2/confirm_hapus.png" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Latihan CRUD 3</h2>
+                        
+                        <!-- Hal yang dibutuhkan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Hal yang dibutuhkan</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>7 File .php</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Langkah-Langkah -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Langkah-Langkah</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Membuat Database
+                                        <ul style="list-style: circle;">
+                                            <li>Buat database baru</li>
+                                            <li>Buat tabel baru</li>
+                                        </ul>
+                                    </li>
+                                    <li>Membuat Interface
+                                        <ul style="list-style: circle;">
+                                            <li>koneksi.php</li>
+                                            <li>beranda.php</li>
+                                            <li>form_tambah.php</li>
+                                            <li>form_ubah.php</li>
+                                            <li>create.php</li>
+                                            <li>update.php</li>
+                                            <li>delete.php</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Database -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Database</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Buat database dengan nama kampus dan tabel dengan nama mahasiswa.</p>
+                                    </dd>
+                                    <dd>
+                                        <h6 class="h6">Membuat database baru</h6>
+                                        <pre class="card bg-light codeB">
+                
+    create database kampus;
+                                        </pre>
+                
+                                        <h6 class="h6">Membuat tabel baru</h6>
+                                        <pre class="card bg-light codeB">
+        
+    create table mahasiswa(
+        no int(10) not null primary key auto_increment,
+        nim int(10),
+        nama varchar(20),
+        prodi varchar(20)
+    );
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Interface -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Interface</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">koneksi.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    &lt;?php 
+        $host = 'localhost'; 
+        $user = 'root'; 
+        $pass = ''; 
+        $db = 'kampus'; 
+        
+        $koneksi = mysqli_connect($host, $user, $pass, $db); 
+        if($koneksi){ 
+            // echo "Koneksi Berhasil";
+        } 
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">beranda.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;html>
+        &lt;body>
+            &lt;h1>Data Mahasiswa&lt;/h1>
+            &lt;a href="form_tambah.php">Tambah Data&lt;/a>
+            &lt;table border="1" cellspacing="0" cellpadding="5">
+                &lt;tr>
+                    &lt;th>No&lt;/th>
+                    &lt;th>NIM&lt;/th>
+                    &lt;th>Nama&lt;/th>
+                    &lt;th>Prodi&lt;/th>
+                    &lt;th>Aksi&lt;/th>
+                &lt;/tr>
+                
+                &lt;?php 
+                    include('koneksi.php'); 
+                    $query = mysqli_query($koneksi, "select * from mahasiswa"); 
+                    $no = 0; 
+                    while($data = mysqli_fetch_array($query)){ 
+                        $no++; 
+                ?>
+                    &lt;tr>
+                        &lt;td>&lt;?php echo $no; ?>&lt;/td>
+                        &lt;td>&lt;?php echo $data['nim']; ?>&lt;/td>
+                        &lt;td>&lt;?php echo $data['nama']; ?>&lt;/td>
+                        &lt;td>&lt;?php echo $data['prodi']; ?>&lt;/td>
+                        &lt;td>
+                            &lt;a href="form_ubah.php?no=&lt;?php echo $data['no']; ?>">ubah&lt;/a>
+                            &lt;a href="delete.php?no=&lt;?php echo $data['no']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ???')">hapus&lt;/a>
+                        &lt;/td>
+                    &lt;/tr>
+                &lt;?php 
+                    } 
+                ?>
+            &lt;/table>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_tambah.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;html>
+        &lt;body>
+            &lt;h1>Form Tambah Data&lt;/h1>
+            &lt;form method="POST" action="create.php">
+                &lt;table>
+                    &lt;tr>
+                        &lt;td>NIM&lt;/td>
+                        &lt;td>&lt;input type="text" name="nim">&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>Nama&lt;/td>
+                        &lt;td>&lt;input type="text" name="nama">&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>Prodi&lt;/td>
+                        &lt;td>&lt;input type="text" name="prodi">&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>&lt;/td>
+                        &lt;td>&lt;input type="submit" value="Tambahkan">&lt;/td>
+                    &lt;/tr>
+                &lt;/table>
+            &lt;/form>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_ubah.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                        
+    &lt;html>
+        &lt;body>
+            &lt;h1>Form Ubah Data&lt;/h1>
+    
+            &lt;?php 
+                include('koneksi.php'); 
+                $no = $_GET['no']; 
+                $query = mysqli_query($koneksi, "select * from mahasiswa where no = '$no'"); 
+                while($data = mysqli_fetch_array($query)){ 
+            ?>
+                &lt;form method="POST" action="update.php">
+                    &lt;input type="hidden" name="no" value="&lt;?php echo $data['no']; ?>">
+                    &lt;table>
+                        &lt;tr>
+                            &lt;td>NIM&lt;/td>
+                            &lt;td>&lt;input type="text" name="nim" value="&lt;?php echo $data['nim']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Nama&lt;/td>
+                            &lt;td>&lt;input type="text" name="nama" value="&lt;?php echo $data['nama']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Prodi&lt;/td>
+                            &lt;td>&lt;input type="text" name="prodi" value="&lt;?php echo $data['prodi']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;td>&lt;input type="submit" value="Simpan Perubahan">&lt;/td>
+                        &lt;/tr>
+                    &lt;/table>
+                &lt;/form>
+            &lt;?php 
+                } 
+            ?>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">create.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    &lt;?php 
+        include('koneksi.php'); 
+
+        $nim = $_POST['nim']; 
+        $nama = $_POST['nama']; 
+        $prodi = $_POST['prodi']; 
+        
+        $query = mysqli_query($koneksi, "insert into mahasiswa values(null, '$nim', '$nama', '$prodi')"); 
+        
+        header('location: beranda.php'); 
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">update.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    &lt;?php 
+        include('koneksi.php');
+
+        $no = $_POST['no']; 
+        $nim = $_POST['nim']; 
+        $nama = $_POST['nama']; 
+        $prodi = $_POST['prodi']; 
+
+        $query = mysqli_query($koneksi, "update mahasiswa set nim = '$nim', nama = '$nama', prodi = '$prodi' where no = '$no'"); 
+        
+        header('location: beranda.php'); 
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">delete.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    &lt;?php 
+        include('koneksi.php'); 
+        $no = $_GET['no']; 
+        $query = mysqli_query($koneksi, "delete from mahasiswa where no = '$no'"); 
+        header('location: beranda.php'); 
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Tampilan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/beranda.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/form_tambah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/form_ubah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/confirm_hapus.png" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Latihan Login 1</h2>
+                        
+                        <!-- Hal yang dibutuhkan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Hal yang dibutuhkan</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>2 folder, client dan server</li>
+                                    <li>5 file php di folder server</li>
+                                    <li>6 file php di folder client</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Langkah-Langkah -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Langkah-Langkah</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Membuat Database
+                                        <ul style="list-style: circle;">
+                                            <li>Buat database</li>
+                                            <li>Buat tabel server</li>
+                                            <li>Buat tabel client</li>
+                                        </ul>
+                                    </li>
+                                    <li>Membuat File Server
+                                        <ul style="list-style: circle;">
+                                            <li>koneksi.php</li>
+                                            <li>daftar.php</li>
+                                            <li>form_daftar.php</li>
+                                            <li>form_login.php</li>
+                                            <li>proses.php</li>
+                                        </ul>
+                                    </li>
+                                    <li>Membuat File Client
+                                        <ul style="list-style: circle;">
+                                            <li>koneksi.php</li>
+                                            <li>admin_daftar.php</li>
+                                            <li>admin_login.php</li>
+                                            <li>admin.php</li>
+                                            <li>form_ubah.php</li>
+                                            <li>proses.php</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Database -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Database</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Buat database dengan nama latihan dan tabel dengan nama server dan client.</p>
+                                    </dd>
+                                    <dd>
+                                        <h6 class="h6">Membuat database</h6>
+                                        <pre class="card bg-light codeB">
+                
+    create database latihan;
+                                        </pre>
+                
+                                        <h6 class="h6">Membuat tabel server</h6>
+                                        <pre class="card bg-light codeB">
+        
+    create table server(
+        username varchar(20) not null primary key,
+        password varchar(20) not null
+    );
+                                        </pre>
+        
+                                        <h6 class="h6">Membuat tabel client</h6>
+                                        <pre class="card bg-light codeB">
+        
+    create table client(
+        username varchar(20) not null primary key,
+        nim int(10),
+        nama varchar(20),
+        prodi varchar(20),
+        alamat varchar(20),
+        usia int(10)
+    );
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Server -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Server</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">koneksi.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    &lt;?php
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'latihan';
+
+        $koneksi = mysqli_connect($host, $user, $pass, $db);
+        if($koneksi){
+            // echo "Koneksi Berhasil";
+        }
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">daftar.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+    ?>
+    
+    &lt;html>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Daftar Mahasiswa&lt;/h1>
+                &lt;a href="form_daftar.php">Daftar&lt;/a> atau &lt;a href="form_login.php">Login&lt;/a>&lt;br>
+    
+                &lt;p>Table Server&lt;/p>
+                &lt;table border="1" cellspacing="0" cellpadding="6">
+                    &lt;tr>
+                        &lt;th>No&lt;/th>
+                        &lt;th>Username&lt;/th>
+                        &lt;th>Password&lt;/th>
+                        &lt;th>Aksi&lt;/th>
+                    &lt;/tr>
+    
+                    &lt;?php
+                        $query = mysqli_query($koneksi, "select * from server");
+                        $no = 0;
+                        while($data = mysqli_fetch_array($query)){
+                            $no++;
+                    ?>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo $no; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['username']; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['password']; ?>&lt;/td>
+                            &lt;td>&lt;a href="proses.php?hapus=&lt;?php echo $data['username']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ???')">hapus&lt;/a>&lt;/td>
+                        &lt;/tr>
+                    &lt;?php
+                        }
+                    ?>
+                &lt;/table>&lt;br>
+    
+                &lt;p>Table Client&lt;/p>
+                &lt;table border="1" cellspacing="0" cellpadding="6">
+                    &lt;tr>
+                        &lt;th>No&lt;/th>
+                        &lt;th>Username&lt;/th>
+                        &lt;th>NIM&lt;/th>
+                        &lt;th>Nama&lt;/th>
+                        &lt;th>Prodi&lt;/th>
+                        &lt;th>Alamat&lt;/th>
+                        &lt;th>Usia&lt;/th>
+                        &lt;th>Aksi&lt;/th>
+                    &lt;/tr>
+    
+                    &lt;?php
+                        $query = mysqli_query($koneksi, "select * from client");
+                        $no = 0;
+                        while($data = mysqli_fetch_array($query)){
+                            $no++;
+                    ?>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo $no; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['username']; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['nim']; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['nama']; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['prodi']; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['alamat']; ?>&lt;/td>
+                            &lt;td>&lt;?php echo $data['usia']; ?>&lt;/td>
+                            &lt;td>&lt;a href="proses.php?hapus=&lt;?php echo $data['username']; ?>" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ???')">hapus&lt;/a>&lt;/td>
+                        &lt;/tr>
+                    &lt;?php
+                        }
+                    ?>
+                &lt;/table>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html> 
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_daftar.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;html>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Form Daftar&lt;/h1>
+                &lt;form method="post" action="proses.php">
+                    &lt;table>
+                        &lt;tr>
+                            &lt;td>Username&lt;/td>
+                            &lt;td>&lt;input type="text" name="username">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Password&lt;/td>
+                            &lt;td>&lt;input type="text" name="password">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;td>&lt;button type="submit" name="aksi" value="daftar">Daftar&lt;/button>&lt;/td>
+                        &lt;/tr>
+                    &lt;/table>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>                                
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_login.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;html>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Form Login&lt;/h1>
+                &lt;form method="post" action="proses.php">
+                    &lt;table>
+                        &lt;tr>
+                            &lt;td>Username&lt;/td>
+                            &lt;td>&lt;input type="text" name="username">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Password&lt;/td>
+                            &lt;td>&lt;input type="text" name="password">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;td>&lt;button type="submit" name="aksi" value="login">Login&lt;/button>&lt;/td>
+                        &lt;/tr>
+                    &lt;/table>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">proses.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    
+        if(isset($_POST['aksi'])){
+            if($_POST['aksi']=="daftar"){
+    
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+    
+                $query = mysqli_query($koneksi, "insert into server values('$user', '$pass')");
+                $queryb = mysqli_query($koneksi, "insert into client values('$user','','','','','')");
+    
+                if($query){
+                    header('location: daftar.php');
+                } else {
+                    header('location: form_daftar.php');
+                }
+    
+            } else if($_POST['aksi']=="login"){
+    
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+    
+                $query = mysqli_query($koneksi, "select * from server where username = '$user' and password = '$pass'");
+    
+                $cek = mysqli_num_rows($query);
+    
+                if($cek==1){
+                    $_SESSION['user'] = $user;
+                    header('location: ../client/admin.php');
+                } else {
+                    header('location: form_login.php');
+                }
+                
+            }
+        } else if(isset($_GET['hapus'])){
+    
+            $user = $_GET['hapus'];
+    
+            $query = mysqli_query($koneksi, "delete from server where username = '$user'");
+            $queryb = mysqli_query($koneksi, "delete from client where username = '$user'");
+    
+            if($query){
+                header('location: daftar.php');
+            }
+    
+        }
+    ?> 
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Client -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Client</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">koneksi.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    &lt;?php
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'latihan';
+
+        $koneksi = mysqli_connect($host, $user, $pass, $db);
+        if($koneksi){
+            // echo "Koneksi Berhasil";
+        }
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">admin_daftar.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    &lt;html>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Form Daftar Mahasiswa&lt;/h1>
+                &lt;form method="post" action="proses.php">
+                    &lt;table>
+                        &lt;tr>
+                            &lt;td>Username&lt;/td>
+                            &lt;td>&lt;input type="text" name="username">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Password&lt;/td>
+                            &lt;td>&lt;input type="text" name="password">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;td>&lt;button type="submit" name="aksi" value="daftar">Daftar&lt;/button>&lt;/td>
+                        &lt;/tr>
+                    &lt;/table>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">admin_login.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                
+    &lt;html>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Form Login Mahasiswa&lt;/h1>
+                &lt;p>Belum punya akun &lt;a href="admin_daftar.php">klik disini&lt;/a>&lt;/p>
+                &lt;form method="post" action="proses.php">
+                    &lt;table>
+                        &lt;tr>
+                            &lt;td>Username&lt;/td>
+                            &lt;td>&lt;input type="text" name="username">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Password&lt;/td>
+                            &lt;td>&lt;input type="text" name="password">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;td>&lt;button type="submit" name="aksi" value="login">Login&lt;/button>&lt;/td>
+                        &lt;/tr>
+                    &lt;/table>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">admin.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    ?>
+
+    &lt;html>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Selamat datang &lt;?php echo $_SESSION['user']; ?>&lt;/h1>
+                &lt;a href="form_ubah.php">Edit Profil&lt;/a>
+                &lt;a href="proses.php?logout=&lt;?php echo $_SESSION['user']; ?>" onclick="return confirm('Apakah anda yakin ingin keluar ???')">Logout&lt;/a>
+                &lt;table border="1" cellspacing="0" cellpadding="6">
+                    &lt;tr>
+                        &lt;th>No&lt;/th>
+                        &lt;th>Profil&lt;/th>
+                        &lt;th>Deskripsi&lt;/th>
+                    &lt;/tr>
+                    
+                    &lt;?php
+                        $user = $_SESSION['user'];
+                        $query = mysqli_query($koneksi, "select * from client where username = '$user'");
+                        $no = 0;
+                        while($data = mysqli_fetch_array($query)){
+                    ?>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                            &lt;td>Username&lt;/td>
+                            &lt;td>&lt;?php echo $data['username'] ?>&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                            &lt;td>NIM&lt;/td>
+                            &lt;td>&lt;?php echo $data['nim'] ?>&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                            &lt;td>Nama&lt;/td>
+                            &lt;td>&lt;?php echo $data['nama'] ?>&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                            &lt;td>Prodi&lt;/td>
+                            &lt;td>&lt;?php echo $data['prodi'] ?>&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                            &lt;td>Alamat&lt;/td>
+                            &lt;td>&lt;?php echo $data['alamat'] ?>&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                            &lt;td>Usia&lt;/td>
+                            &lt;td>&lt;?php echo $data['usia'] ?>&lt;/td>
+                        &lt;/tr>
+                    &lt;?php
+                        }
+                    ?>
+                &lt;/table>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_ubah.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+
+        $user = $_SESSION['user'];
+        $query = mysqli_query($koneksi, "select * from client where username = '$user'");
+        $no = 0;
+        $data = mysqli_fetch_array($query);
+    ?>
+
+    &lt;html>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Edit Profil &lt;?php echo $_SESSION['user']; ?>&lt;/h1>
+                &lt;form method="post" action="proses.php">
+                &lt;input type="hidden" name="username" value="&lt;?php echo $data['username']; ?>">
+                    &lt;table>
+                        &lt;tr>
+                            &lt;td>Username&lt;/td>
+                            &lt;td>&lt;?php echo $data['username']; ?>&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>NIM&lt;/td>
+                            &lt;td>&lt;input type="number" name="nim" value="&lt;?php echo $data['nim']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Nama&lt;/td>
+                            &lt;td>&lt;input type="text" name="nama" value="&lt;?php echo $data['nama']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Prodi&lt;/td>
+                            &lt;td>&lt;input type="text" name="prodi" value="&lt;?php echo $data['prodi']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Alamat&lt;/td>
+                            &lt;td>&lt;input type="text" name="alamat" value="&lt;?php echo $data['alamat']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>Usia&lt;/td>
+                            &lt;td>&lt;input type="number" name="usia" value="&lt;?php echo $data['usia']; ?>">&lt;/td>
+                        &lt;/tr>
+                        &lt;tr>
+                            &lt;td>&lt;/td>
+                            &lt;td>&lt;button type="submit" name="aksi" value="ubah">Simpan Perubahan&lt;/button>&lt;/td>
+                        &lt;/tr>
+                    &lt;/table>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">proses.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+
+        if(isset($_POST['aksi'])){
+            if($_POST['aksi']=="daftar"){
+
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+
+                $query = mysqli_query($koneksi, "insert into server values('$user', '$pass')");
+                $queryb = mysqli_query($koneksi, "insert into client values('$user','','','','','')");
+
+                if($query){
+                    header('location: admin_login.php');
+                } else {
+                    header('location: admin_daftar.php');
+                }
+
+            } else if($_POST['aksi']=="login"){
+
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+
+                $query = mysqli_query($koneksi, "select * from server where username = '$user' and password = '$pass'");
+
+                $cek = mysqli_num_rows($query);
+
+                if($cek==1){
+                    $_SESSION['user'] = $user;
+                    header('location: admin.php');
+                } else {
+                    header('location: admin_login.php');
+                }
+
+            } else if($_POST['aksi']=="ubah"){
+
+                $user = $_POST['username'];
+                $nim = $_POST['nim'];
+                $nama = $_POST['nama'];
+                $prodi = $_POST['prodi'];
+                $alamat = $_POST['alamat'];
+                $usia = $_POST['usia'];
+
+                $query = mysqli_query($koneksi, "update client set nim = '$nim', nama = '$nama', prodi = '$prodi', alamat = '$alamat', usia = '$usia' where username = '$user'");
+
+                header('location: admin.php');
+
+            }
+
+        } else if(isset($_GET['logout'])){
+
+            session_unset();
+            session_destroy();
+            header('location: admin_login.php');
+            exit();
+    
+        }
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Tampilan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/beranda.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/form_tambah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/form_ubah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/confirm_hapus.png" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+        
+                    <div class="card materi hide">
+                    <div class="card-body">
+                        <h2 class="judul1">Latihan Login 2</h2>
+                        
+                        <!-- Hal yang dibutuhkan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Hal yang dibutuhkan</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Bootstrap 5</li>
+                                    <li>Font Awesome</li>
+                                    <li>2 folder, maker dan user</li>
+                                    <li>5 file php di folder maker</li>
+                                    <li>6 file php di folder user</li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Langkah-Langkah -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Langkah-Langkah</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li>Membuat Database
+                                        <ul style="list-style: circle;">
+                                            <li>Buat database</li>
+                                            <li>Buat tabel login</li>
+                                            <li>Buat tabel profil</li>
+                                        </ul>
+                                    </li>
+                                    <li>Membuat File Maker
+                                        <ul style="list-style: circle;">
+                                            <li>koneksi.php</li>
+                                            <li>daftar.php</li>
+                                            <li>form_daftar.php</li>
+                                            <li>form_login.php</li>
+                                            <li>proses.php</li>
+                                        </ul>
+                                    </li>
+                                    <li>Membuat File User
+                                        <ul style="list-style: circle;">
+                                            <li>koneksi.php</li>
+                                            <li>admin_daftar.php</li>
+                                            <li>admin_login.php</li>
+                                            <li>admin.php</li>
+                                            <li>form_ubah.php</li>
+                                            <li>proses.php</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Membuat Database -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Membuat Database</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Buat database dengan nama latihan2 dan tabel dengan nama login dan profil.</p>
+                                    </dd>
+                                    <dd>
+                                        <h6 class="h6">Membuat database</h6>
+                                        <pre class="card bg-light codeB">
+                
+    create database latihan2;
+                                        </pre>
+                
+                                        <h6 class="h6">Membuat tabel login</h6>
+                                        <pre class="card bg-light codeB">
+        
+    create table login(
+        username varchar(20) not null primary key,
+        password varchar(20) not null
+    );
+                                        </pre>
+        
+                                        <h6 class="h6">Membuat tabel profil</h6>
+                                        <pre class="card bg-light codeB">
+        
+    create table profil(
+        username varchar(20) not null primary key,
+        nim int(10),
+        nama varchar(20),
+        prodi varchar(20),
+        alamat varchar(20),
+        usia int(10)
+    );
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Maker -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">Maker</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">koneksi.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'latihan2';
+
+        $koneksi = mysqli_connect($host, $user, $pass, $db);
+        if($koneksi){
+            // echo "Koneksi Berhasil";
+        }
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">daftar.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    ?>
+
+    &lt;html>
+        &lt;head>
+            &lt;!-- Bootstrap -->
+            &lt;link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+            &lt;scripx type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js">&lt;/script>
+            &lt;!-- Font Awesome -->
+            &lt;link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css"> 
+        &lt;/head>
+        &lt;body>
+            &lt;div class="container">
+                &lt;h1>Data Mahasiswa&lt;/h1>
+
+                &lt;p>
+                    &lt;a href="form_daftar.php" type="button" class="btn btn-primary btn-sm">Daftar&lt;/a> 
+                    &lt;a href="form_login.php" type="button" class="btn btn-primary btn-sm">Login&lt;/a>
+                &lt;/p>
+
+                &lt;?php
+                    if(isset($_SESSION['berhasil'])):
+                ?>
+                    &lt;div class="row">
+                        &lt;div class="col-md-3">
+                            &lt;div class="alert alert-primary">
+                                &lt;?php echo $_SESSION['berhasil']; ?>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;?php
+                    session_destroy();
+                    endif;
+                ?>
+                
+                &lt;div class="table-responsive">
+                    &lt;table class="table table-hover" style="max-width: 600px;">
+                        &lt;thead>
+                            &lt;tr>
+                                &lt;th>No&lt;/th>
+                                &lt;th>Username&lt;/th>
+                                &lt;th>Password&lt;/th>
+                                &lt;th>Aksi&lt;/th>
+                            &lt;/tr>
+                        &lt;/thead>
+                        &lt;tbody>
+                            &lt;?php
+                                $query = mysqli_query($koneksi, "select * from login");
+                                $no = 0;
+                                while($data = mysqli_fetch_array($query)){
+                                    $no++;
+                            ?>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo $no; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['username']; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['password']; ?>&lt;/td>
+                                    &lt;td>
+                                        &lt;a href="proses.php?hapus=&lt;?php echo $data['username']; ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ???')">
+                                            &lt;i class="fa fa-trash">&lt;/i>
+                                            hapus
+                                        &lt;/a>
+                                    &lt;/td>
+                                &lt;/tr>
+                            &lt;?php
+                                }
+                            ?>
+                        &lt;/tbody>    
+                    &lt;/table>
+                &lt;/div>&lt;br>
+
+                &lt;div class="table-responsive">
+                    &lt;table class="table table-hover">
+                        &lt;thead>
+                            &lt;tr>
+                                &lt;th>No&lt;/th>
+                                &lt;th>Username&lt;/th>
+                                &lt;th>NIM&lt;/th>
+                                &lt;th>Nama&lt;/th>
+                                &lt;th>Prodi&lt;/th>
+                                &lt;th>Alamat&lt;/th>
+                                &lt;th>Usia&lt;/th>
+                                &lt;th>Aksi&lt;/th>
+                            &lt;/tr>
+                        &lt;/thead>
+                        &lt;tbody>
+                            &lt;?php
+                                $query = mysqli_query($koneksi, "select * from profil");
+                                $no = 0;
+                                while($data = mysqli_fetch_array($query)){
+                                    $no++;
+                            ?>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo $no; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['username']; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['nim']; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['nama']; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['prodi']; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['alamat']; ?>&lt;/td>
+                                    &lt;td>&lt;?php echo $data['usia']; ?>&lt;/td>
+                                    &lt;td>
+                                        &lt;a href="proses.php?hapus=&lt;?php echo $data['username']; ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data tersebut ???')">
+                                            &lt;i class="fa fa-trash">&lt;/i> 
+                                            hapus
+                                        &lt;/a>
+                                    &lt;/td>
+                                &lt;/tr>
+                            &lt;?php
+                                }
+                            ?>
+                        &lt;/tbody>
+                        
+                    &lt;/table>
+                &lt;/div>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_daftar.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    ?>
+    
+    &lt;html>
+        &lt;head>
+            &lt;!-- Bootstrap -->
+            &lt;link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+            &lt;scripx type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js">&lt;/script>
+            &lt;!-- Font Awesome -->
+            &lt;link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css"> 
+        &lt;/head>
+        &lt;body>
+            &lt;div class="container">
+    
+                &lt;h1>Form Daftar&lt;/h1>
+    
+                &lt;?php
+                    if(isset($_SESSION['gagal'])):
+                ?>
+                    &lt;div class="row">
+                        &lt;div class="col-md-3">
+                            &lt;div class="alert alert-danger">
+                                &lt;?php echo $_SESSION['gagal']; ?>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;?php
+                    session_destroy();
+                    endif;
+                ?>
+    
+                &lt;form method="post" action="proses.php">
+                    &lt;div class="row mb-2">
+                        &lt;label for="username" class="col-md-1">
+                            Username
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="username" id="username" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label for="password" class="col-md-1">
+                            Password
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="password" id="password" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;div class="col">
+                            &lt;button type="submit" name="aksi" value="daftar" class="btn btn-primary">Daftar&lt;/button>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html> 
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_login.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    ?>
+
+    &lt;html>
+        &lt;head>
+            &lt;!-- Bootstrap -->
+            &lt;link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+            &lt;scripx type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js">&lt;/script>
+            &lt;!-- Font Awesome -->
+            &lt;link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css"> 
+        &lt;/head>
+        &lt;body>
+            &lt;div class="container">
+
+                &lt;h1>Form Login&lt;/h1>
+
+                &lt;?php
+                    if(isset($_SESSION['gagal'])):
+                ?>
+                    &lt;div class="row">
+                        &lt;div class="col-md-3">
+                            &lt;div class="alert alert-danger">
+                                &lt;?php echo $_SESSION['gagal']; ?>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;?php
+                    session_destroy();
+                    endif;
+                ?>
+
+                &lt;form method="post" action="proses.php">
+                    &lt;div class="row mb-2">
+                        &lt;label for="username" class="col-md-1">
+                            Username
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="username" id="username" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label for="password" class="col-md-1">
+                            Password
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="password" id="password" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;div class="col">
+                            &lt;button type="submit" name="aksi" value="login" class="btn btn-primary">Login&lt;/button>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">proses.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    
+        if(isset($_POST['aksi'])){
+            if($_POST['aksi']=="daftar"){
+    
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+    
+                $query = mysqli_query($koneksi, "insert into login values('$user','$pass')");
+                $queryb = mysqli_query($koneksi, "insert into profil values('$user','','','','','')");
+    
+                if($query){
+                    $_SESSION['berhasil'] = "Data berhasil ditambahkan";
+                    header('location: daftar.php');
+                } else {
+                    $_SESSION['gagal'] = "Data tersebut sudah digunakan";
+                    header('location: form_daftar.php');
+                }
+    
+            } else if($_POST['aksi']=="login"){
+    
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+    
+                $query = mysqli_query($koneksi, "select * from login where username = '$user' and password = '$pass'");
+    
+                $cek = mysqli_num_rows($query);
+    
+                if($cek){
+                    $_SESSION['user'] = $user;
+                    header('location: ../user/admin.php');
+                } else {
+                    $_SESSION['gagal'] = "Data yang anda masukan salah";
+                    header('location: form_login.php');
+                }
+    
+            }
+        } else if(isset($_GET['hapus'])){
+    
+            $user = $_GET['hapus'];
+            
+            $query = mysqli_query($koneksi, "delete from login where username = '$user'");
+            $queryb = mysqli_query($koneksi, "delete from profil where username = '$user'");
+    
+            if($query){
+                $_SESSION['berhasil'] = "Data berhasil dihapus";
+                header('location: daftar.php');
+            }
+    
+        }
+    ?> 
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- User -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="judul2">User</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">koneksi.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        $host = 'localhost';
+        $user = 'root';
+        $pass = '';
+        $db = 'latihan2';
+
+        $koneksi = mysqli_connect($host, $user, $pass, $db);
+        if($koneksi){
+            // echo "Koneksi Berhasil";
+        }
+    ?>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">admin_daftar.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    ?>
+
+    &lt;html>
+        &lt;head>
+            &lt;!-- Bootstrap -->
+            &lt;link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+            &lt;scripx type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js">&lt;/script>
+            &lt;!-- Font Awesome -->
+            &lt;link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css"> 
+        &lt;/head>
+        &lt;body>
+            &lt;div class="container">
+
+                &lt;h1>Form Daftar Mahasiswa&lt;/h1>
+
+                &lt;?php
+                    if(isset($_SESSION['gagal'])):
+                ?>
+                    &lt;div class="row">
+                        &lt;div class="col-md-3">
+                            &lt;div class="alert alert-danger">
+                                &lt;?php echo $_SESSION['gagal']; ?>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;?php
+                    session_destroy();
+                    endif;
+                ?>
+
+                &lt;form method="post" action="proses.php">
+                    &lt;div class="row mb-2">
+                        &lt;label for="username" class="col-md-1">
+                            Username
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="username" id="username" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label for="password" class="col-md-1">
+                            Password
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="password" id="password" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;div class="col">
+                            &lt;button type="submit" name="aksi" value="daftar" class="btn btn-primary">Daftar&lt;/button>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">admin_login.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    ?>
+
+    &lt;html>
+        &lt;head>
+            &lt;!-- Bootstrap -->
+            &lt;link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+            &lt;scripx type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js">&lt;/script>
+            &lt;!-- Font Awesome -->
+            &lt;link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css"> 
+        &lt;/head>
+        &lt;body>
+            &lt;div class="container">
+
+                &lt;h1>Form Login Mahasiswa&lt;/h1>
+
+                &lt;?php
+                    if(isset($_SESSION['gagal'])):
+                ?>
+                    &lt;div class="row">
+                        &lt;div class="col-md-3">
+                            &lt;div class="alert alert-danger">
+                                &lt;?php echo $_SESSION['gagal']; ?>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;?php
+                    session_destroy();
+                    endif;
+                ?>
+
+                &lt;form method="post" action="proses.php">
+                    &lt;div class="row mb-2">
+                        &lt;label for="username" class="col-md-1">
+                            Username
+                        &lt;/label>
+                        &lt;div class="col-md-4">
+                            &lt;input type="text" name="username" id="username" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label for="password" class="col-md-1">
+                            Password
+                        &lt;/label>
+                        &lt;div class="col-md-4">
+                            &lt;input type="text" name="password" id="password" class="form-control">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;div class="col">
+                            &lt;button type="submit" name="aksi" value="login" class="btn btn-primary">Login&lt;/button>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">admin.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    ?>
+
+    &lt;html>
+        &lt;head>
+            &lt;!-- Bootstrap -->
+            &lt;link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+            &lt;scripx type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js">&lt;/script>
+            &lt;!-- Font Awesome -->
+            &lt;link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css"> 
+        &lt;/head>
+        &lt;body>
+            &lt;div class="container">
+
+                &lt;h1>Halaman &lt;?php echo $_SESSION['user']; ?>&lt;/h1>
+
+                &lt;p>
+                    &lt;a href="form_ubah.php" type="button" class="btn btn-success btn-sm">
+                        &lt;i class="fa fa-pencil">&lt;/i>
+                        Ubah Data
+                    &lt;/a>
+                    &lt;a href="proses.php?logout=&lt;?php echo $_SESSION['user']; ?>" type="button" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin keluar ???')">
+                        &lt;i class="fa fa-reply">&lt;/i>
+                        Logout
+                    &lt;/a>
+                &lt;/p>
+
+                &lt;?php
+                    if(isset($_SESSION['berhasil'])):
+                ?>
+                    &lt;div class="row">
+                        &lt;div class="col-md-3">
+                            &lt;div class="alert alert-success">
+                                &lt;?php echo $_SESSION['berhasil']; ?>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;?php
+                    session_destroy();
+                    endif;
+                ?>
+
+                &lt;div class="table-responsive">
+                    &lt;table class="table" style="max-width: 600px;">
+                        &lt;thead>
+                            &lt;tr>
+                                &lt;th>No&lt;/th>
+                                &lt;th>Profil&lt;/th>
+                                &lt;th>Deskripsi&lt;/th>
+                            &lt;/tr>
+                        &lt;/thead>
+                        &lt;tbody>
+                            &lt;?php
+                                $user = $_SESSION['user'];
+                                $query = mysqli_query($koneksi, "select * from profil where username = '$user'");
+                                $no = 0;
+                                while($data = mysqli_fetch_array($query)){
+                            ?>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                                    &lt;td>Username&lt;/td>
+                                    &lt;td>&lt;?php echo $data['username']; ?>&lt;/td>
+                                &lt;/tr>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                                    &lt;td>NIM&lt;/td>
+                                    &lt;td>&lt;?php echo $data['nim']; ?>&lt;/td>
+                                &lt;/tr>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                                    &lt;td>Nama&lt;/td>
+                                    &lt;td>&lt;?php echo $data['nama']; ?>&lt;/td>
+                                &lt;/tr>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                                    &lt;td>Prodi&lt;/td>
+                                    &lt;td>&lt;?php echo $data['prodi']; ?>&lt;/td>
+                                &lt;/tr>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                                    &lt;td>Alamat&lt;/td>
+                                    &lt;td>&lt;?php echo $data['alamat']; ?>&lt;/td>
+                                &lt;/tr>
+                                &lt;tr>
+                                    &lt;td>&lt;?php echo ++$no; ?>&lt;/td>
+                                    &lt;td>Usia&lt;/td>
+                                    &lt;td>&lt;?php echo $data['usia']; ?>&lt;/td>
+                                &lt;/tr>
+                            &lt;?php
+                                }
+                            ?>
+                        &lt;/tbody>
+                    &lt;/table>
+                &lt;/div>
+                
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">form_ubah.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+
+        $user = $_SESSION['user'];
+        $query = mysqli_query($koneksi, "select * from profil where username = '$user'");
+        $data = mysqli_fetch_array($query);
+    ?>
+
+    &lt;html>
+        &lt;head>
+            &lt;!-- Bootstrap -->
+            &lt;link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+            &lt;scripx type="text/javascript" src="../bootstrap/js/bootstrap.bundle.js">&lt;/script>
+            &lt;!-- Font Awesome -->
+            &lt;link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css"> 
+        &lt;/head>
+        &lt;body>
+            &lt;div class="container">
+
+                &lt;h1>Form Ubah Data &lt;?php echo $_SESSION['user']; ?>&lt;/h1>
+
+                &lt;form method="post" action="proses.php">
+                &lt;input type="hidden" name="username" class="form-control" value="&lt;?php echo $data['username'];?>">
+                    &lt;div class="row mb-2">
+                        &lt;label class="col-md-1">
+                            Username
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;?php echo $data['username'];?>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label class="col-md-1">
+                            NIM
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="nim" class="form-control" value="&lt;?php echo $data['nim'];?>">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label class="col-md-1">
+                            Nama
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="nama" class="form-control" value="&lt;?php echo $data['nama'];?>">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label class="col-md-1">
+                            Prodi
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="prodi" class="form-control" value="&lt;?php echo $data['prodi'];?>">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label class="col-md-1">
+                            Alamat
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="alamat" class="form-control" value="&lt;?php echo $data['alamat'];?>">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;label class="col-md-1">
+                            Usia
+                        &lt;/label>
+                        &lt;div class="col-md-2">
+                            &lt;input type="text" name="usia" class="form-control" value="&lt;?php echo $data['usia'];?>">
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="row mb-2">
+                        &lt;div class="col">
+                            &lt;button type="submit" name="aksi" class="btn btn-primary" value="ubah">Perbarui&lt;/button>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/form>
+            &lt;/div>
+        &lt;/body>
+    &lt;/html>
+                                        </pre>
+                                    </dd>
+                                </dl>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">proses.php</h6>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dt>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+            
+    &lt;?php
+        include('koneksi.php');
+        session_start();
+    
+        if(isset($_POST['aksi'])){
+            if($_POST['aksi']=="daftar"){
+    
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+    
+                $query = mysqli_query($koneksi, "insert into login values('$user','$pass')");
+                $queryb = mysqli_query($koneksi, "insert into profil values('$user','','','','','')");
+    
+                if($query){
+                    $_SESSION['berhasil'] = "Data $user Berhasil ditambahkan";
+                    header('location: admin_login.php');
+                } else {
+                    $_SESSION['gagal'] = "Data $user sudah digunakan";
+                    header('location: admin_daftar.php');
+                }
+    
+            } else if($_POST['aksi']=="login"){
+    
+                $user = $_POST['username'];
+                $pass = $_POST['password'];
+    
+                $query = mysqli_query($koneksi, "select * from login where username = '$user' and password = '$pass'");
+    
+                $cek = mysqli_num_rows($query);
+    
+                if($cek){
+                    $_SESSION['user'] = $user;
+                    header('location: admin.php');
+                } else {
+                    $_SESSION['gagal'] = "Data yang anda masukan salah";
+                    header('location: admin_login.php');
+                }
+    
+            } else if($_POST['aksi']=="ubah"){
+    
+                $user = $_POST['username'];
+                $nim = $_POST['nim'];
+                $nama = $_POST['nama'];
+                $prodi = $_POST['prodi'];
+                $alamat = $_POST['alamat'];
+                $usia = $_POST['usia'];
+    
+                $query = mysqli_query($koneksi, "update profil set nim = '$nim', nama = '$nama', prodi = '$prodi', alamat = '$alamat', usia = '$usia' where username = '$user'");
+    
+                if($query){
+                    $_SESSION['berhasil'] = "Data berhasil diperbarui";
+                    header('location: admin.php');
+                }
+    
+            }
+
+        } else if(isset($_GET['logout'])){
+
+            session_unset();
+            session_destroy();
+            header('location: admin_login.php');
+            exit();
+    
+        }
+    ?> 
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        </div>
+        
+                        <!-- Tampilan -->
+                        <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/beranda.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/form_tambah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/form_ubah.png" class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="5000">
+                                        <img src="img/latihan_crud3/confirm_hapus.png" class="d-block w-100" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/single/single-script.js"></script>
+</body>
+</html>

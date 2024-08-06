@@ -137,8 +137,9 @@ function pilihDaftar(daftarKe) {
 
 // Tutup Daftar
 function closeDaftar() {
-    kotakDaftar.forEach((box) => box.classList.add('hide'));
-    kotakPilihDaftar.classList.remove('hide');
+    // kotakDaftar.forEach((box) => box.classList.add('hide'));
+    // kotakPilihDaftar.classList.remove('hide');
+    window.location.reload();
 }
 
 // Resize icon

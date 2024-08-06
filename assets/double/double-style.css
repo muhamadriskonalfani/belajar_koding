@@ -45,6 +45,14 @@ body {
     overflow: hidden;
 }
 
+.card, .card-body {
+    border: none;
+}
+
+pre {
+    color: green;
+}
+
 
 /* Aside */
 

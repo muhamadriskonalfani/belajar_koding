@@ -25,18 +25,17 @@
                         <ul class="list-unstyled">
                             <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(1)">Python</button> </li>
                             <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(2)">Tipe Data</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(3)">Struktur Data</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(4)">Variabel</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(5)">Percabangan</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(6)">Perulangan</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(7)">Fungsi</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(8)">Modularisasi</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(9)">Pemrograman Berorientasi Objek</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(10)">Exception Handling</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(3)">Variabel</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(4)">Percabangan</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(5)">Perulangan</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(6)">Fungsi</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(7)">Modularisasi</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(8)">Pemrograman Berorientasi Objek</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(9)">Exception Handling</button> </li>
                         </ul>
 
                         <ul class="list-unstyled">
-                            <li> <button type="button" class="btn text-primary teks" onclick="pilihDaftar(11)">Pustaka Python</button> </li>
+                            <li> <button type="button" class="btn text-primary teks" onclick="pilihDaftar(10)">Pustaka Python</button> </li>
                         </ul>
                     </div>
 
@@ -53,15 +52,8 @@
                         <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
                         <ul class="list-unstyled">
                             <li> <button type="button" class="btn text-dark teks" onclick="showPage(2)">Apa Itu Tipe Data</button> </li>
-                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(3)">Casting Tipe Data</button> </li>
-                        </ul>
-                    </div>
-
-                    <!-- Struktur Data -->
-                    <div class="daftar hide">
-                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
-                        <ul class="list-unstyled">
-                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(4)">Apa Itu Struktur Data</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(3)">Apa Itu Struktur Data</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(4)">Casting Tipe Data</button> </li>
                         </ul>
                     </div>
                     
@@ -213,6 +205,7 @@
                                 <ul>
                                     <li>Definisi</li>
                                     <li>Jenis Tipe Data Python</li>
+                                    <li>Menampilkan Jenis Tipe Data</li>
                                 </ul>
                             </div>
                         </div>
@@ -221,7 +214,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Tipe Data adalah jenis nilai yang dapat disimpan dan dimanipulasi oleh program. Python memiliki beberapa tipe data bawaan yang digunakan untuk menyimpan berbagai jenis informasi.</p>
+                                <p>Tipe Data adalah jenis nilai yang dapat disimpan dan dimanipulasi oleh program. Tipe data menentukan operasi apa saja yang dapat dilakukan terhadap nilai tersebut dalam sebuah program.</p>
                             </div>
                         </div>
 
@@ -251,7 +244,7 @@
                                             <li><p>List: untuk menyimpan sekumpulan item yang dapat diubah dan terurut</p> <pre class="card bg-light codeA">fruits = ["apple", "banana", "cherry"]</pre></li>
                                             <li><p>Tuple: untuk menyimpan sekumpulan item yang tidak dapat diubah dan terurut</p> <pre class="card bg-light codeA">coordinates = (10.0, 20.0)</pre></li>
                                             <li><p>Set: untuk menyimpan sekumpulan item yang unik dan tidak terurut</p> <pre class="card bg-light codeA">unique_numbers = {1, 2, 3, 4, 5}</pre></li>
-                                            <li><p>Dictionary (dict): untuk menyimpan pasangan kunci-nilai yang tidak terurut</p> <pre class="card bg-light codeA">student = {"name": "John", "age": 25, "courses": ["Math", "Science"]}</pre></li>
+                                            <li><p>Dictionary: untuk menyimpan pasangan kunci-nilai yang tidak terurut</p> <pre class="card bg-light codeA">student = {"name": "John", "age": 25, "courses": ["Math", "Science"]}</pre></li>
                                         </ul>
                                     </dd>
                                 </dl>
@@ -267,134 +260,34 @@
                                 </dl>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="card card-body materi hide">
-                        <h2 class="judul1">Casting Tipe Data</h2>
-
-                        <!-- Daftar Isi -->
+                        <!-- Menampilkan Jenis Tipe Data -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Daftar Isi</h5>
+                            <h5 class="judul2">Menampilkan Jenis Tipe Data</h5>
                             <div class="teks">
-                                <ul>
-                                    <li>Definisi</li>
-                                    <li>Casting Tipe Data di Python</li>
-                                </ul>
-                            </div>
-                        </div>
+                                <p>Pada bahasa Python, Anda dapat menggunakan fungsi "type()" untuk menampilkan jenis tipe data dari sebuah variabel.</p>
+                                <pre class="card bg-light codeB">
 
-                        <!-- Definisi -->
-                        <div class="card card-body mb-4">
-                            <h5 class="judul2">Definisi</h5>
-                            <div class="teks">
-                                <p>Casting tipe data, atau sering disebut sebagai type casting atau type conversion, adalah proses mengubah satu tipe data menjadi tipe data lain. Ini penting ketika Anda perlu memastikan bahwa data yang Anda proses sesuai dengan tipe data yang diharapkan untuk operasi tertentu.</p>
-                            </div>
-                        </div>
-
-                        <!-- Casting Tipe Data di Python -->
-                        <div class="card card-body mb-4">
-                            <h5 class="judul2">Casting Tipe Data di Python</h5>
-                            <div class="teks">
-                                <p>Berikut adalah beberapa fungsi casting tipe data yang umum digunakan pada python.</p>
-
-                                <dl>
-                                    <dt><h6>1. Fungsi 'int()'</h6></dt>
-                                    <dd>
-                                        <p>Mengonversi nilai menjadi integer.</p>
-                                        <pre class="card bg-light codeB">
-
-    float_value = 3.14
-    int_value = int(float_value)  # Hasilnya: 3
-                                        </pre>
-                                    </dd>
-                                </dl>
-                                <br>
-                                
-                                <dl>
-                                    <dt><h6>2. Fungsi 'float()'</h6></dt>
-                                    <dd>
-                                        <p>Mengonversi nilai menjadi float.</p>
-                                        <pre class="card bg-light codeB">
-
-    int_value = 10
-    float_value = float(int_value)  # Hasilnya: 10.0     
-                                        </pre>
-                                    </dd>
-                                </dl>
-                                <br>
-
-                                <dl>
-                                    <dt><h6>3. Fungsi 'str()'</h6></dt>
-                                    <dd>
-                                        <p>Mengonversi nilai menjadi string.</p>
-                                        <pre class="card bg-light codeB">
-
-    int_value = 25
-    str_value = str(int_value)  # Hasilnya: "25"     
-                                        </pre>
-                                    </dd>
-                                </dl>
-                                <br>
-
-                                <dl>
-                                    <dt><h6>4. Fungsi 'bool()'</h6></dt>
-                                    <dd>
-                                        <p>Mengonversi nilai menjadi boolean.</p>
-                                        <pre class="card bg-light codeB">
-
-    int_value = 0
-    bool_value = bool(int_value)  # Hasilnya: False
+    # Variabel dengan tipe data yang berbeda
+    x = 10                  # Integer
+    y = 3.14                # Float
+    z = "Hello, world!"     # String
+    a = [1, 2, 3]           # List
+    b = {1, 2, 3}           # Set
+    c = {"key": "value"}    # Dictionary
     
-    non_zero_value = 5
-    bool_value = bool(non_zero_value)  # Hasilnya: True       
-                                        </pre>
-                                    </dd>
-                                </dl>
-                                <br>
-
-                                <dl>
-                                    <dt><h6>5. Fungsi 'list()'</h6></dt>
-                                    <dd>
-                                        <p>Mengonversi nilai menjadi list.</p>
-                                        <pre class="card bg-light codeB">
-
-    tuple_value = (1, 2, 3)
-    list_value = list(tuple_value)  # Hasilnya: [1, 2, 3]      
-                                        </pre>
-                                    </dd>
-                                </dl>
-                                <br>
-
-                                <dl>
-                                    <dt><h6>6. Fungsi 'tuple()'</h6></dt>
-                                    <dd>
-                                        <p>Mengonversi nilai menjadi tuple.</p>
-                                        <pre class="card bg-light codeB">
-
-    list_value = [1, 2, 3]
-    tuple_value = tuple(list_value)  # Hasilnya: (1, 2, 3)      
-                                        </pre>
-                                    </dd>
-                                </dl>
-                                <br>
-
-                                <dl>
-                                    <dt><h6>7. Fungsi 'set()'</h6></dt>
-                                    <dd>
-                                        <p>Mengonversi nilai menjadi set.</p>
-                                        <pre class="card bg-light codeB">
-
-    list_value = [1, 2, 2, 3]
-    set_value = set(list_value)  # Hasilnya: {1, 2, 3}     
-                                        </pre>
-                                    </dd>
-                                </dl>
+    # Menampilkan tipe data dari variabel
+    print(type(x))      # &lt;class 'int'>
+    print(type(y))      # &lt;class 'float'>
+    print(type(z))      # &lt;class 'str'>
+    print(type(a))      # &lt;class 'list'>
+    print(type(b))      # &lt;class 'set'>
+    print(type(c))      # &lt;class 'dict'>  
+                                </pre>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Struktur Data -->
-                    
                     <div class="card card-body materi hide">
                         <h2 class="judul1">Apa Itu Struktur Data</h2>
 
@@ -413,7 +306,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Dalam bahasa pemrograman Python, struktur data adalah cara untuk menyimpan dan mengatur data sehingga bisa diakses dan dimanipulasi dengan efisien.</p>
+                                <p>Struktur data adalah cara untuk menyimpan dan mengatur data sehingga bisa diakses dan dimanipulasi oleh program dengan lebih efisien. Tipe data adalah bagian dari struktur data, yang membantu menentukan jenis data apa yang akan disimpan dalam struktur tersebut.</p>
                             </div>
                         </div>
 
@@ -426,8 +319,150 @@
                                     <li><p>List: untuk menyimpan sekumpulan item yang dapat diubah dan terurut</p> <pre class="card bg-light codeA">fruits = ["apple", "banana", "cherry"]</pre></li>
                                     <li><p>Tuple: untuk menyimpan sekumpulan item yang tidak dapat diubah dan terurut</p> <pre class="card bg-light codeA">coordinates = (10.0, 20.0)</pre></li>
                                     <li><p>Set: untuk menyimpan sekumpulan item yang unik dan tidak terurut</p> <pre class="card bg-light codeA">unique_numbers = {1, 2, 3, 4, 5}</pre></li>
-                                    <li><p>Dictionary (dict): untuk menyimpan pasangan kunci-nilai yang tidak terurut</p> <pre class="card bg-light codeA">student = {"name": "John", "age": 25, "courses": ["Math", "Science"]}</pre></li>
+                                    <li><p>Dictionary: untuk menyimpan pasangan kunci-nilai yang tidak terurut</p> <pre class="card bg-light codeA">student = {"name": "John", "age": 25, "courses": ["Math", "Science"]}</pre></li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Casting Tipe Data</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                    <li>Casting Tipe Data di Python</li>
+                                    <li>Contoh Penggunaan</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Casting tipe data adalah proses mengubah satu tipe data menjadi tipe data lain. Proses ini dilakukan untuk memastikan bahwa data yang akan diproses sesuai dengan tipe data yang diharapkan untuk operasi tertentu.</p>
+                            </div>
+                        </div>
+
+                        <!-- Casting Tipe Data di Python -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Casting Tipe Data di Python</h5>
+                            <div class="teks">
+                                <p>Berikut adalah beberapa fungsi casting tipe data yang umum digunakan pada python.</p>
+
+                                <dl>
+                                    <dt>1. Fungsi "int()"</dt>
+                                    <dd>
+                                        <p>Mengonversi nilai menjadi integer.</p>
+                                        <pre class="card bg-light codeB">
+
+    float_value = 3.14
+    int_value = int(float_value)  # Hasilnya: 3
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <br>
+                                
+                                <dl>
+                                    <dt>2. Fungsi "float()"</dt>
+                                    <dd>
+                                        <p>Mengonversi nilai menjadi float.</p>
+                                        <pre class="card bg-light codeB">
+
+    int_value = 10
+    float_value = float(int_value)  # Hasilnya: 10.0     
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <br>
+
+                                <dl>
+                                    <dt>3. Fungsi "str()"</dt>
+                                    <dd>
+                                        <p>Mengonversi nilai menjadi string.</p>
+                                        <pre class="card bg-light codeB">
+
+    int_value = 25
+    str_value = str(int_value)  # Hasilnya: "25"     
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <br>
+
+                                <dl>
+                                    <dt>4. Fungsi "bool()"</dt>
+                                    <dd>
+                                        <p>Mengonversi nilai menjadi boolean.</p>
+                                        <pre class="card bg-light codeB">
+
+    int_value = 0
+    bool_value = bool(int_value)  # Hasilnya: False
+    
+    non_zero_value = 5
+    bool_value = bool(non_zero_value)  # Hasilnya: True       
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <br>
+
+                                <dl>
+                                    <dt>5. Fungsi "list()"</dt>
+                                    <dd>
+                                        <p>Mengonversi nilai menjadi list.</p>
+                                        <pre class="card bg-light codeB">
+
+    tuple_value = (1, 2, 3)
+    list_value = list(tuple_value)  # Hasilnya: [1, 2, 3]      
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <br>
+
+                                <dl>
+                                    <dt>6. Fungsi "tuple()"</dt>
+                                    <dd>
+                                        <p>Mengonversi nilai menjadi tuple.</p>
+                                        <pre class="card bg-light codeB">
+
+    list_value = [1, 2, 3]
+    tuple_value = tuple(list_value)  # Hasilnya: (1, 2, 3)      
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <br>
+
+                                <dl>
+                                    <dt>7. Fungsi "set()"</dt>
+                                    <dd>
+                                        <p>Mengonversi nilai menjadi set.</p>
+                                        <pre class="card bg-light codeB">
+
+    list_value = [1, 2, 2, 3]
+    set_value = set(list_value)  # Hasilnya: {1, 2, 3}     
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+
+                        <!-- Contoh Penggunaan -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Contoh Penggunaan</h5>
+                            <div class="teks">
+                                <p>Casting tipe data biasanya dilakukan dengan fungsi "input()" untuk mengambil inputan dari pengguna.</p>
+                                <pre class="card bg-light codeB">
+
+    bil1 = int(input(f'Bilangan pertama: '))    
+    bil2 = int(input(f'Bilangan kedua: '))
+
+    hasil = bil1 + bil2
+    print(f'Hasilnya: {hasil}')
+                                </pre>
+                                <p>Kode ini akan bekerja dengan baik jika input yang diberikan oleh pengguna adalah nilai numerik. Jika pengguna memasukkan input yang bukan numerik, maka kode akan menimbulkan error (ValueError).</p>
                             </div>
                         </div>
                     </div>
@@ -537,7 +572,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Variabel dasar dalam Python digunakan untuk menyimpan berbagai jenis data sederhana.</p>
+                                <p>Variabel dasar dalam Python digunakan untuk menyimpan nilai dengan tipe data dasar. Variabel ini menyimpan satu nilai dengan tipe data dasar seperti integer, float, string, dan boolean.</p>
                             </div>
                         </div>
 
@@ -545,12 +580,37 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Variabel Dasar</h5>
                             <div class="teks">
-                                <ul>
-                                    <li><h6>Integer (int)</h6> <p>Variabel ini digunakan untuk menyimpan bilangan bulat</p> <pre class="card bg-light codeA">age = 25</pre></li>
-                                    <li><h6>Float (float)</h6> <p>Variabel ini digunakan untuk menyimpan bilangan pecahan</p> <pre class="card bg-light codeA">height = 5.9</pre></li>
-                                    <li><h6>String (str)</h6> <p>Variabel ini digunakan untuk menyimpan teks</p> <pre class="card bg-light codeA">name = "Alexander"</pre></li>
-                                    <li><h6>Boolean (bool)</h6> <p>Variabel ini digunakan untuk menyimpan nilai benar atau salah</p> <pre class="card bg-light codeA">is_student = True</pre></li>
-                                </ul>
+                                <dl>
+                                    <dt>1. Integer (int)</dt>
+                                    <dd>
+                                        <p>Variabel ini digunakan untuk menyimpan bilangan bulat</p>
+                                        <pre class="card bg-light codeA">age = 25</pre>
+                                    </dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>2. Float (float)</dt>
+                                    <dd>
+                                        <p>Variabel ini digunakan untuk menyimpan bilangan pecahan</p>
+                                        <pre class="card bg-light codeA">height = 5.9</pre>
+                                    </dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>3. String (str)</dt>
+                                    <dd>
+                                        <p>Variabel ini digunakan untuk menyimpan teks</p>
+                                        <pre class="card bg-light codeA">name = "Alexander"</pre>
+                                    </dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>4. Boolean (bool)</dt>
+                                    <dd>
+                                        <p>Variabel ini digunakan untuk menyimpan nilai benar atau salah</p>
+                                        <pre class="card bg-light codeA">is_student = True</pre>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
@@ -578,7 +638,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Variabel list adalah tipe data yang digunakan untuk menyimpan kumpulan item yang terurut dan dapat diubah. List bisa menyimpan berbagai jenis data, termasuk angka, string, objek, dan bahkan list lain.</p>
+                                <p>Variabel list adalah variabel yang menyimpan nilai dengan tipe data list. Variabel ini digunakan untuk menyimpan kumpulan item yang terurut dan dapat diubah. List bisa menyimpan berbagai jenis data, termasuk angka, string, objek, dan bahkan list lain.</p>
 
                                 <h6>Ciri-ciri List</h6>
                                 <ul>
@@ -594,7 +654,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Membuat List</h5>
                             <div class="teks">
-                                <p>List dibuat dengan menggunakan tanda kurung siku '[]' dan elemen dipisahkan oleh koma.</p>
+                                <p>List dibuat dengan menggunakan tanda kurung siku "[ ]" dan elemen dipisahkan oleh koma.</p>
                                 <pre class="card bg-light codeB">
 
     # List kosong
@@ -646,9 +706,9 @@
                             <div class="teks">
                                 <p>Ada beberapa metode untuk menambahkan elemen ke list:</p>
                                 <ul>
-                                    <li>append(): Menambahkan elemen ke akhir list.</li>
-                                    <li>insert(): Menyisipkan elemen pada posisi tertentu.</li>
-                                    <li>extend(): Menambahkan elemen dari list lain ke akhir list.</li>
+                                    <li>"append()" : Menambahkan elemen ke akhir list.</li>
+                                    <li>"insert()" : Menyisipkan elemen pada posisi tertentu.</li>
+                                    <li>"extend()" : Menambahkan elemen dari list lain ke akhir list.</li>
                                 </ul>
 
                                 <pre class="card bg-light codeB">
@@ -677,9 +737,9 @@
                             <div class="teks">
                                 <p>Ada beberapa metode untuk menghapus elemen dari list:</p>
                                 <ul>
-                                    <li>remove(): Menghapus elemen berdasarkan nilai.</li>
-                                    <li>pop(): Menghapus elemen berdasarkan indeks dan mengembalikan elemen tersebut.</li>
-                                    <li>del: Menghapus elemen atau seluruh list menggunakan kata kunci 'del'.</li>
+                                    <li>"remove()" : Menghapus elemen berdasarkan nilai.</li>
+                                    <li>"pop()" : Menghapus elemen berdasarkan indeks dan mengembalikan elemen tersebut.</li>
+                                    <li>"del" : Menghapus elemen atau seluruh list menggunakan kata kunci 'del'.</li>
                                 </ul>
 
                                 <pre class="card bg-light codeB">
@@ -751,7 +811,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Tuple adalah salah satu tipe data koleksi yang digunakan untuk menyimpan sekumpulan item yang terurut, tetapi tidak dapat diubah. Setelah tuple dibuat, Anda tidak bisa mengubah, menambah, atau menghapus item dari tuple tersebut.</p>
+                                <p>Variabel tuple adalah variabel yang menyimpan nilai dengan tipe data tuple. Tuple digunakan untuk menyimpan sekumpulan item yang terurut, tetapi tidak dapat diubah. Setelah tuple dibuat, Anda tidak bisa mengubah, menambah, atau menghapus item dari tuple tersebut.</p>
 
                                 <h6>Ciri-ciri Tuple</h6>
                                 <ul>
@@ -767,7 +827,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Membuat Tuple</h5>
                             <div class="teks">
-                                <p>Tuple dibuat dengan menggunakan tanda kurung () dan memisahkan item dengan koma ,.</p>
+                                <p>Tuple dibuat dengan menggunakan tanda kurung "( )" dan memisahkan item dengan koma ,.</p>
                                 <pre class="card bg-light codeB">
 
     # Contoh Tuple
@@ -807,9 +867,9 @@
                                 <p>Walaupun tuple tidak bisa diubah, beberapa operasi masih bisa dilakukan:</p>
 
                                 <dl>
-                                    <dt>Menggabungkan Tuple</dt>
+                                    <dt>1. Menggabungkan Tuple</dt>
                                     <dd>
-                                        <p>Anda bisa menggabungkan dua atau lebih tuple menggunakan operator +.</p>
+                                        <p>Anda bisa menggabungkan dua atau lebih tuple menggunakan operator "+".</p>
                                         <pre class="card bg-light codeB">
 
     tuple1 = (1, 2, 3)
@@ -821,9 +881,9 @@
                                 </dl>
 
                                 <dl>
-                                    <dt>Mengulang Tuple</dt>
+                                    <dt>2. Mengulang Tuple</dt>
                                     <dd>
-                                        <p>Anda bisa mengulang tuple menggunakan operator *.</p>
+                                        <p>Anda bisa mengulang tuple menggunakan operator "*".</p>
                                         <pre class="card bg-light codeB">
 
     repeated_tuple = tuple1 * 3
@@ -833,9 +893,9 @@
                                 </dl>
 
                                 <dl>
-                                    <dt>Memeriksa Keberadaan Elemen</dt>
+                                    <dt>3. Memeriksa Keberadaan Elemen</dt>
                                     <dd>
-                                        <p>Anda bisa memeriksa apakah suatu elemen ada di dalam tuple menggunakan operator in.</p>
+                                        <p>Anda bisa memeriksa apakah suatu elemen ada di dalam tuple menggunakan operator "in".</p>
                                         <pre class="card bg-light codeB">
 
     print(2 in tuple1)  # Output: True
@@ -845,9 +905,9 @@
                                 </dl>
 
                                 <dl>
-                                    <dt>Menghitung Jumlah Elemen</dt>
+                                    <dt>4. Menghitung Jumlah Elemen</dt>
                                     <dd>
-                                        <p>Anda bisa menggunakan fungsi len() untuk mendapatkan jumlah elemen dalam tuple.</p>
+                                        <p>Anda bisa menggunakan fungsi "len()" untuk mendapatkan jumlah elemen dalam tuple.</p>
                                         <pre class="card bg-light codeB">
 
     print(len(tuple1))  # Output: 3
@@ -856,9 +916,9 @@
                                 </dl>
 
                                 <dl>
-                                    <dt>Menghitung Kemunculan Elemen</dt>
+                                    <dt>5. Menghitung Kemunculan Elemen</dt>
                                     <dd>
-                                        <p>Anda bisa menggunakan metode count() untuk menghitung berapa kali suatu elemen muncul di dalam tuple.</p>
+                                        <p>Anda bisa menggunakan metode "count()" untuk menghitung berapa kali suatu elemen muncul di dalam tuple.</p>
                                         <pre class="card bg-light codeB">
 
     print(tuple1.count(2))  # Output: 1
@@ -867,9 +927,9 @@
                                 </dl>
 
                                 <dl>
-                                    <dt>Mendapatkan Indeks Elemen</dt>
+                                    <dt>6. Mendapatkan Indeks Elemen</dt>
                                     <dd>
-                                        <p>Anda bisa menggunakan metode index() untuk mendapatkan indeks dari suatu elemen di dalam tuple.</p>
+                                        <p>Anda bisa menggunakan metode "index()" untuk mendapatkan indeks dari suatu elemen di dalam tuple.</p>
                                         <pre class="card bg-light codeB">
 
     print(tuple1.index(3))  # Output: 2
@@ -913,7 +973,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Variabel Set adalah koleksi yang menyimpan kumpulan elemen unik yang tidak terurut. Berbeda dengan tipe data koleksi lainnya seperti list atau tuple, set tidak mengizinkan elemen duplikat dan tidak mempertahankan urutan elemen.</p>
+                                <p>Variabel set adalah variabel yang menyimpan nilai dengan tipe data set. Set digunakan untuk menyimpan kumpulan elemen unik yang tidak terurut. Berbeda dengan tipe data koleksi lainnya seperti list atau tuple, set tidak mengizinkan elemen duplikat dan tidak mempertahankan urutan elemen.</p>
 
                                 <h6>Ciri-ciri Set</h6>
                                 <ul>
@@ -929,7 +989,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Membuat Set</h5>
                             <div class="teks">
-                                <p>Untuk membuat set, gunakan tanda kurung kurawal {} atau fungsi set().</p>
+                                <p>Untuk membuat set, gunakan tanda kurung kurawal "{ }" atau fungsi "set()".</p>
                                 <pre class="card bg-light codeB">
 
     # Menggunakan tanda kurung kurawal
@@ -948,7 +1008,7 @@
                                 <dl>
                                     <dt>1. Menambah Elemen</dt>
                                     <dd>
-                                        <p>Gunakan metode add() untuk menambahkan elemen baru.</p>
+                                        <p>Gunakan metode "add()" untuk menambahkan elemen baru.</p>
                                         <pre class="card bg-light codeB">
 
     my_set.add(6)
@@ -959,7 +1019,7 @@
                                 <dl>
                                     <dt>2. Menghapus Elemen</dt>
                                     <dd>
-                                        <p>Gunakan metode remove() atau discard() untuk menghapus elemen.</p>
+                                        <p>Gunakan metode "remove()" atau "discard()" untuk menghapus elemen.</p>
                                         <pre class="card bg-light codeB">
 
     my_set.remove(2) # untuk menghapus elemen (akan menyebabkan error jika elemen tidak ada).
@@ -971,7 +1031,7 @@
                                 <dl>
                                     <dt>3. Mengecek Keberadaan Elemen</dt>
                                     <dd>
-                                        <p>Gunakan operator in untuk mengecek apakah elemen ada dalam set.</p>
+                                        <p>Gunakan operator "in" untuk mengecek apakah elemen ada dalam set.</p>
                                         <pre class="card bg-light codeB">
 
     if 4 in my_set:
@@ -1005,7 +1065,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Variabel dictionary adalah tipe data koleksi yang digunakan untuk menyimpan pasangan kunci-nilai. Setiap kunci dalam dictionary harus unik dan tidak dapat diubah (immutable), sedangkan nilai bisa berupa tipe data apa saja, termasuk tipe data lain seperti list atau dictionary.</p>
+                                <p>Variabel dictionary adalah variabel yang menyimpan nilai dengan tipe data dictionary. Dictionary digunakan untuk menyimpan pasangan kunci-nilai. Setiap kunci dalam dictionary harus unik dan tidak dapat diubah (immutable), sedangkan nilai bisa berupa tipe data apa saja, termasuk tipe data lain seperti list atau dictionary.</p>
 
                                 <h6>Karakteristik Dictionary</h6>
                                 <ul>
@@ -1020,7 +1080,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Membuat Dictionary</h5>
                             <div class="teks">
-                                <p>Dictionary dapat dibuat menggunakan kurung kurawal {} dan memisahkan kunci dan nilai dengan titik dua :. Anda juga bisa menggunakan fungsi dict() untuk membuat dictionary.</p>
+                                <p>Dictionary dapat dibuat menggunakan kurung kurawal "{ }" dan memisahkan kunci dan nilai dengan titik dua ":". Anda juga bisa menggunakan fungsi "dict()" untuk membuat dictionary.</p>
                                 <pre class="card bg-light codeB">
 
     # Membuat dictionary menggunakan kurung kurawal
@@ -1076,7 +1136,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Menghapus Pasangan Kunci-Nilai dari Dictionary</h5>
                             <div class="teks">
-                                <p>Anda bisa menghapus pasangan kunci-nilai menggunakan kata kunci del atau metode pop().</p>
+                                <p>Anda bisa menghapus pasangan kunci-nilai menggunakan kata kunci "del" atau metode "pop()".</p>
                                 <pre class="card bg-light codeB">
 
     # Menghapus pasangan kunci-nilai menggunakan del
@@ -1122,9 +1182,7 @@
                                 <ul>
                                     <li>Definisi</li>
                                     <li>Cara Kerja Percabangan</li>
-                                    <li>Percabangan Dasar dengan if</li>
-                                    <li>Percabangan dengan if dan else</li>
-                                    <li>Percabangan dengan if, elif, dan else</li>
+                                    <li>Contoh Penggunaan</li>
                                 </ul>
                             </div>
                         </div>
@@ -1133,7 +1191,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks">
-                                <p>Percabangan adalah struktur kontrol yang memungkinkan program untuk mengambil keputusan berdasarkan kondisi tertentu. Dalam Python, percabangan menggunakan pernyataan 'if', 'elif', dan 'else' untuk mengevaluasi kondisi dan mengeksekusi blok kode yang sesuai.</p>
+                                <p>Percabangan adalah struktur kontrol yang memungkinkan program untuk mengambil keputusan berdasarkan kondisi tertentu. Dalam Python, percabangan menggunakan pernyataan if, elif, dan else untuk mengevaluasi kondisi dan mengeksekusi blok kode yang sesuai.</p>
                             </div>
                         </div>
 
@@ -1150,26 +1208,31 @@
                             </div>
                         </div>
 
-                        <!-- Percabangan Dasar dengan if -->
+                        <!-- Contoh Penggunaan -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Percabangan Dasar dengan if</h5>
+                            <h5 class="judul2">Contoh Penggunaan</h5>
                             <div class="teks">
-                                <pre class="card bg-light codeB">
+                                <dl>
+                                    <dt>1. Percabangan dengan if</dt>
+                                    <dd>
+                                        <p></p>
+                                        <pre class="card bg-light codeB">
 
     x = 10
 
     if x > 5:
         print("x lebih besar dari 5")
-                                </pre>
-                                <p>Jika nilai x lebih besar dari 5, maka pernyataan dalam blok if akan dieksekusi.</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Percabangan dengan if dan else -->
-                        <div class="card card-body mb-4">
-                            <h5 class="judul2">Percabangan dengan if dan else</h5>
-                            <div class="teks">
-                                <pre class="card bg-light codeB">
+                                        </pre>
+                                        <p>Jika nilai x lebih besar dari 5, maka pernyataan dalam blok if akan dieksekusi.</p>
+                                    </dd>
+                                </dl>
+                                <br>
+
+                                <dl>
+                                    <dt>2. Percabangan dengan if dan else</dt>
+                                    <dd>
+                                        <p></p>
+                                        <pre class="card bg-light codeB">
 
     x = 3
 
@@ -1177,16 +1240,17 @@
         print("x lebih besar dari 5")
     else:
         print("x tidak lebih besar dari 5")                                    
-                                </pre>
-                                <p>Jika nilai x tidak lebih besar dari 5, maka blok else akan dieksekusi.</p>
-                            </div>
-                        </div>
+                                        </pre>
+                                        <p>Jika nilai x tidak lebih besar dari 5, maka blok else akan dieksekusi.</p>
+                                    </dd>
+                                </dl>
+                                <br>
 
-                        <!-- Percabangan dengan if, elif, dan else -->
-                        <div class="card card-body mb-4">
-                            <h5 class="judul2">Percabangan dengan if, elif, dan else</h5>
-                            <div class="teks">
-                                <pre class="card bg-light codeB">
+                                <dl>
+                                    <dt>3. Percabangan dengan if, elif, dan else</dt>
+                                    <dd>
+                                        <p></p>
+                                        <pre class="card bg-light codeB">
 
     x = 5
 
@@ -1195,9 +1259,11 @@
     elif x == 5:
         print("x sama dengan 5")
     else:
-        print("x kurang dari 5")                                    
-                                </pre>
-                                <p>Blok 'elif' akan dieksekusi jika nilai x sama dengan 5. Jika tidak ada kondisi if atau elif yang benar, maka blok else akan dieksekusi.</p>
+        print("x kurang dari 5")            
+                                        </pre>
+                                        <p>Blok 'elif' akan dieksekusi jika nilai x sama dengan 5. Jika tidak ada kondisi if atau elif yang benar, maka blok else akan dieksekusi.</p>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
@@ -1224,7 +1290,7 @@
                                 
                                 <p>Sintaks untuk inline conditional di Python adalah:</p>
                                 <pre class="card bg-light codeA">nilai_true if kondisi else nilai_false</pre>
-                                <p>Di sini, kondisi adalah ekspresi yang dievaluasi. Jika kondisi benar (True), maka nilai_true dikembalikan; jika tidak, nilai_false dikembalikan.</p>
+                                <p>Di sini, kondisi adalah ekspresi yang dievaluasi. Jika kondisi benar (True), maka "nilai_true" dikembalikan. Jika tidak, "nilai_false" dikembalikan.</p>
                             </div>
                         </div>
 
@@ -1233,8 +1299,9 @@
                             <h5 class="judul2">Contoh Inline Conditional</h5>
                             <div class="teks">
                                 <dl>
-                                    <dt><h6>Contoh Sederhana</h6></dt>
+                                    <dt>1. Contoh Sederhana</dt>
                                     <dd>
+                                        <p></p>
                                         <pre class="card bg-light codeB">
 
     x = 10
@@ -1247,8 +1314,9 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>Contoh dengan Beberapa Kondisi</h6></dt>
+                                    <dt>2. Contoh dengan Beberapa Kondisi</dt>
                                     <dd>
+                                        <p></p>
                                         <pre class="card bg-light codeB">
 
     x = 10
@@ -1262,8 +1330,9 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>Contoh Penggunaan dalam Fungsi</h6></dt>
+                                    <dt>3. Contoh Penggunaan dalam Fungsi</dt>
                                     <dd>
+                                        <p></p>
                                         <pre class="card bg-light codeB">
 
     def evaluasi(nilai):
@@ -1273,10 +1342,9 @@
     print(evaluasi(75))  # Output: B
     print(evaluasi(50))  # Output: C
                                         </pre>
-                                        <p>Dalam contoh ini, fungsi 'evaluasi' mengembalikan nilai huruf berdasarkan rentang nilai yang diberikan, menggunakan beberapa inline conditional bertingkat.</p>
+                                        <p>Dalam contoh ini, fungsi "evaluasi" mengembalikan nilai huruf berdasarkan rentang nilai yang diberikan, menggunakan beberapa inline conditional bertingkat.</p>
                                     </dd>
                                 </dl>
-                                <br>
                             </div>
                         </div>
                     </div>
@@ -1363,9 +1431,9 @@
                             <div class="teks">
                                 <p>Operator ini digunakan untuk menggabungkan beberapa kondisi.</p>
                                 <ul>
-                                    <li>'and' : Mengembalikan True jika kedua kondisi benar.</li>
-                                    <li>'or' : Mengembalikan True jika salah satu kondisi benar.</li>
-                                    <li>'not' : Mengembalikan True jika kondisi adalah False, dan sebaliknya.</li>
+                                    <li>"and" : Mengembalikan True jika kedua kondisi benar.</li>
+                                    <li>"or" : Mengembalikan True jika salah satu kondisi benar.</li>
+                                    <li>"not" : Mengembalikan True jika kondisi adalah False, dan sebaliknya.</li>
                                 </ul>
                                 <pre class="card bg-light codeB">
 
@@ -1388,12 +1456,12 @@
                             <div class="teks">
                                 <p>Operator ini digunakan untuk membandingkan dua nilai. Hasil dari operasi ini adalah nilai boolean (True atau False).</p>
                                 <ul>
-                                    <li>== : Sama dengan</li>
-                                    <li>!= : Tidak sama dengan</li>
-                                    <li>> : Lebih besar dari</li>
-                                    <li>< : Lebih kecil dari</li>
-                                    <li>>= : Lebih besar atau sama dengan</li>
-                                    <li><= : Lebih kecil atau sama dengan</li>
+                                    <li>"==" : Sama dengan</li>
+                                    <li>"!=" : Tidak sama dengan</li>
+                                    <li>">" : Lebih besar dari</li>
+                                    <li>"<" : Lebih kecil dari</li>
+                                    <li>">=" : Lebih besar atau sama dengan</li>
+                                    <li>"<=" : Lebih kecil atau sama dengan</li>
                                 </ul>
                                 <pre class="card bg-light codeB">
 
@@ -1418,8 +1486,8 @@
                             <div class="teks">
                                 <p>Operator ini digunakan untuk memeriksa apakah suatu nilai ada dalam suatu koleksi seperti list, tuple, atau string.</p>
                                 <ul>
-                                    <li>'in' : Mengembalikan True jika nilai ada dalam koleksi.</li>
-                                    <li>'not in' : Mengembalikan True jika nilai tidak ada dalam koleksi.</li>
+                                    <li>"in" : Mengembalikan True jika nilai ada dalam koleksi.</li>
+                                    <li>"not in" : Mengembalikan True jika nilai tidak ada dalam koleksi.</li>
                                 </ul>
                                 <pre class="card bg-light codeB">
 
@@ -1439,8 +1507,8 @@
                             <div class="teks">
                                 <p>Operator ini digunakan untuk memeriksa apakah dua referensi merujuk ke objek yang sama.</p>
                                 <ul>
-                                    <li>'is' : Mengembalikan True jika kedua variabel merujuk ke objek yang sama.</li>
-                                    <li>'is not' : Mengembalikan True jika kedua variabel tidak merujuk ke objek yang sama.</li>
+                                    <li>"is" : Mengembalikan True jika kedua variabel merujuk ke objek yang sama.</li>
+                                    <li>"is not" : Mengembalikan True jika kedua variabel tidak merujuk ke objek yang sama.</li>
                                 </ul>
                                 <pre class="card bg-light codeB">
 
@@ -1460,7 +1528,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Perbandingan Berantai</h5>
                             <div class="teks">
-                                <p>Python mendukung perbandingan berantai yang memungkinkan Anda untuk menulis pernyataan seperti a < b < c.</p>
+                                <p>Python mendukung perbandingan berantai yang memungkinkan Anda untuk menulis pernyataan seperti "a < b < c".</p>
                                 <pre class="card bg-light codeB">
 
     x = 5
@@ -1485,7 +1553,7 @@
                                     <li>Definisi</li>
                                     <li>Perulangan for</li>
                                     <li>Perulangan while</li>
-                                    <li>Penggunaan 'break' dan 'continue'</li>
+                                    <li>Penggunaan break dan continue</li>
                                 </ul>
                             </div>
                         </div>
@@ -1502,7 +1570,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Perulangan for</h5>
                             <div class="teks">
-                                <p>Perulangan 'for' digunakan untuk mengulangi serangkaian nilai (misalnya, elemen-elemen dalam list, tuple, string, atau objek iterable lainnya).</p>
+                                <p>Perulangan for digunakan untuk mengulangi serangkaian nilai (misalnya, elemen-elemen dalam list, tuple, string, atau objek iterable lainnya).</p>
                                 <pre class="card bg-light codeB">
 
     # Menggunakan perulangan for untuk mengulangi elemen dalam list
@@ -1522,7 +1590,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Perulangan while</h5>
                             <div class="teks">
-                                <p>Perulangan 'while' terus berjalan selama kondisi yang diberikan adalah True. Kondisi tersebut dievaluasi sebelum setiap iterasi perulangan.</p>
+                                <p>Perulangan while terus berjalan selama kondisi yang diberikan adalah True. Kondisi tersebut dievaluasi sebelum setiap iterasi perulangan.</p>
                                 <pre class="card bg-light codeB">
 
     # Menggunakan perulangan while untuk mencetak angka dari 1 sampai 5
@@ -1541,17 +1609,17 @@
                             </div>
                         </div>
 
-                        <!-- Penggunaan 'break' dan 'continue' -->
+                        <!-- Penggunaan break dan continue -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Penggunaan 'break' dan 'continue'</h5>
+                            <h5 class="judul2">Penggunaan break dan continue</h5>
                             <div class="teks">
-                                <p>Dalam perulangan Python, terdapat keyword 'break' dan 'continue' yang digunakan untuk menghentikan perulangan.</p>
+                                <p>Dalam perulangan Python, terdapat keyword "break" dan "continue" yang digunakan untuk menghentikan perulangan.</p>
                                 <ul>
-                                    <li>break: Menghentikan perulangan sebelum waktunya.</li>
-                                    <li>continue: Melompati iterasi saat ini dan melanjutkan dengan iterasi berikutnya.</li>
+                                    <li>"break" : Menghentikan perulangan sebelum waktunya.</li>
+                                    <li>"continue" : Melompati iterasi saat ini dan melanjutkan dengan iterasi berikutnya.</li>
                                 </ul>
 
-                                <p>Contoh pada perulangan 'for'</p>
+                                <p>Contoh pada perulangan for</p>
                                 <pre class="card bg-light codeB">
 
     for i in range(10):
@@ -1562,7 +1630,7 @@
         print(i) 
                                 </pre>
 
-                                <p>Contoh pada perulangan 'while'</p>
+                                <p>Contoh pada perulangan while</p>
                                 <pre class="card bg-light codeB">
 
     count = 0
@@ -1687,12 +1755,12 @@
                             <div class="teks">
                                 <ul>
                                     <li>Definisi</li>
-                                    <li>Fungsi 'range()'</li>
-                                    <li>Fungsi 'enumerate()'</li>
-                                    <li>Fungsi 'zip()'</li>
-                                    <li>Fungsi 'reversed()'</li>
-                                    <li>Fungsi 'sorted()'</li>
-                                    <li>Fungsi 'filter()' dan 'map()'</li>
+                                    <li>Fungsi range()</li>
+                                    <li>Fungsi enumerate()</li>
+                                    <li>Fungsi zip()</li>
+                                    <li>Fungsi reversed()</li>
+                                    <li>Fungsi sorted()</li>
+                                    <li>Fungsi filter() dan map()</li>
                                 </ul>
                             </div>
                         </div>
@@ -1705,16 +1773,16 @@
                             </div>
                         </div>
 
-                        <!-- Fungsi 'range()' -->
+                        <!-- Fungsi range() -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Fungsi 'range()'</h5>
+                            <h5 class="judul2">Fungsi range()</h5>
                             <div class="teks">
-                                <p>Fungsi 'range()' menghasilkan deretan angka yang bisa digunakan dalam perulangan for.</p>
+                                <p>Fungsi "range()" menghasilkan deretan angka yang bisa digunakan dalam perulangan for.</p>
                                 <p>Sintaks:</p> <pre class="card bg-light codeA">range(start, stop, step)</pre>
                                 <ul>
-                                    <li>'start': Angka mulai (opsional, default adalah 0).</li>
-                                    <li>'stop': Angka berhenti (tidak termasuk).</li>
-                                    <li>'step': Langkah atau selang (opsional, default adalah 1).</li>
+                                    <li>"start" : Angka mulai (opsional, default adalah 0).</li>
+                                    <li>"stop" : Angka berhenti (tidak termasuk).</li>
+                                    <li>"step" : Langkah atau selang (opsional, default adalah 1).</li>
                                 </ul>
 
                                 <p>Contoh:</p>
@@ -1731,11 +1799,11 @@
                             </div>
                         </div>
 
-                        <!-- Fungsi 'enumerate()' -->
+                        <!-- Fungsi enumerate() -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Fungsi 'enumerate()'</h5>
+                            <h5 class="judul2">Fungsi enumerate()</h5>
                             <div class="teks">
-                                <p>Fungsi 'enumerate()' memberikan indeks bersama dengan nilai item dalam iterable.</p>
+                                <p>Fungsi "enumerate()" memberikan indeks bersama dengan nilai item dalam iterable.</p>
                                 <p>Contoh:</p>
                                 <pre class="card bg-light codeB">
 
@@ -1746,11 +1814,11 @@
                             </div>
                         </div>
 
-                        <!-- Fungsi 'zip()' -->
+                        <!-- Fungsi zip() -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Fungsi 'zip()'</h5>
+                            <h5 class="judul2">Fungsi zip()</h5>
                             <div class="teks">
-                                <p>Fungsi 'zip()' menggabungkan beberapa iterables (seperti list, tuple) menjadi satu iterable baru.</p>
+                                <p>Fungsi "zip()" menggabungkan beberapa iterables (seperti list, tuple) menjadi satu iterable baru.</p>
                                 <p>Contoh:</p>
                                 <pre class="card bg-light codeB">
 
@@ -1762,11 +1830,11 @@
                             </div>
                         </div>
 
-                        <!-- Fungsi 'reversed()' -->
+                        <!-- Fungsi reversed() -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Fungsi 'reversed()'</h5>
+                            <h5 class="judul2">Fungsi reversed()</h5>
                             <div class="teks">
-                                <p>Fungsi 'reversed()' menghasilkan iterasi terbalik dari sebuah iterable.</p>
+                                <p>Fungsi "reversed()" menghasilkan iterasi terbalik dari sebuah iterable.</p>
                                 <pre class="card bg-light codeB">
 
     for i in reversed(range(5)):
@@ -1775,11 +1843,11 @@
                             </div>
                         </div>
 
-                        <!-- Fungsi 'sorted()' -->
+                        <!-- Fungsi sorted() -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Fungsi 'sorted()'</h5>
+                            <h5 class="judul2">Fungsi sorted()</h5>
                             <div class="teks">
-                                <p>Fungsi 'sorted()' menghasilkan daftar baru yang terurut dari elemen-elemen dalam iterable yang diberikan.</p>
+                                <p>Fungsi "sorted()" menghasilkan daftar baru yang terurut dari elemen-elemen dalam iterable yang diberikan.</p>
                                 <pre class="card bg-light codeB">
 
     numbers = [4, 1, 3, 2, 5]
@@ -1789,16 +1857,16 @@
                             </div>
                         </div>
 
-                        <!-- Fungsi 'filter()' dan 'map()' -->
+                        <!-- Fungsi filter() dan map() -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Fungsi 'filter()' dan 'map()'</h5>
+                            <h5 class="judul2">Fungsi filter() dan map()</h5>
                             <div class="teks">
                                 <ul>
-                                    <li>filter(function, iterable): Menghasilkan elemen-elemen dari iterable yang fungsi-nya mengembalikan True.</li>
-                                    <li>map(function, iterable): Menerapkan fungsi ke semua elemen dalam iterable.</li>
+                                    <li>"filter(function, iterable)" : Menghasilkan elemen-elemen dari iterable yang fungsi-nya mengembalikan True.</li>
+                                    <li>"map(function, iterable)" : Menerapkan fungsi ke semua elemen dalam iterable.</li>
                                 </ul>
 
-                                <p>Contoh 'filter()':</p>
+                                <p>Contoh "filter()":</p>
                                 <pre class="card bg-light codeB">
 
     numbers = [1, 2, 3, 4, 5, 6]
@@ -1807,7 +1875,7 @@
         print(num)
                                 </pre>
 
-                                <p>Contoh 'map()':</p>
+                                <p>Contoh "map()":</p>
                                 <pre class="card bg-light codeB">
 
     numbers = [1, 2, 3, 4, 5]
@@ -1828,11 +1896,11 @@
                             <div class="teks">
                                 <ul>
                                     <li>Definisi</li>
-                                    <li>List</li>
-                                    <li>Tuple</li>
-                                    <li>Set</li>
-                                    <li>String</li>
-                                    <li>Dictionary</li>
+                                    <li>Perulangan Dengan List</li>
+                                    <li>Perulangan Dengan Tuple</li>
+                                    <li>Perulangan Dengan Set</li>
+                                    <li>Perulangan Dengan String</li>
+                                    <li>Perulangan Dengan Dictionary</li>
                                 </ul>
                             </div>
                         </div>
@@ -1845,11 +1913,11 @@
                             </div>
                         </div>
 
-                        <!-- List -->
+                        <!-- Perulangan Dengan List -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">List</h5>
+                            <h5 class="judul2">Perulangan Dengan List</h5>
                             <div class="teks">
-                                <p>Perulangan 'for' pada list memungkinkan Anda untuk mengakses setiap elemen dalam list satu per satu.</p>
+                                <p>Perulangan for pada list memungkinkan Anda untuk mengakses setiap elemen dalam list satu per satu.</p>
                                 <pre class="card bg-light codeB">
 
     fruits = ["apple", "banana", "cherry"]
@@ -1866,9 +1934,9 @@
                             </div>
                         </div>
 
-                        <!-- Tuple -->
+                        <!-- Perulangan Dengan Tuple -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Tuple</h5>
+                            <h5 class="judul2">Perulangan Dengan Tuple</h5>
                             <div class="teks">
                                 <p>Tuple mirip dengan list tetapi tidak bisa diubah (immutable). Anda dapat mengakses setiap elemen dalam tuple dengan perulangan.</p>
                                 <pre class="card bg-light codeB">
@@ -1887,9 +1955,9 @@
                             </div>
                         </div>
 
-                        <!-- Set -->
+                        <!-- Perulangan Dengan Set -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Set</h5>
+                            <h5 class="judul2">Perulangan Dengan Set</h5>
                             <div class="teks">
                                 <p>Set adalah koleksi yang tidak berurutan dan tidak memiliki elemen duplikat. Anda bisa mengulangi elemen dalam set.</p>
                                 <pre class="card bg-light codeB">
@@ -1908,9 +1976,9 @@
                             </div>
                         </div>
 
-                        <!-- String -->
+                        <!-- Perulangan Dengan String -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">String</h5>
+                            <h5 class="judul2">Perulangan Dengan String</h5>
                             <div class="teks">
                                 <p>Dengan perulangan, Anda juga dapat mengakses setiap huruf pada sebuah String.</p>
                                 <pre class="card bg-light codeB">
@@ -1931,9 +1999,9 @@
                             </div>
                         </div>
 
-                        <!-- Dictionary -->
+                        <!-- Perulangan Dengan Dictionary -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Dictionary</h5>
+                            <h5 class="judul2">Perulangan Dengan Dictionary</h5>
                             <div class="teks">
                                 <p>Dictionary adalah koleksi pasangan kunci-nilai (key-value pairs). Anda bisa mengulangi kunci, nilai, atau kedua-duanya.</p>
 
@@ -2030,7 +2098,7 @@
                                 <dl>
                                     <dt><h6>1. Mendefinisikan Fungsi</h6></dt>
                                     <dd>
-                                        <p>Fungsi didefinisikan menggunakan kata kunci 'def' diikuti oleh nama fungsi, tanda kurung, dan titik dua. Contoh:</p>
+                                        <p>Fungsi didefinisikan menggunakan kata kunci "def" diikuti oleh nama fungsi, tanda kurung, dan titik dua. Contoh:</p>
                                         <pre class="card bg-light codeB">
         
     def nama_fungsi():
@@ -2072,7 +2140,7 @@
                                 <dl>
                                     <dt><h6>4. Nilai Kembali (Return)</h6></dt>
                                     <dd>
-                                        <p>Fungsi dapat mengembalikan nilai menggunakan kata kunci 'return'. Contoh:</p>
+                                        <p>Fungsi dapat mengembalikan nilai menggunakan kata kunci "return". Contoh:</p>
                                         <pre class="card bg-light codeB">
         
     def kali(a, b):
@@ -2137,12 +2205,15 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Fungsi Built-in</h5>
                             <div class="teks">
-                                <p>Fungsi Built-in adalah fungsi yang sudah disediakan oleh Python.</p>
+                                <p>Fungsi Built-in adalah fungsi yang sudah disediakan oleh Python. Fungsi ini dapat langsung digunakan tanpa perlu didefinisikan terlebih dahulu. Berikut contohnya.</p>
                                 <ul>
-                                    <li>Fungsi ini dapat langsung digunakan tanpa perlu didefinisikan terlebih dahulu. Contoh: print(), len(), type(), range()</li>
-                                    <li>Ada banyak fungsi Built-in lainnya</li>
-                                    <li></li>
-                                    <li></li>
+                                    <li>"print()" : untuk menampilkan.</li>
+                                    <li>"len()" : untuk mendapatkan panjang string</li>
+                                    <li>"type()" : untuk mengetahui tipe data dari sebuah nilai.</li>
+                                    <li>"range()" : biasa digunakan pada perulangan untuk menentukan berapa kali iterasi.</li>
+                                    <li>"upper()" : untuk mengubah huruf kecil ke huruf besar.</li>
+                                    <li>"lower()" : untuk mengubah huruf besar ke huruf kecil.</li>
+                                    <li>"input()" : untuk mengambil inputan pengguna.</li>
                                 </ul>
                             </div>
                         </div>
@@ -2174,7 +2245,11 @@
         if n == 0:
             return 1
         else:
-            return n * faktorial(n - 1)                                
+            return n * faktorial(n - 1)
+    
+    # Contoh pemanggilan fungsi
+    print(faktorial(5))  # menghitung 5! (5 * 4 * 3 * 2 * 1) yang hasilnya 120.     
+    print(faktorial(3))  # menghitung 3! (3 * 2 * 1) yang hasilnya 6.
                                 </pre>
                             </div>
                         </div>
@@ -2187,6 +2262,8 @@
                                 <pre class="card bg-light codeB">
 
     tambah = lambda a, b: a + b
+    hasil = tambah(5, 3)
+    print(f'Hasilnya: {hasil}') # Output: Hasilnya: 8                                           
                                 </pre>
                             </div>
                         </div>
@@ -2204,7 +2281,8 @@
     def kali_dua(x):
         return x * 2
     
-    print(fungsi_higher_order(kali_dua, 5))  # Output: 10 
+    hasil = fungsi_higher_order(kali_dua, 5)    
+    print(hasil)  # Output: 10 
                                 </pre>
                             </div>
                         </div>
@@ -2213,16 +2291,20 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Fungsi Generator</h5>
                             <div class="teks">
-                                <p>Fungsi yang menggunakan kata kunci yield untuk mengembalikan serangkaian nilai satu per satu, memungkinkan iterasi besar tanpa memuat semuanya ke dalam memori sekaligus.</p>
+                                <p>Fungsi yang menggunakan kata kunci "yield" alih-alih "return" untuk mengembalikan serangkaian nilai satu per satu, memungkinkan iterasi besar tanpa memuat semuanya ke dalam memori sekaligus.</p>
                                 <pre class="card bg-light codeB">
 
-    def generator():
-        yield 1
-        yield 2
-        yield 3
+    def count_up_to(max):
+        count = 1
+        while count <= max:
+            yield count
+            count += 1
     
-    for nilai in generator():
-        print(nilai) 
+    counter = count_up_to(5)
+    for number in counter:
+        print(number)
+    
+    # Outputnya adalah 1 sampai 5 (ditampilkan ke bawah)    
                                 </pre>
                             </div>
                         </div>
@@ -2246,7 +2328,13 @@
         print("Ini fungsi asli")
     
     fungsi() 
+
+    # Output:
+    # Sebelum fungsi asli
+    # Ini fungsi asli
+    # Setelah fungsi asli
                                 </pre>
+                                <p>Fungsi "fungsi" setelah baris "@dekorator" menjadi parameter dari fungsi "dekorator".</p>
                             </div>
                         </div>
 
@@ -2260,7 +2348,9 @@
     def fungsi_luar():
         def fungsi_dalam():
             print("Ini fungsi dalam")
-        fungsi_dalam()                                
+        fungsi_dalam()
+    
+    fungsi_luar() # Output: Ini fungsi dalam    
                                 </pre>
                             </div>
                         </div>
@@ -2270,24 +2360,44 @@
                             <h5 class="judul2">Fungsi dengan Variable-length Arguments</h5>
                             <div class="teks">
                                 <p>Fungsi yang dapat menerima sejumlah argumen yang tidak diketahui sebelumnya.</p>
-                                <ul>
-                                    <li><p>Positional Arguments: Menggunakan *args</p>
+                                
+                                <dl>
+                                    <dt>1. Positional Arguments: Menggunakan *args</dt>
+                                    <dd>
+                                        <p></p>
                                         <pre class="card bg-light codeB">
 
-    def cetak_semua(*args):
-        for arg in args:
-            print(arg) 
+    def hitung_semua(*args):
+        total = 0
+        for angka in args:
+            total += angka
+        return total
+    
+    hasil = hitung_semua(1, 2, 3, 4, 5)     
+    print(hasil)    # Output: 15
                                         </pre>
-                                    </li>
-                                    <li><p>Keyword Arguments: Menggunakan **kwargs</p>
+                                    </dd>
+                                </dl>
+
+                                <dl>
+                                    <dt>2. Keyword Arguments: Menggunakan **kwargs</dt>
+                                    <dd>
+                                        <p></p>
                                         <pre class="card bg-light codeB">
 
     def cetak_detail(**kwargs):
         for key, value in kwargs.items():
-            print(f"{key}: {value}") 
+            print(f"{key}: {value}")
+    
+    cetak_detail(nama="Alexander", usia=24, Status="Mahasiswa")     
+    
+    # Output:
+    # nama: Alexander
+    # usia: 24
+    # Status: Mahasiswa
                                         </pre>
-                                    </li>
-                                </ul>
+                                    </dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
@@ -2344,9 +2454,10 @@
     hasil = hitung_luas_persegi_panjang(panjang, lebar)
     print(f"Luas persegi panjang adalah {hasil}")
                                 </pre>
+
                                 <p>Dalam contoh di atas:</p>
                                 <ul>
-                                    <li>Fungsi hitung_luas_persegi_panjang didefinisikan dengan dua parameter: panjang dan lebar.</li>
+                                    <li>Fungsi "hitung_luas_persegi_panjang" didefinisikan dengan dua parameter: panjang dan lebar.</li>
                                     <li>Fungsi tersebut mengembalikan hasil perhitungan luas (panjang * lebar) menggunakan kata kunci return.</li>
                                     <li>Fungsi kemudian dipanggil dengan memberikan nilai 10 untuk panjang dan 5 untuk lebar.</li>
                                     <li>Hasil pemanggilan fungsi disimpan dalam variabel hasil dan kemudian dicetak ke layar.</li>
@@ -2397,7 +2508,7 @@
                             <h5 class="judul2">Jenis-Jenis Argumen</h5>
                             <div class="teks">
                                 <dl>
-                                    <dt><h6>1. Positional Arguments</h6></dt>
+                                    <dt>1. Positional Arguments</dt>
                                     <dd>
                                         <p>Argumen yang diberikan berdasarkan posisi mereka sesuai dengan posisi parameter.</p>
                                         <pre class="card bg-light codeB">
@@ -2407,13 +2518,13 @@
 
     sapa("Budi", 25) 
                                         </pre>
-                                        <p>Pada contoh di atas, "Budi" adalah argumen untuk parameter 'nama' dan 25 adalah argumen untuk parameter 'umur'.</p>
+                                        <p>Pada contoh di atas, "Budi" adalah argumen untuk parameter "nama" dan 25 adalah argumen untuk parameter "umur".</p>
                                     </dd>
                                 </dl>
                                 <br>
 
                                 <dl>
-                                    <dt><h6>2. Keyword Arguments</h6></dt>
+                                    <dt>2. Keyword Arguments</dt>
                                     <dd>
                                         <p>Argumen yang diberikan berdasarkan nama parameter, memungkinkan pengaturan urutan argumen.</p>
                                         <pre class="card bg-light codeB">
@@ -2426,7 +2537,7 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>3. Default Arguments</h6></dt>
+                                    <dt>3. Default Arguments</dt>
                                     <dd>
                                         <p>Default Arguments memungkinkan parameter memiliki nilai default jika argumen tidak diberikan.</p>
                                         <pre class="card bg-light codeB">
@@ -2437,13 +2548,13 @@
     sapa()          # Output: Halo, Anonim!
     sapa("Budi")    # Output: Halo, Budi!
                                         </pre>
-                                        <p>Pada contoh ini, jika sapa() dipanggil tanpa argumen, parameter nama akan memiliki nilai default "Anonim".</p>
+                                        <p>Pada contoh ini, jika "sapa()" dipanggil tanpa argumen, parameter nama akan memiliki nilai default "Anonim".</p>
                                     </dd>
                                 </dl>
                                 <br>
 
                                 <dl>
-                                    <dt><h6>4. Variable-length Arguments</h6></dt>
+                                    <dt>4. Variable-length Arguments</dt>
                                     <dd>
                                         <ul>
                                             <li>
@@ -2553,7 +2664,7 @@
     hasil = tambah(5, 3)
     print(hasil)  # Output: 8
                                 </pre>
-                                <p>Pada contoh diatas, kode 'return nilai' akan mengirimkan value dari 'nilai' ke variabel pemanggil fungsinya yang pada kasus ini adalah 'hasil'.</p>
+                                <p>Pada contoh diatas, kode "return nilai" akan mengirimkan value dari "nilai" ke variabel pemanggil fungsinya yang pada kasus ini adalah "hasil".</p>
                             </div>
                         </div>
 
@@ -2611,7 +2722,7 @@
                             <h5 class="judul2">Konsep Dasar Function Scope</h5>
                             <div class="teks">
                                 <dl>
-                                    <dt><h6>1. Variabel Lokal</h6></dt>
+                                    <dt>1. Variabel Lokal</dt>
                                     <dd>
                                         <p>Variabel Lokal adalah variabel yang dibuat di dalam fungsi. Variabel ini hanya dapat diakses di dalam fungsi tersebut.</p>
                                         <pre class="card bg-light codeB">
@@ -2628,7 +2739,7 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>2. Variabel Global</h6></dt>
+                                    <dt>2. Variabel Global</dt>
                                     <dd>
                                         <p>Variabel Global adalah variabel yang dibuat di luar fungsi. Variabel ini dapat diakses dari mana saja dalam kode, termasuk dari dalam fungsi.</p>
                                         <pre class="card bg-light codeB">
@@ -2650,9 +2761,9 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Mengubah Variabel Global dari Dalam Fungsi</h5>
                             <div class="teks">
-                                <p>Anda dapat mengubah nilai dari variabel global dari dalam fungsi, ini memungkinkan sebuah fungsi untuk mengembalikan nilai tanpa keyword 'return'. Berikut adalah caranya.</p>
+                                <p>Anda dapat mengubah nilai dari variabel global dari dalam fungsi, ini memungkinkan sebuah fungsi untuk mengembalikan nilai tanpa keyword "return". Berikut adalah caranya.</p>
                                 <ul style="list-style: decimal;">
-                                    <li>Di dalam fungsi, ketik keyword 'global' diikuti nama variabel globalnya.</li>
+                                    <li>Di dalam fungsi, ketik keyword "global" diikuti nama variabel globalnya.</li>
                                     <li>jika lebih dari satu variabel global maka pisahkan mereka dengan koma (,).</li>
                                     <li>Ubah nilai dari variabel global.</li>
                                     <li>Di luar fungsi, jalankan fungsi tersebut dan tampilkan nilai dari variabel global.</li>
@@ -2723,7 +2834,7 @@
                                     <dd>
                                         <ul>
                                             <li>Definisi: Modul adalah file Python yang berisi definisi fungsi, kelas, variabel, dan kode lainnya. File ini memiliki ekstensi .py.</li>
-                                            <li>Contoh: Jika Anda memiliki file 'math_utils.py' yang berisi fungsi matematika, file ini adalah modul.</li>
+                                            <li>Contoh: Jika Anda memiliki file "math_utils.py" yang berisi fungsi matematika, file ini adalah modul.</li>
                                         </ul>
                                     </dd>
                                 </dl>
@@ -2733,8 +2844,8 @@
                                     <dt><h6>2. Paket</h6></dt>
                                     <dd>
                                         <ul>
-                                            <li>Definisi: Paket adalah kumpulan modul yang dikelompokkan dalam direktori. Direktori ini harus mengandung file '__init__.py' (meskipun file ini bisa kosong) untuk dianggap sebagai paket.</li>
-                                            <li>Contoh: Jika Anda memiliki direktori 'my_package' yang berisi file 'module1.py' dan 'module2.py', 'my_package' adalah paket.</li>
+                                            <li>Definisi: Paket adalah kumpulan modul yang dikelompokkan dalam direktori. Direktori ini harus mengandung file "__init__.py" (meskipun file ini bisa kosong) untuk dianggap sebagai paket.</li>
+                                            <li>Contoh: Jika Anda memiliki direktori "my_package" yang berisi file "module1.py" dan "module2.py", "my_package" adalah paket.</li>
                                         </ul>
                                     </dd>
                                 </dl>
@@ -2744,7 +2855,7 @@
                                     <dt><h6>3. Import Modul</h6></dt>
                                     <dd>
                                         <ul>
-                                            <li>Definisi: Menggunakan pernyataan import untuk menggunakan fungsi, kelas, atau variabel dari modul lain.</li>
+                                            <li>Definisi: Menggunakan pernyataan "import" untuk menggunakan fungsi, kelas, atau variabel dari modul lain.</li>
                                             <li>Contoh:
                                                 <pre class="card bg-light codeB">
 
@@ -2817,7 +2928,7 @@
                                     <dt><h6>7. Penggunaan __init__.py</h6></dt>
                                     <dd>
                                         <ul>
-                                            <li>Definisi: File __init__.py dalam direktori paket memungkinkan Python untuk mengenali direktori tersebut sebagai paket. Anda dapat menyertakan kode inisialisasi atau import di sini.</li>
+                                            <li>Definisi: File "__init__.py" dalam direktori paket memungkinkan Python untuk mengenali direktori tersebut sebagai paket. Anda dapat menyertakan kode inisialisasi atau import di sini.</li>
                                             <li>Contoh:
                                                 <pre class="card bg-light codeB">
 
@@ -2872,7 +2983,7 @@
                             <h5 class="judul2">Konsep Dasar OOP</h5>
                             <div class="teks">
                                 <dl>
-                                    <dt><h6>1. Kelas (Class)</h6></dt>
+                                    <dt>1. Kelas (Class)</dt>
                                     <dd>
                                         <p>Kelas adalah blueprint atau template untuk membuat objek. Kelas mendefinisikan atribut (data) dan metode (fungsi) yang dimiliki oleh objek.</p>
                                     </dd>
@@ -2880,7 +2991,7 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>2. Objek (Object)</h6></dt>
+                                    <dt>2. Objek (Object)</dt>
                                     <dd>
                                         <p>Objek adalah instance dari kelas. Ketika Anda membuat objek dari kelas, Anda membuat instansi yang memanfaatkan blueprint dari kelas tersebut.</p>
                                     </dd>
@@ -2888,7 +2999,7 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>3. Pewarisan (Inheritance)</h6></dt>
+                                    <dt>3. Pewarisan (Inheritance)</dt>
                                     <dd>
                                         <p>Pewarisan memungkinkan Anda untuk membuat kelas baru yang mewarisi atribut dan metode dari kelas yang sudah ada. Ini memungkinkan Anda untuk menggunakan kembali kode dan membangun hierarki kelas.</p>
                                     </dd>
@@ -2896,7 +3007,7 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>4. Polimorfisme (Polymorphism)</h6></dt>
+                                    <dt>4. Polimorfisme (Polymorphism)</dt>
                                     <dd>
                                         <p>Polimorfisme memungkinkan objek dari kelas yang berbeda untuk diperlakukan dengan cara yang sama melalui metode yang memiliki nama yang sama tetapi implementasi yang berbeda.</p>
                                     </dd>
@@ -2904,7 +3015,7 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>5. Enkapsulasi (Encapsulation)</h6></dt>
+                                    <dt>5. Enkapsulasi (Encapsulation)</dt>
                                     <dd>
                                         <p>Enkapsulasi adalah prinsip menyembunyikan detail implementasi internal dan hanya menampilkan interface yang diperlukan. Dalam Python, atribut dan metode dapat diatur dengan aksesibilitas publik, privat, atau protektif.</p>
                                     </dd>
@@ -2943,7 +3054,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Mendefinisikan Kelas</h5>
                             <div class="teks">
-                                <p>Untuk mendefinisikan kelas dalam Python, Anda menggunakan kata kunci 'class' diikuti dengan nama kelas. Di dalam kelas terdapat atribut dan metode yang mendefinisikan kelas tersebut.</p>
+                                <p>Untuk mendefinisikan kelas dalam Python, Anda menggunakan kata kunci "class" diikuti dengan nama kelas. Di dalam kelas terdapat atribut dan metode yang mendefinisikan kelas tersebut.</p>
                                 <ul>
                                     <li>Atribut adalah variabel yang dimiliki oleh kelas.</li>
                                     <li>Metode adalah fungsi yang didefinisikan di dalam kelas (opsional).</li>
@@ -2963,9 +3074,9 @@
                                 </pre>
                                 <p>Dalam kode diatas:</p>
                                 <ul>
-                                    <li>'Buku' adalah nama kelas.</li>
-                                    <li>'judul', 'pengarang', 'tahun_terbit' adalah atribut dari kelas Buku.</li>
-                                    <li>'info( )' adalah metode atau fungsi dari kelas Buku.</li>
+                                    <li>"Buku" adalah nama kelas.</li>
+                                    <li>"judul", "pengarang", "tahun_terbit" adalah atribut dari kelas Buku.</li>
+                                    <li>"info()" adalah metode atau fungsi dari kelas Buku.</li>
                                 </ul>
                             </div>
                         </div>
@@ -3091,7 +3202,7 @@
                                         </ul><p></p>
                                     </li>
                                     <li><h6>Penggunaan super():</h6>
-                                        <p>super().__init__(merk, model) memanggil konstruktor dari kelas dasar untuk menginisialisasi atribut merk dan model.</p>
+                                        <p>"super().__init__(merk, model)" memanggil konstruktor dari kelas dasar untuk menginisialisasi atribut merk dan model.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -3225,7 +3336,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Contoh Kasus Enkapsulasi</h5>
                             <div class="teks">
-                                <p>Misalkan kita ingin membuat kelas 'AkunBank' yang memiliki atribut saldo yang harus dilindungi dari perubahan yang tidak sah. Berikut adalah contoh bagaimana enkapsulasi dapat diterapkan:</p>
+                                <p>Misalkan kita ingin membuat kelas "AkunBank" yang memiliki atribut saldo yang harus dilindungi dari perubahan yang tidak sah. Berikut adalah contoh bagaimana enkapsulasi dapat diterapkan:</p>
                                 <pre class="card bg-light codeB">
 
     class AkunBank:
@@ -3264,9 +3375,9 @@
 
                                 <p>Penjelasan:</p>
                                 <ul>
-                                    <li>Atribut Privat: Atribut __saldo dilindungi dari akses langsung di luar kelas AkunBank. Ini mencegah pengguna kelas dari memodifikasi saldo secara langsung dan tidak sah.</li>
+                                    <li>Atribut Privat: Atribut "__saldo" dilindungi dari akses langsung di luar kelas AkunBank. Ini mencegah pengguna kelas dari memodifikasi saldo secara langsung dan tidak sah.</li>
                                     <li>Metode Publik: Metode setor, tarik, dan cek_saldo memberikan cara yang aman untuk berinteraksi dengan saldo akun. setor dan tarik menangani logika bisnis untuk memastikan saldo tidak menjadi negatif dan hanya dapat diubah dengan cara yang valid.</li>
-                                    <li>Akses Langsung: Jika Anda mencoba mengakses __saldo langsung dari luar kelas, Anda akan mendapatkan AttributeError karena atribut tersebut dilindungi.</li>
+                                    <li>Akses Langsung: Jika Anda mencoba mengakses "__saldo" langsung dari luar kelas, Anda akan mendapatkan AttributeError karena atribut tersebut dilindungi.</li>
                                 </ul>
                             </div>
                         </div>
@@ -3374,7 +3485,7 @@
                                 <p>Python memiliki banyak jenis exception bawaan (built-in exceptions) yang digunakan untuk menangani berbagai situasi kesalahan. Berikut adalah beberapa jenis exception bawaan:</p>
 
                                 <dl>
-                                    <dt><h6>1. ZeroDivisionError</h6></dt>
+                                    <dt>1. ZeroDivisionError</dt>
                                     <dd>
                                         <p>Menangani pembagian dengan nol.</p>
                                         <pre class="card bg-light codeB">
@@ -3389,7 +3500,7 @@
                                 <br>
 
                                 <dl>
-                                    <dt><h6>2. IndexError</h6></dt>
+                                    <dt>2. IndexError</dt>
                                     <dd>
                                         <p>Menangani akses indeks yang di luar jangkauan list.</p>
                                         <pre class="card bg-light codeB">
@@ -3405,7 +3516,7 @@
                                 <br>
                                 
                                 <dl>
-                                    <dt><h6>3. KeyError</h6></dt>
+                                    <dt>3. KeyError</dt>
                                     <dd>
                                         <p>Menangani akses kunci yang tidak ada dalam dictionary.</p>
                                         <pre class="card bg-light codeB">
@@ -3421,7 +3532,7 @@
                                 <br>
                                 
                                 <dl>
-                                    <dt><h6>4. TypeError</h6></dt>
+                                    <dt>4. TypeError</dt>
                                     <dd>
                                         <p>Menangani operasi antara tipe data yang tidak sesuai.</p>
                                         <pre class="card bg-light codeB">
@@ -3436,7 +3547,7 @@
                                 <br>
                                 
                                 <dl>
-                                    <dt><h6>5. ValueError</h6></dt>
+                                    <dt>5. ValueError</dt>
                                     <dd>
                                         <p>Menangani konversi tipe data yang gagal.</p>
                                         <pre class="card bg-light codeB">
@@ -3451,7 +3562,7 @@
                                 <br>
                                 
                                 <dl>
-                                    <dt><h6>6. NameError</h6></dt>
+                                    <dt>6. NameError</dt>
                                     <dd>
                                         <p>Menangani variabel yang belum dideklarasikan.</p>
                                         <pre class="card bg-light codeB">
@@ -3466,7 +3577,7 @@
                                 <br>
                                 
                                 <dl>
-                                    <dt><h6>7. AttributeError</h6></dt>
+                                    <dt>7. AttributeError</dt>
                                     <dd>
                                         <p>Menangani atribut yang tidak ada pada objek.</p>
                                         <pre class="card bg-light codeB">
@@ -3488,7 +3599,7 @@
                                 <br>
                                 
                                 <dl>
-                                    <dt><h6>8. FileNotFoundError</h6></dt>
+                                    <dt>8. FileNotFoundError</dt>
                                     <dd>
                                         <p>Menangani kasus ketika file yang akan dibuka tidak ada.</p>
                                         <pre class="card bg-light codeB">
@@ -3513,35 +3624,35 @@
                             <h5 class="judul2">Daftar Isi</h5>
                             <div class="teks">
                                 <ul>
-                                    <li>Kata Kunci 'try'</li>
-                                    <li>Kata Kunci 'except'</li>
-                                    <li>Kata Kunci 'else'</li>
-                                    <li>Kata Kunci 'finally'</li>
+                                    <li>Kata Kunci try</li>
+                                    <li>Kata Kunci except</li>
+                                    <li>Kata Kunci else</li>
+                                    <li>Kata Kunci finally</li>
                                     <li>Kesimpulan</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- Kata Kunci 'try' -->
+                        <!-- Kata Kunci try -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Kata Kunci 'try'</h5>
+                            <h5 class="judul2">Kata Kunci try</h5>
                             <div class="teks"> 
-                                <p>Kata kunci 'try' digunakan untuk menulis kode yang mungkin menimbulkan kesalahan (exception). Jika kode di dalam blok try menghasilkan exception, eksekusi akan dialihkan ke blok except yang sesuai.</p>
+                                <p>Kata kunci "try" digunakan untuk menulis kode yang mungkin menimbulkan kesalahan (exception). Jika kode di dalam blok try menghasilkan exception, eksekusi akan dialihkan ke blok except yang sesuai.</p>
                                 <pre class="card bg-light codeB">
 
     try:
         result = 10 / 2
         print("Hasil:", result)                                
                                 </pre>
-                                <p>Di sini, kode 10 / 2 tidak menimbulkan exception, jadi blok except dan finally tidak dijalankan pada contoh ini.</p>
+                                <p>Di sini, kode "10 / 2" tidak menimbulkan exception, jadi blok except dan finally tidak dijalankan pada contoh ini.</p>
                             </div>
                         </div>
                         
-                        <!-- Kata Kunci 'except' -->
+                        <!-- Kata Kunci except -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Kata Kunci 'except'</h5>
+                            <h5 class="judul2">Kata Kunci except</h5>
                             <div class="teks"> 
-                                <p>Kata Kunci 'except' menangani exception yang terjadi dalam blok 'try'. Anda dapat memiliki beberapa blok except untuk menangani berbagai jenis exception yang berbeda.</p>
+                                <p>Kata Kunci "except" menangani exception yang terjadi dalam blok try. Anda dapat memiliki beberapa blok except untuk menangani berbagai jenis exception yang berbeda.</p>
                                 <pre class="card bg-light codeB">
 
     try:
@@ -3549,15 +3660,15 @@
     except ZeroDivisionError:
         print("Error: Pembagian dengan nol.")                                
                                 </pre>
-                                <p>Jika terjadi pembagian dengan nol dalam blok try, exception ZeroDivisionError akan ditangkap dan pesan kesalahan "Error: Pembagian dengan nol." akan ditampilkan.</p>
+                                <p>Jika terjadi pembagian dengan nol dalam blok try, exception "ZeroDivisionError" akan ditangkap dan pesan kesalahan "Error: Pembagian dengan nol." akan ditampilkan.</p>
                             </div>
                         </div>
 
-                        <!-- Kata Kunci 'else' -->
+                        <!-- Kata Kunci else -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Kata Kunci 'else'</h5>
+                            <h5 class="judul2">Kata Kunci else</h5>
                             <div class="teks"> 
-                                <p>Kata Kunci 'else' dijalankan jika tidak ada exception yang terjadi dalam blok try. Ini berguna jika Anda ingin menjalankan kode hanya jika semua kode dalam blok try berhasil.</p>
+                                <p>Kata Kunci "else" dijalankan jika tidak ada exception yang terjadi dalam blok try. Ini berguna jika Anda ingin menjalankan kode hanya jika semua kode dalam blok try berhasil.</p>
                                 <pre class="card bg-light codeB">
 
     try:
@@ -3571,9 +3682,9 @@
                             <p>Di sini, karena tidak ada exception yang terjadi, blok else dijalankan dan menampilkan hasil "Hasil: 5.0".</p>
                         </div>
 
-                        <!-- Kata Kunci 'finally' -->
+                        <!-- Kata Kunci finally -->
                         <div class="card card-body mb-4">
-                            <h5 class="judul2">Kata Kunci 'finally'</h5>
+                            <h5 class="judul2">Kata Kunci finally</h5>
                             <div class="teks"> 
                                 <p>Blok finally selalu dijalankan setelah blok try dan except, terlepas dari apakah exception terjadi atau tidak. Ini sering digunakan untuk membersihkan sumber daya seperti menutup file atau koneksi jaringan.</p>
                                 <pre class="card bg-light codeB">
@@ -3587,7 +3698,7 @@
         file.close()
         print("File telah ditutup.")
                                 </pre>
-                                <p>Di sini, file example.txt akan ditutup di blok finally, apakah terjadi exception atau tidak. Jika file tidak ditemukan, pesan "File tidak ditemukan." akan ditampilkan, dan setelah itu "File telah ditutup." akan dicetak, memastikan bahwa file selalu ditutup dengan benar.</p>
+                                <p>Di sini, file "example.txt" akan ditutup di blok finally, apakah terjadi exception atau tidak. Jika file tidak ditemukan, pesan "File tidak ditemukan." akan ditampilkan, dan setelah itu "File telah ditutup." akan dicetak, memastikan bahwa file selalu ditutup dengan benar.</p>
                             </div>
                         </div>
 
@@ -3667,19 +3778,19 @@
                                 <ul>
                                     <li>Mendefinisikan Exception Kustom:
                                         <ul>
-                                            <li>InvalidAgeError adalah kelas exception kustom yang mewarisi dari Exception.</li>
-                                            <li>Konstruktor __init__ memungkinkan penambahan atribut khusus (seperti age) dan pesan kesalahan default.</li>
+                                            <li>"InvalidAgeError" adalah kelas exception kustom yang mewarisi dari Exception.</li>
+                                            <li>Konstruktor "__init__" memungkinkan penambahan atribut khusus (seperti age) dan pesan kesalahan default.</li>
                                         </ul><p></p>
                                     </li>
                                     <li>Menggunakan Exception Kustom:
                                         <ul>
-                                            <li>Fungsi check_age memeriksa apakah umur berada dalam rentang yang valid. Jika tidak, ia melempar InvalidAgeError.</li>
-                                            <li>Dalam blok try, kita memanggil check_age dan menangkap InvalidAgeError jika terjadi.</li>
+                                            <li>Fungsi "check_age" memeriksa apakah umur berada dalam rentang yang valid. Jika tidak, ia melempar "InvalidAgeError".</li>
+                                            <li>Dalam blok try, kita memanggil "check_age" dan menangkap "InvalidAgeError" jika terjadi.</li>
                                         </ul>
                                     </li>
                                     <li>Menangkap dan Mengelola Exception:
                                         <ul>
-                                            <li>Ketika InvalidAgeError ditangkap, kita dapat mengakses atribut khusus (age) dan pesan kesalahan untuk memberikan informasi yang lebih baik kepada pengguna.</li>
+                                            <li>Ketika "InvalidAgeError" ditangkap, kita dapat mengakses atribut khusus (age) dan pesan kesalahan untuk memberikan informasi yang lebih baik kepada pengguna.</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -3714,7 +3825,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Penggunaan Multiple Exceptions</h5>
                             <div class="teks">
-                                <p>Misalkan Anda ingin menangani dua jenis kesalahan berbeda: ValueError jika pengguna memasukkan input yang tidak bisa dikonversi menjadi integer, dan ZeroDivisionError jika pengguna memasukkan angka nol yang menyebabkan pembagian dengan nol.</p>
+                                <p>Misalkan Anda ingin menangani dua jenis kesalahan berbeda: "ValueError" jika pengguna memasukkan input yang tidak bisa dikonversi menjadi integer, dan "ZeroDivisionError" jika pengguna memasukkan angka nol yang menyebabkan pembagian dengan nol.</p>
                                 <pre class="card bg-light codeB">
 
     try:
@@ -3740,12 +3851,12 @@
                                     </li>
                                     <li>Menangani Kesalahan Input
                                         <ul>
-                                            <li>Jika input tidak dapat dikonversi menjadi integer, maka ValueError akan ditangkap dan pesan yang sesuai akan ditampilkan.</li>
+                                            <li>Jika input tidak dapat dikonversi menjadi integer, maka "ValueError" akan ditangkap dan pesan yang sesuai akan ditampilkan.</li>
                                         </ul>
                                     </li>
                                     <li>Menangani Pembagian Nol
                                         <ul>
-                                            <li>Jika input yang valid (seperti angka nol) menyebabkan pembagian dengan nol, maka ZeroDivisionError akan ditangkap dan pesan yang sesuai akan ditampilkan.</li>
+                                            <li>Jika input yang valid (seperti angka nol) menyebabkan pembagian dengan nol, maka "ZeroDivisionError" akan ditangkap dan pesan yang sesuai akan ditampilkan.</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -3788,7 +3899,6 @@
                             <div class="teks">
                                 <ul>
                                     <li>Definisi</li>
-                                    <li>Tujuan Dan Manfaat</li>
                                 </ul>
                             </div>
                         </div>
@@ -3797,43 +3907,7 @@
                         <div class="card card-body mb-4">
                             <h5 class="judul2">Definisi</h5>
                             <div class="teks"> 
-                                <p>Exception Handling adalah mekanisme untuk menangani kesalahan (errors) yang terjadi selama eksekusi program, sehingga program tidak terhenti secara mendadak. Dengan menggunakan exception handling, Anda dapat menangkap dan mengelola kesalahan dengan cara yang terstruktur dan elegan.</p>
-                            </div>
-                        </div>
-
-                        <!-- Tujuan Dan Manfaat -->
-                        <div class="card card-body mb-4">
-                            <h5 class="judul2">Tujuan Dan Manfaat</h5>
-                            <div class="teks"> 
-                                <p>Exception Handling memiliki tujuan dan manfaat utama sebagai berikut:</p>
-
-                                <dl>
-                                    <dt><h6>Tujuan:</h6></dt>
-                                    <dd>
-                                        <ul>
-                                            <li>Menangani Kesalahan Secara Terstruktur: Mengelola kesalahan dengan cara yang teratur untuk mencegah program berhenti mendadak.</li>
-                                            <li>Mengelola Kesalahan dengan Elegan: Menangani kesalahan dengan respons yang terencana.</li>
-                                            <li>Meningkatkan Kestabilan Program: Mengurangi kemungkinan kegagalan total dengan menangani kesalahan dengan baik.</li>
-                                            <li>Memudahkan Debugging dan Pemeliharaan: Memberikan informasi jelas tentang kesalahan untuk membantu debugging.</li>
-                                            <li>Memastikan Pembersihan Sumber Daya: Menjamin bahwa sumber daya dibersihkan dengan benar menggunakan blok finally.</li>
-                                        </ul>
-                                    </dd>
-                                </dl>
-                                <br>
-
-                                <dl>
-                                    <dt><h6>Manfaat:</h6></dt>
-                                    <dd>
-                                        <ul>
-                                            <li>Menangani Error Spesifik: Memungkinkan penanganan berbagai jenis kesalahan secara spesifik.</li>
-                                            <li>Meningkatkan Pengalaman Pengguna: Memberikan umpan balik yang lebih baik dan mencegah program berhenti tiba-tiba.</li>
-                                            <li>Memudahkan Pengembangan dan Pengujian: Mempermudah pengembangan dan pengujian dengan penanganan kesalahan yang baik.</li>
-                                            <li>Mendukung Modularisasi Kode: Memisahkan logika penanganan kesalahan dari logika utama program.</li>
-                                            <li>Meningkatkan Keamanan: Menghindari potensi celah keamanan dari kesalahan yang tidak tertangani.</li>
-                                            <li>Memastikan Konsistensi Data: Menjaga konsistensi data dan validitas sumber daya.</li>
-                                        </ul>
-                                    </dd>
-                                </dl>
+                                <p></p>
                             </div>
                         </div>
                     </div>

@@ -116,7 +116,7 @@ pre {
     position: fixed;
     bottom: .4rem;
     right: .5rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--white1);
     z-index: 5;
     transform: translateX(100vw);
@@ -127,8 +127,8 @@ pre {
     content: '';
     position: absolute;
     background: var(--grey);
-    bottom: -6.7rem;
-    right: -6.7rem;
+    bottom: -7rem;
+    right: -7rem;
     width: 10rem;
     height: 10rem;
     z-index: -1;
@@ -138,7 +138,7 @@ pre {
 .grid-double .main .main-content {
     width: 100%;
     min-height: 100vh;
-    padding-bottom: 5rem;
+    padding-bottom: 20rem;
 }
 
 .grid-double .main .main-content .logo {
@@ -374,7 +374,7 @@ h6.h6 {
         position: fixed;
         top: .4rem;
         left: .5rem;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         color: var(--white1);
         z-index: 1;
         transform: translateX(-100vw);
@@ -385,8 +385,8 @@ h6.h6 {
         content: '';
         position: absolute;
         background: var(--grey);
-        top: -6.7rem;
-        left: -6.7rem;
+        top: -7rem;
+        left: -7rem;
         width: 10rem;
         height: 10rem;
         z-index: -1;

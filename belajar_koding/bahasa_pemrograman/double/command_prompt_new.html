@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Prompt</title>
+    
+    <!-- bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css custom link -->
+    <link rel="stylesheet" href="../../../assets/double/double-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="grid-double">
+            <!-- Aside box -->
+            <div class="aside bg-light">
+                <div class="aside-content">
+                    <!-- Sub Materi -->
+                    <div class="pilih-daftar">
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(1)">Command Prompt</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(2)">Manajemen File Dan Folder</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(3)">Mengelola Jaringan</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(4)">Batch File</button> </li>
+                        </ul>
+                    </div>
+
+                    <!-- Command Prompt -->
+                    <div class="daftar hide">
+                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Apa Itu Command Prompt</button> </li>
+                        </ul>
+                    </div>
+
+                    <!-- Manajemen File Dan Folder -->
+                    <div class="daftar hide">
+                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(2)">Mengelola File Dan Folder</button> </li>
+                        </ul>
+                    </div>
+
+                    <!-- Mengelola Jaringan -->
+                    <div class="daftar hide">
+                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Apa Itu Command Prompt</button> </li>
+                        </ul>
+                    </div>
+
+                    <!-- Batch File -->
+                    <div class="daftar hide">
+                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Apa Itu Command Prompt</button> </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Main box -->
+            <div class="main">
+                <!-- Show aside box -->
+                <div class="show-aside"><i class="fas fa-bars"></i></div>
+
+                <!-- Resize font -->
+                <div class="resize-font"><i class="fas fa-font"></i></div>
+                <div class="box-size">
+                    <div class="item-size translateX" onclick="resizeFont(18)">lg</div>
+                    <div class="item-size translateX" onclick="resizeFont(16)">md</div>
+                    <div class="item-size translateX" onclick="resizeFont(14)">sm</div>
+                    <div class="item-size translateX" onclick="resizeFont(12)">xm</div>
+                </div>
+                
+                <div class="main-content">
+                    <div class="logo">
+                        <img src="../assets/img/python.jpg" style="max-width: 400px;" alt="">
+                    </div>
+
+                    <!-- Command Prompt -->
+                    
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Apa Itu Python</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manajemen File Dan Folder -->
+
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Mengelola File Dan Folder</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                    <li>Kode</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <!-- Kode -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Kode</h5>
+                            <div class="teks">
+                                <ul style="list-style: decimal;">
+                                    <li><p><strong>dir</strong> : berfungsi untuk menampilkan daftar isi folder saat ini.</p> <pre class="card bg-light codeA">ls</pre></li>
+                                    <li><p><strong>cd</strong>
+                                        <ul>
+                                            <li><p>Berfungsi untuk masuk kedalam folder. Ketik "cd" diikuti dengan nama folder yang dituju.</p> <pre class="card bg-light codeA">cd documents</pre></li>
+                                            <li><p>Berfungsi untuk keluar dari folder.</p> <pre class="card bg-light codeA">cd ..</pre></li>
+                                        </ul>
+                                    </p></li>
+                                    <li><p><strong>md</strong> : Berfungsi untuk membuat folder baru. Ketik "md" diikuti dengan nama folder baru yang ingin dibuat.</p> <pre class="card bg-light codeA">md NewFolder</pre></li>
+                                    <li><p><strong>rd</strong>
+                                        <ul>
+                                            <li><p>Berfungsi untuk menghapus folder kosong. Ketik "rd" diikuti dengan nama folder baru yang ingin dihapus.</p> <pre class="card bg-light codeA">rd NewFolder</pre></li>
+                                            <li><p>Berfungsi untuk menghapus folder yang ada isinya. Kode "/s" untuk menghapus semua isi folder, "/q" untuk menghapus tanpa konfirmasi</p> <pre class="card bg-light codeA">rd /s /q NewFolder</pre></li>
+                                        </ul>
+                                    </p></li>
+                                    <li><p><strong>mv</strong>
+                                        <ul>
+                                            <li><p>Berfungsi untuk mengubah nama folder. Ketik "mv" diikuti dengan nama folder lama, dan diikuti dengan nama folder baru.</p> <pre class="card bg-light codeA">mv docs documents</pre></li>
+                                            <li><p>Berfungsi untuk mengubah nama file. Ketik "mv" diikuti dengan nama file lama, dan diikuti dengan nama file baru.</p> <pre class="card bg-light codeA">mv FileLama.txt FileBaru.txt</pre></li>
+                                            <li><p>Berfungsi untuk memindah file atau folder. Ketik `mv` diikuti dengan nama file atau folder yang ingin dipindahkan, lalu diikuti dengan lokasi tujuan.</p> <pre class="card bg-light codeA">mv NewFile.txt /home/user/Documents/</pre></li>
+                                        </ul>
+                                    </p></li>
+                                    <li><p><strong>touch</strong> : Berfungsi untuk membuat file baru. Ketik "touch" diikuti dengan nama file yang ingin dibuat.</p> <pre class="card bg-light codeA">touch NewFile.txt</pre></li>
+                                    <li><p><strong>rm</strong> : Berfungsi untuk menghapus file. Ketik "rm" diikuti dengan nama file yang ingin dihapus.</p> <pre class="card bg-light codeA">rm NewFile.txt</pre></li>
+                                    <li><p><strong>echo</strong>
+                                        <ul>
+                                            <li><p>Berfungsi untuk menampilkan teks.</p> <pre class="card bg-light codeA">echo "Hello World"</pre></li>
+                                            <li><p>Berfungsi untuk menulis isi file dengan menimpa teks yang sudah ada.</p> <pre class="card bg-light codeA">echo "Hello World" > NewFile.txt</pre></li>
+                                            <li><p>Berfungsi untuk menulis isi file dan menambah teks yang sudah ada.</p> <pre class="card bg-light codeA">echo "Hello World" >> NewFile.txt</pre></li>
+                                        </ul>
+                                    </p></li>
+                                    <li><p><strong>cat</strong> : Berfungsi untuk menampilkan isi file. Ketik "cat" diikuti dengan nama file yang ingin ditampilkan.</p> <pre class="card bg-light codeA">cat NewFile.txt</pre></li>
+                                    <li><p><strong>cp</strong> : Berfungsi untuk menyalin file atau folder. Ketik `cp` diikuti dengan nama file atau folder yang ingin disalin, lalu diikuti dengan lokasi tujuan.</p> <pre class="card bg-light codeA">cp NewFile.txt /home/user/Documents/</pre></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mengelola Jaringan -->
+
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Apa Itu Python</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batch File -->
+
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Apa Itu Python</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/double/double-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Dasar</title>
+    
+    <!-- bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css custom link -->
+    <link rel="stylesheet" href="../../../assets/double/double-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="grid-double">
+            <!-- Aside box -->
+            <div class="aside bg-light">
+                <div class="aside-content">
+                    <!-- Sub Materi -->
+                    <div class="pilih-daftar">
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(1)">Command Prompt</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(2)">Batch File</button> </li>
+                        </ul>
+                    </div>
+
+                    <!-- Command Prompt -->
+                    <div class="daftar hide">
+                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Command Prompt Atau Terminal</button> </li>
+                        </ul>
+                    </div>
+
+                    <!-- Batch File -->
+                    <div class="daftar hide">
+                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(2)">Pengenalan Batch File</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(3)">Perintah Batch File</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(4)">Variabel Batch File</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(5)">Percabangan Batch File</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(6)">Pengulangan Batch File</button> </li>
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(7)">Membuat Kode Sederhana</button> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main box -->
+            <div class="main">
+                <!-- Show aside box -->
+                <div class="show-aside"><i class="fas fa-bars"></i></div>
+
+                <!-- Resize font -->
+                <div class="resize-font"><i class="fas fa-font"></i></div>
+                <div class="box-size">
+                    <div class="item-size translateX" onclick="resizeFont(18)">lg</div>
+                    <div class="item-size translateX" onclick="resizeFont(16)">md</div>
+                    <div class="item-size translateX" onclick="resizeFont(14)">sm</div>
+                    <div class="item-size translateX" onclick="resizeFont(12)">xm</div>
+                </div>
+
+                <div class="main-content">
+                    <div class="logo">
+                        <img src="../assets/img/cmd.png" style="max-width: 500px;" alt="">
+                    </div>
+
+                    <!-- Command Prompt -->
+
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Command Prompt Atau Terminal</h2>
+                        
+                        <h4>Kode Dan Fungsinya</h4>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        Menampilkan daftar isi folder saat ini
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`ls`</code> pada command prompt atau terminal.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        Menampilkan folder aktif saat ini
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`pwd`</code> pada command prompt atau terminal.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Masuk kedalam folder
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`cd`</code> diikuti dengan nama folder untuk masuk kedalam folder tersebut. Contohnya, <code>`cd documents`</code> untuk masuk kedalam folder "documents".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFour">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Keluar dari folder
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`cd ..`</code> untuk keluar dari folder.</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFive">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                        Membuat folder baru
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`mkdir`</code> diikuti dengan nama folder baru yang ingin dibuat. Contohnya, <code>`mkdir NewFolder`</code> akan membuat folder baru dengan nama "NewFolder".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingSix">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                        Menghapus folder
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`rmdir`</code> diikuti dengan nama folder yang ingin dihapus. Contohnya, <code>`rmdir NewFolder`</code> akan menghapus folder dengan nama "NewFolder".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingSeven">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                                        Mengubah nama folder
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`mv`</code> diikuti dengan nama folder lama, dan diikuti dengan nama folder baru. Contohnya, <code>`mv docs documents`</code> akan mengubah nama folder dengan nama "docs" menjadi "documents".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingEight">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                                        Membuat file baru
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`touch`</code> diikuti dengan nama file yang ingin dibuat. Contohnya, <code>`touch NewFile.txt`</code> akan membuat file baru dengan nama "NewFile.txt".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingNine">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                                        Menghapus file
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`rm`</code> diikuti dengan nama file yang ingin dihapus. Contohnya, <code>`rm NewFile.txt`</code> akan menghapus file dengan nama "NewFile.txt".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTen">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                                        Mengubah nama file
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`mv`</code> diikuti dengan nama file lama, dan diikuti dengan nama file baru. Contohnya, <code>`mv FileLama.txt FileBaru.txt`</code> akan mengubah nama file dengan nama "FileLama.txt" menjadi "FileBaru.txt".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingEleven">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                                        Menulis isi file
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEleven" class="accordion-collapse collapse" aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`echo "Hello World" > NewFile.txt`</code> untuk menulis teks. perhatikan tanda <code>`>>`</code> untuk menambah teks dan tanda <code>`>`</code> untuk menimpa teks. Jika ada file dengan nama tersebut maka teks akan disimpan di dalamnya, dan jika tidak ada maka akan dibuatkan</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwelve">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                                        Menampilkan isi file
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`cat`</code> diikuti dengan nama file yang ingin ditampilkan. Contohnya, <code>`cat NewFile.txt`</code> untuk menampilkan isi dari file "NewFile.txt".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThirdteen">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirdteen" aria-expanded="false" aria-controls="flush-collapseThirdteen">
+                                        Menyalin file atau folder
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThirdteen" class="accordion-collapse collapse" aria-labelledby="flush-headingThirdteen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`cp`</code> diikuti dengan nama file atau folder yang ingin disalin, lalu diikuti dengan lokasi tujuan. Contohnya, <code>`cp NewFile.txt /home/user/Documents/`</code> akan menyalin file "NewFile.txt" ke folder "Documents" di dalam folder "user".</div>
+                                </div>
+                            </div>
+            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFourteen">
+                                    <button class="accordion-button collapsed text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFourteen" aria-expanded="false" aria-controls="flush-collapseFourteen">
+                                        Memindah file atau folder
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFourteen" class="accordion-collapse collapse" aria-labelledby="flush-headingFourteen" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">Ketik <code>`mv`</code> diikuti dengan nama file atau folder yang ingin dipindahkan, lalu diikuti dengan lokasi tujuan. Contohnya, <code>`mv NewFile.txt /home/user/Documents/`</code> akan memindahkan file "NewFile.txt" ke folder "Documents" di dalam folder "user".</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Batch File -->
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Pengenalan Batch File</h2>
+                        
+                        <!-- Apa Itu Batch File -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Apa Itu Batch File</h5>
+                            <div class="teks">
+                                Batch file adalah sebuah file teks yang berisi serangkaian perintah yang dapat dieksekusi secara otomatis oleh sistem operasi. Batch file digunakan untuk menyusun dan mengatur serangkaian tugas yang harus dilakukan secara berurutan atau dalam satu waktu tertentu. Biasanya, batch file digunakan untuk otomatisasi tugas-tugas rutin dalam lingkungan Windows, seperti menjalankan beberapa perintah sekaligus, mengatur pengaturan sistem, menjalankan program atau skrip, serta mengelola file dan folder. Dengan menggunakan batch file, pengguna dapat menghemat waktu dan usaha yang seharusnya diperlukan untuk menjalankan setiap perintah secara manual.
+                            </div>
+                        </div>
+        
+                        <!-- Apa Fungsi Batch File -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Apa Fungsi Batch File</h5>
+                            <div class="teks">
+                                <p>Batch file memiliki beberapa fungsi penting, antara lain</p>
+                                <ul class="list-unstyled tx-zero">
+                                    <li><h6 class="h6">1. Otomatisasi Tugas</h6> <p>Batch file digunakan untuk mengotomatisasi tugas-tugas rutin seperti menjalankan serangkaian perintah atau program secara berurutan. Dengan batch file, pengguna dapat menghindari keharusan mengetik dan menjalankan perintah secara manual setiap kali.</p></li>
+                                    <li><h6 class="h6">2. Pengaturan Sistem</h6> <p>Batch file memungkinkan pengguna untuk mengatur pengaturan sistem secara efisien. Misalnya, pengguna dapat menggunakan batch file untuk mengubah pengaturan jaringan, mengonfigurasi perangkat keras, mengelola layanan, dan melakukan tugas-tugas administratif lainnya.</p></li>
+                                    <li><h6 class="h6">3. Penjadwalan Tugas</h6> <p>Batch file memungkinkan penjadwalan tugas untuk dijalankan pada waktu yang ditentukan. Pengguna dapat membuat batch file dan menggunakan alat bantu sistem operasi seperti Task Scheduler untuk menjalankan batch file tersebut secara otomatis pada waktu yang ditentukan.</p></li>
+                                    <li><h6 class="h6">4. Penjadwalan Tugas</h6> <p>Batch file memungkinkan penjadwalan tugas untuk dijalankan pada waktu yang ditentukan. Pengguna dapat membuat batch file dan menggunakan alat bantu sistem operasi seperti Task Scheduler untuk menjalankan batch file tersebut secara otomatis pada waktu yang ditentukan.</p></li>
+                                    <li><h6 class="h6">5. Pengolahan File dan Folder</h6> <p>Batch file dapat digunakan untuk mengelola file dan folder. Pengguna dapat membuat batch file untuk menggabungkan, memindahkan, menghapus, atau mengubah nama file dan folder dengan cepat dan efisien.</p></li>
+                                    <li><h6 class="h6">6. Eksekusi Program dan Skrip</h6> <p>Batch file memungkinkan pengguna untuk menjalankan program atau skrip secara otomatis. Ini memungkinkan pengguna untuk menjalankan serangkaian perintah atau skrip yang kompleks dengan sekali klik atau melalui penjadwalan tugas.</p></li>
+                                </ul>
+                                <p>Dengan berbagai fungsi ini, batch file menjadi alat yang kuat untuk mengotomatisasi tugas-tugas dalam sistem operasi Windows, meningkatkan efisiensi, dan menghemat waktu.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Apa Yang Harus Dipelajari -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Apa Yang Harus Dipelajari</h5>
+                            <div class="teks">
+                                <p>Untuk memahami tentang batch file, ada beberapa hal yang harus dipelajari</p>
+                                <ul class="list-unstyled tx-zero">
+                                    <li><h6 class="h6">1. Dasar-Dasar Pemrograman</h6> <p>Memahami konsep dasar pemrograman seperti variabel, percabangan, pengulangan, dan fungsi sangat penting dalam menguasai batch file. Anda perlu memahami bagaimana perintah-perintah dalam batch file dieksekusi dan bagaimana mengelola aliran eksekusi dengan menggunakan kontrol logika.</p></li>
+                                    <li><h6 class="h6">2. Perintah Batch</h6> <p>Batch file menggunakan sejumlah perintah bawaan yang disediakan oleh sistem operasi. Anda perlu mempelajari perintah-perintah ini, termasuk sintaksisnya, opsi-opsi yang tersedia, dan cara menggunakannya. Contoh beberapa perintah yang umum digunakan adalah echo, set, if, for, call, dan pause.</p></li>
+                                    <li><h6 class="h6">3. Variabel Lingkungan</h6> <p>Batch file menggunakan variabel lingkungan untuk menyimpan dan mengelola data. Anda perlu memahami cara mendefinisikan variabel, memberikan nilai, dan mengaksesnya dalam batch file. Selain itu, juga penting untuk memahami variabel lingkungan bawaan yang disediakan oleh sistem operasi, seperti %USERNAME%, %DATE%, dan %TIME%.</p></li>
+                                    <li><h6 class="h6">4. Pengolahan File dan Folder</h6> <p>Salah satu fungsi utama batch file adalah pengolahan file dan folder. Anda perlu mempelajari perintah-perintah yang digunakan untuk mengelola file dan folder, seperti copy, move, del, dir, dan ren. Selain itu, pemahaman tentang wildcard dan cara menggunakannya dalam batch file juga diperlukan.</p></li>
+                                    <li><h6 class="h6">5. Penjadwalan Tugas</h6> <p>Batch file dapat digunakan untuk menjalankan tugas secara terjadwal. Anda perlu mempelajari cara menggunakan alat bantu sistem operasi, seperti Task Scheduler di Windows, untuk menjadwalkan dan menjalankan batch file pada waktu yang ditentukan.</p></li>
+                                </ul>
+                                <p>Selain itu, praktik secara aktif membuat dan menjalankan batch file juga akan membantu meningkatkan pemahaman Anda tentang konsep dan penggunaan batch file. Melalui eksperimen dan pengalaman, Anda dapat mengembangkan keterampilan dalam membuat batch file yang efektif dan efisien.</p>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Perintah Batch File</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Batch file adalah file teks yang berisi kumpulan perintah yang dapat dieksekusi secara berurutan oleh sistem operasi. Perintah-perintah dalam batch file dieksekusi secara berurutan dan otomatis oleh sistem operasi, sehingga memungkinkan otomatisasi tugas-tugas yang berulang atau kompleks. Berikut adalah beberapa perintah yang umum digunakan dalam batch file</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <div class="table-scroll">
+                                            <table class="table table-hover table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Perintah</th>
+                                                        <th>Fungsi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>@echo off</td>
+                                                        <td>Menghentikan tampilan perintah dalam batch file.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>echo</td>
+                                                        <td>Menampilkan teks atau variabel ke layar.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>title</td>
+                                                        <td>Memberi judul pada batch file</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>rem | :: </td>
+                                                        <td>Membuat komentar pada batch file</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>color</td>
+                                                        <td>Memberi warna pada background dan teks. Daftar selengkapnya di CMD ketik <h6 class="d-inline">help color</h6></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>set</td>
+                                                        <td>Membuat atau mengubah nilai variabel.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>cls</td>
+                                                        <td>Membersihkan jendela terminal</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>if</td>
+                                                        <td>Mengizinkan eksekusi perintah berdasarkan kondisi tertentu.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>for</td>
+                                                        <td>Melakukan iterasi melalui daftar item dan menjalankan perintah pada setiap item.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>goto</td>
+                                                        <td>Mengarahkan eksekusi ke label yang ditentukan.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>pause</td>
+                                                        <td>Menunda eksekusi batch file dan menunggu pengguna menekan tombol.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>exit</td>
+                                                        <td>Menghentikan eksekusi batch file dan keluar dari program.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Perintah Berdasarkan Fungsinya -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Perintah Berdasarkan Fungsinya</h5>
+                            <div class="teks">
+                                <p>Sebelumnya hanya beberapa perintah dasar yang sering digunakan dalam batch file. Ada banyak perintah lainnya yang tersedia untuk berbagai tugas seperti manipulasi file, pengaturan lingkungan, dan lain-lain. Perintah-perintah tersebut dapat digunakan dalam batch file untuk mencapai berbagai tujuan dan mengotomatisasi tugas-tugas dalam lingkungan Windows. Berikut beberapa perintah pada batch file berdasarkan fungsinya.</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: decimal;">
+                                            <li>Mengelola file dan folder
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">mkdir</h6> : Membuat direktori baru.</li>
+                                                    <li><h6 class="d-inline">rmdir</h6> : Menghapus direktori kosong.</li>
+                                                    <li><h6 class="d-inline">del</h6> : Menghapus file.</li>
+                                                    <li><h6 class="d-inline">copy</h6> : Menyalin file atau direktori.</li>
+                                                    <li><h6 class="d-inline">move</h6> : Memindahkan file atau direktori.</li>
+                                                    <li><h6 class="d-inline">ren</h6> : Mengganti nama file atau direktori.</li>
+                                                    <li><h6 class="d-inline">xcopy</h6> : Menyalin file dan direktori dengan opsi tambahan.</li>
+                                                    <li><h6 class="d-inline">attrib</h6> : Mengatur atribut file atau direktori.</li>
+                                                    <li><h6 class="d-inline">dir</h6> : Menampilkan daftar file dan direktori dalam folder tertentu.</li>
+                                                    <li><h6 class="d-inline">forfiles</h6> : Melakukan tindakan pada file atau direktori yang sesuai dengan filter yang ditentukan.</li>
+                                                </ul>
+                                            </li>
+            
+                                            <li>Menjalankan program atau aplikasi
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">start</h6> : Menjalankan program atau aplikasi.</li>
+                                                    <li><h6 class="d-inline">call</h6> : Memanggil batch file atau skrip lain dari dalam batch file saat ini.</li>
+                                                </ul>
+                                            </li>
+            
+                                            <li>Mengatur variabel lingkungan
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">set</h6> : Membuat atau mengubah nilai variabel.</li>
+                                                </ul>
+                                            </li>
+            
+                                            <li>Menjalankan perintah sistem
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">ping</h6> : Memeriksa konektivitas jaringan.</li>
+                                                    <li><h6 class="d-inline">ipconfig</h6> : Menampilkan informasi konfigurasi jaringan.</li>
+                                                    <li><h6 class="d-inline">tasklist</h6> : Menampilkan daftar proses yang berjalan.</li>
+                                                </ul>
+                                            </li>
+            
+                                            <li>Mengatur penjadwalan tugas
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">schtasks</h6> : Mengatur penjadwalan tugas untuk menjalankan batch file secara otomatis.</li>
+                                                </ul>
+                                            </li>
+            
+                                            <li>Membaca dan menulis file teks
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">echo</h6> : Menampilkan teks ke layar atau ke file.</li>
+                                                    <li><h6 class="d-inline">type</h6> : Menampilkan isi file teks.</li>
+                                                    <li><h6 class="d-inline">findstr</h6> : Mencari teks tertentu dalam file.</li>
+                                                </ul>
+                                            </li>
+            
+                                            <li>Menangani kesalahan dan logika
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">if</h6> : Mengizinkan eksekusi perintah berdasarkan kondisi tertentu.</li>
+                                                    <li><h6 class="d-inline">else</h6> : Mengatur kondisi alternatif dalam blok if.</li>
+                                                    <li><h6 class="d-inline">goto</h6> : Mengarahkan eksekusi ke label yang ditentukan.</li>
+                                                </ul>
+                                            </li>
+            
+                                            <li>Interaksi dengan pengguna
+                                                <ul class="mb-2 mt-2">
+                                                    <li><h6 class="d-inline">set /p</h6> : Menerima input dari pengguna dan menyimpannya dalam variabel.</li>
+                                                    <li><h6 class="d-inline">choice</h6> : Menunggu input dari pengguna dan menyimpan pilihan tersebut dalam variabel.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Variabel Batch File</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Variabel adalah sebuah wadah atau tempat yang memiliki nama dan digunakan untuk menyimpan sebuah nilai. Nilai yang disimpan di dalam variabel bisa berupa angka ataupun berupa teks.</p>
+        
+                                <p>Dalam batch file, variabel digunakan untuk menyimpan dan mengakses data. Ada beberapa jenis variabel yang dapat digunakan dalam batch file</p>
+
+                                <div>
+                                    <p>
+                                        <h6 class="h6">1. Variabel lingkungan (environment variables)</h6>
+                                        <p>Ini adalah variabel yang ditentukan di dalam sistem operasi dan dapat diakses oleh batch file. Berikut adalah beberapa variabel lingkungan umum yang sering digunakan dalam sistem operasi Windows dan fungsinya. Variabel-variabel lingkungan ini memberikan akses ke informasi penting dan lokasi dalam sistem operasi, memungkinkan batch file dan skrip untuk berinteraksi dengan lingkungan sistem dan melakukan tugas yang berhubungan dengan pengguna, konfigurasi, dan file sistem.</p>
+            
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        <div class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <div class="table-scroll">
+                                                    <table class="table table-hover table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Variabel Lingkungan</th>
+                                                                <th>Apa Yang Disimpan</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>%USERNAME%</td>
+                                                                <td>Menyimpan nama pengguna yang saat ini masuk ke sistem.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%USERPROFILE%</td>
+                                                                <td>Menyimpan jalur lengkap ke direktori profil pengguna yang saat ini masuk. Digunakan untuk mengakses file dan folder di dalam profil pengguna.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%TEMP% atau %TMP%</td>
+                                                                <td>Menyimpan jalur lengkap ke direktori temporer yang digunakan oleh sistem dan program untuk menyimpan file sementara.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%PATH%</td>
+                                                                <td>Menyimpan daftar direktori di mana sistem operasi mencari file eksekusi atau perintah. Dapat digunakan untuk menjalankan program atau perintah dari lokasi mana pun dalam sistem.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%COMPUTERNAME%</td>
+                                                                <td>Menyimpan nama komputer.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%SYSTEMROOT%</td>
+                                                                <td>Menyimpan jalur lengkap ke direktori instalasi sistem operasi.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%APPDATA%</td>
+                                                                <td>Menyimpan jalur lengkap ke direktori data aplikasi untuk pengguna saat ini.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%PROGRAMFILES%</td>
+                                                                <td>Menyimpan jalur lengkap ke direktori default untuk instalasi program (biasanya C:\Program Files).</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%PUBLIC%</td>
+                                                                <td>Menyimpan jalur lengkap ke direktori publik yang dapat diakses oleh semua pengguna pada komputer.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%HOMEPATH%</td>
+                                                                <td>Menyimpan jalur relatif ke direktori rumah pengguna saat ini.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%DATE%</td>
+                                                                <td>Menyimpan tanggal saat ini sesuai dengan format tanggal yang diatur dalam sistem operasi.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%TIME%</td>
+                                                                <td>Menyimpan waktu saat ini sesuai dengan format waktu yang diatur dalam sistem operasi.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <hr>
+            
+                                    <p>
+                                        <h6 class="h6">2. Variabel batch lokal</h6>
+                                        <p>Ini adalah variabel yang ditentukan dan digunakan hanya dalam lingkup batch file yang sama. Untuk mendefinisikan variabel lokal, gunakan sintaks "set nama_variabel=nilai". Contohnya, "set nama=John" akan mendefinisikan variabel lokal "nama" dengan nilai John. Variabel lokal hanya dapat diakses dalam batch file yang sama.</p>
+                                        
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        <div class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <div class="table-scroll">
+                                                    <table class="table table-hover table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Cara Membuat</th>
+                                                                <th>Fungsi</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>set <i>nama_variabel</i>=<i>value_variabel</i></td>
+                                                                <td>Untuk membuat variabel dengan tipe data String</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>set /a <i>nama_variabel</i>=<i>value_variabel</i></td>
+                                                                <td>Untuk membuat variabel dengan tipe data Integer</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>set /p <i>nama_variabel</i>="Ketikan Nama Anda : "</td>
+                                                                <td>Untuk membuat variabel input, value dari variabel diisi saat program dijalankan</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                    <hr>
+            
+                                    <p>
+                                        <h6 class="h6">3. Parameter command-line</h6>
+                                        <p>Anda dapat mengirimkan argumen ke batch file saat memanggilnya dari command-line. Argumen ini dapat diakses melalui variabel batch seperti %1, %2, dan seterusnya. Variabel %1 akan berisi nilai argumen pertama, %2 akan berisi nilai argumen kedua, dan seterusnya.</p>
+                                    </p>
+                                    <hr>
+            
+                                    <p>
+                                        <h6 class="h6">4. Variabel spesial</h6>
+                                        <p>Variabel spesial dalam batch file adalah variabel bawaan yang sudah didefinisikan sebelumnya dan memiliki nilai khusus yang dapat digunakan dalam script atau program batch. Mereka memberikan akses langsung ke informasi tertentu atau perilaku khusus dalam lingkungan batch file. Variabel spesial ini dapat digunakan dalam script batch untuk mendapatkan informasi waktu, tanggal, direktori kerja, dan hasil eksekusi perintah sebelumnya. Mereka membantu dalam mengelola alur eksekusi dan logika dalam batch file.</p>
+            
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        <div class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <div class="table-scroll">
+                                                    <table class="table table-hover table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Variabel Spesial</th>
+                                                                <th>Apa Yang Disimpan</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>%DATE%</td>
+                                                                <td>Menyimpan tanggal saat ini sesuai dengan format tanggal yang diatur dalam sistem operasi. Contohnya, "30/06/2023".</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%TIME%</td>
+                                                                <td>Menyimpan waktu saat ini sesuai dengan format waktu yang diatur dalam sistem operasi. Contohnya, "14:45:30.50".</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%RANDOM%</td>
+                                                                <td>Menyimpan nilai acak antara 0 dan 32.767. Ini sering digunakan untuk menghasilkan angka acak dalam script batch. Contohnya, "12345".</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%ERRORLEVEL%</td>
+                                                                <td>Menyimpan nilai kode keluaran dari perintah atau program yang terakhir dieksekusi. Nilai ini berguna untuk menguji keberhasilan atau kesalahan dari perintah sebelumnya.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%CD%</td>
+                                                                <td>Menyimpan jalur lengkap ke direktori kerja saat ini. Ini adalah direktori di mana batch file sedang dieksekusi.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%CMDCMDLINE%</td>
+                                                                <td>Menyimpan baris perintah lengkap yang digunakan untuk menjalankan batch file saat ini.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>%CMDEXTVERSION%</td>
+                                                                <td>Menyimpan versi ekstensi perintah CMD yang saat ini digunakan.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Membuat Variabel -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Membuat Variabel</h5>
+                            <div class="teks">
+                                <p>Berikut beberapa cara mendefinisikan variabel pada batch file.</p>
+        
+                                <p>Membuat variabel dengan tipe data String <pre class="card bg-light codeA">set nama_variabel=value_variabel</pre></p>
+        
+                                <p>Membuat variabel dengan tipe data Integer <pre class="card bg-light codeA">set /a nama_variabel=value_variabel</pre></p>
+        
+                                <p>Membuat variabel Input <pre class="card bg-light codeA">set /p nama_variabel="Type Your Name : "</pre></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Percabangan Batch File</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Percabangan adalah sebuah konstruksi yang digunakan untuk membuat keputusan atau melakukan perintah berdasarkan kondisi yang diberikan. Struktur dasar percabangan dalam batch file adalah menggunakan perintah IF dan ELSE. Berikut adalah contoh percabangan pada batch file</p>
+
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. IF Statement</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Pernyataan IF memungkinkan Anda untuk menjalankan serangkaian perintah jika kondisi tertentu terpenuhi. Contohnya</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+
+    // Statement IF
+                                    
+    IF %nama_variabel% == 1 (
+        perintah
+    )
+
+
+    // Statement IF - ELSE
+                                    
+    IF %nama_variabel% == 1 (
+        perintah 1
+    ) ELSE (
+        perintah 2
+    )
+
+
+    // Statement IF - ELSE IF - ELSE
+                                    
+    IF %nama_variabel% == 1 (
+        Perintah 1
+    ) ELSE IF %nama_variabel% == 2 (
+        perintah 2
+    ) ELSE (
+        perintah 3
+    )
+
+
+    // Catatan
+    -> Anda dapat menggunakan operator perbandingan lain untuk membandingkan nilai variabel dengan nilai yang diinginkan, contoh:
+        -> ==  (sama dengan)
+        -> NEQ (tidak sama dengan)
+        -> LSS (kurang dari)
+        -> LEQ (kurang dari atau sama dengan)
+        -> GTR (lebih besar dari)
+        -> GEQ (lebih besar dari atau sama dengan)
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. GOTO Statement</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Pernyataan GOTO memungkinkan Anda untuk melompat ke label tertentu dalam batch file. Contohnya</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                            
+    set /p pilihan=Masukkan pilihan (1 atau 2): 
+
+    IF %pilihan% == 1 (
+        goto option1
+    ) ELSE IF %pilihan% == 2 (
+        goto option2
+    ) ELSE (
+        goto invalid
+    )
+
+    :option1
+    echo Anda memilih opsi 1
+    goto end
+
+    :option2
+    echo Anda memilih opsi 2
+    goto end
+
+    :invalid
+    echo Pilihan tidak valid.
+    goto end
+
+    :end
+    echo Selesai.
+
+
+    // Catatan
+    -> Jika anda memasukan angka 1 maka label "option1" dan perintahnya akan dijalankan.
+    -> Jika anda memasukan angka 2 maka label "option2" dan perintahnya akan dijalankan.
+    -> Dan jika anda memasukan pilihan selain angka 1 dan 2 maka label "invalid" dan perintahnya akan dijalankan.
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">3. CHOICE statement</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Pernyataan CHOICE memungkinkan Anda untuk menampilkan pilihan kepada pengguna dan menjalankan perintah berdasarkan pilihan yang dipilih. Contohnya</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                            
+    echo Pilih bahasa yang ingin Anda gunakan:
+    echo 1. Bahasa Inggris
+    echo 2. Bahasa Spanyol
+    echo 3. Bahasa Prancis
+
+    CHOICE /C 123 /M "Masukkan pilihan Anda:"
+
+    IF %ERRORLEVEL% EQU 1 (
+        echo Anda memilih Bahasa Inggris.
+    ) ELSE IF %ERRORLEVEL% EQU 2 (
+        echo Usted ha elegido el idioma español. (Anda telah memilih Bahasa Spanyol.)
+    ) ELSE IF %ERRORLEVEL% EQU 3 (
+        echo Vous avez choisi la langue française. (Anda telah memilih Bahasa Prancis.)
+    ) ELSE (
+        echo Pilihan tidak valid.
+    )
+        
+    // Catatan
+    -> Pernyataan CHOICE dengan opsi /C 123 digunakan untuk menentukan pilihan yang valid, yaitu 1, 2, atau 3. Pesan "/M" menampilkan pesan "Masukkan pilihan Anda:".
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">4. Existence of Files/Folders</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Anda juga dapat menggunakan pernyataan pengkondisian untuk memeriksa keberadaan file atau folder. Contohnya</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    IF EXIST "C:\path\to\file.txt" (
+        echo File.txt ditemukan.
+    ) else (
+        echo File.txt tidak ditemukan.
+    )
+
+    // Catatan
+    -> Dalam contoh ini, pernyataan IF digunakan untuk memeriksa apakah file "file.txt" ada atau tidak pada path yang ditentukan.
+    -> Jika file tersebut ada, perintah di dalam blok IF akan dieksekusi dan pesan "File.txt ditemukan" akan ditampilkan.
+    -> Jika file tidak ada, perintah di dalam blok ELSE akan dieksekusi dan pesan "File.txt tidak ditemukan" akan ditampilkan.
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- Operator Perbandingan -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Operator Perbandingan</h5>
+                            <div class="teks">
+                                <p>Di dalam percabangan batch file juga ada operator perbandingan lain untuk membandingkan nilai variabel dengan nilai yang diinginkan. Berikut adalah beberapa operator perbandingan yang dapat digunakan dalam percabangan perintah IF pada batch file. Anda juga bisa melihat apa saja operatornya dengan mengetikan perintah "help if" pada CMD.</p>
+                                
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <div class="table-scroll">
+                                            <table class="table table-hover table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Operator Perbandingan</th>
+                                                        <th>Deskripsi</th>
+                                                        <th>Peruntukan</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>==</td>
+                                                        <td>Sama dengan</td>
+                                                        <td>Memeriksa kesamaan dua nilai (String)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>EQU</td>
+                                                        <td>Sama dengan</td>
+                                                        <td>Memeriksa kesamaan dua nilai (Integer)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NEQ</td>
+                                                        <td>Tidak sama dengan</td>
+                                                        <td>Memeriksa ketidaksamaan dua nilai</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>LSS</td>
+                                                        <td>Kurang dari</td>
+                                                        <td>Memeriksa apakah nilai pertama kurang dari nilai kedua</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>LEQ</td>
+                                                        <td>Kurang dari sama dengan</td>
+                                                        <td>Memeriksa apakah nilai pertama kurang dari atau sama dengan nilai kedua</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>GTR</td>
+                                                        <td>Lebih besar dari</td>
+                                                        <td>Memeriksa apakah nilai pertama lebih besar dari nilai kedua</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>GEQ</td>
+                                                        <td>Lebih besar dari sama dengan</td>
+                                                        <td>Memeriksa apakah nilai pertama lebih besar dari atau sama dengan nilai kedua</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Pengulangan Batch File</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Perulangan pada batch file adalah kemampuan untuk menjalankan serangkaian perintah berulang kali. Dalam batch file, ada beberapa cara untuk melakukan perulangan. Dua jenis perulangan yang umum digunakan adalah perulangan FOR dan perulangan DO - WHILE.</p>
+                                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. FOR</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Perulangan FOR digunakan untuk mengulangi serangkaian perintah untuk setiap item dalam satu atau lebih daftar item.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    FOR %%i in (1 2 3 4) do (
+    echo %%i
+    )
+
+
+    // Catatan
+    -> Dari contoh diatas, "%%i" adalah variabel index, dia ditulis dengan 2 tanda persen dan 1 karakter.
+    -> Selanjutnya "(1 2 3 4)" adalah daftar yang akan ditampilkan, setiap daftar dipisahkan dengan spasi.
+                                        </pre>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. DO - WHILE</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Perulangan ini digunakan untuk mengulangi serangkaian perintah selama kondisi tertentu terpenuhi dan akan terus dijalankan sampai kondisi yang ditentukan tidak lagi terpenuhi.</p>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    set /a counter=1
+
+    :loop
+    echo %counter%
+    set /a counter+=1
+    if %counter% LEQ 5 (
+        goto loop
+    )
+
+
+    // Catatan
+    -> Dari contoh diatas, variabel "counter" memiliki value 1.
+    -> Di dalam loop, variabel "counter" akan di tambah satu pada setiap pengulangannya.
+    -> Dan variabel "counter" akan di ulang selama dia kurang dari sama dengan 5.
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- Parameter Tambahan -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Parameter Tambahan</h5>
+                            <div class="teks">
+                                <p>Di dalam pengulangan pada batch file terdapat parameter tambahan yang memiliki fungsi-fungsi tertentu yang bisa anda gunakan. Anda bisa mempelajari lebih lanjut tentang pengulangan dengan masuk ke CMD dan ketikan perintah "help for", disitu terdapat banyak contoh penggunaan pengulangan dan juga parameter tambahan.</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <div class="table-scroll">
+                                            <table class="table table-hover table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Parameter</th>
+                                                        <th>Fungsi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>/D</td>
+                                                        <td>If set contains wildcards, then specifies to match against directory names instead of file names.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>/R</td>
+                                                        <td>Walks the directory tree rooted at [drive:]path, executing the FOR statement in each directory of the tree.  If no directory specification is specified after /R then the current directory is assumed.  If set is just a single period (.) character then it will just enumerate the directory tree.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>/L</td>
+                                                        <td>The set is a sequence of numbers from start to end, by step amount. So (1,1,5) would generate the sequence 1 2 3 4 5 and (5,-1,1) would generate the sequence (5 4 3 2 1)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>/F</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Membuat Kode Sederhana</h2>
+                        
+                        <!-- Projek UAS Sistem Operasi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Projek UAS Sistem Operasi</h5>
+                            <div class="teks">
+                                <p>Sebelumnya ini adalah contoh batch file yang saya buat sendiri untuk projek UAS sistem operasi, dan saya menaruhnya disini supaya bisa dijadikan sebagai bahan pebelajaran bagi kalian. Kode ini saya buat di windows 11, jadi jika OS kalian berbeda mungkin akan ada beberapa perintah yang tidak bisa dijalankan. Buat yang mau mengcopy silahkan dicopy. Berikut kodenya</p>
+        
+                                <dl>
+                                    <dd>
+                                        <button class="btn btn-outline-primary btn-sm" name="hiddenCode">tampilkan kode</button>
+                                    </dd>
+                                    <dd class="hiddenCode hide">
+                                        <div class="hide-code"><i class="fas fa-times"></i></div>
+                                        <pre class="card codeB code-box">
+                                            
+    @echo off
+    setlocal enabledelayedexpansion
+
+    :login
+        set /p user="Masukan Username   : "
+
+        if %user% == %USERNAME% goto menu
+
+        cls
+        echo Inputan Anda Salah . . .
+        goto login
+
+
+    :menu
+        cls
+        color 1F
+        echo.
+        echo [====================================================]
+        echo                    Daftar Menu 
+        echo [====================================================]
+        echo.
+        echo    [1] Penilaian Mahasiswa
+        echo    [2] Aplikasi Perhitungan
+        echo    [3] Menu Perbaikan Komputer
+        echo    [4] Menu Jaringan Komputer
+        echo    [5] Menu Aplikasi
+        echo    [6] Menu Setting
+        echo    [0] Keluar
+        echo.
+        echo [=====================================================]
+        echo.
+
+        set /p pilihan="Pilihan Anda : "
+
+        if %pilihan% == 1 goto penilaian_mahasiswa
+        if %pilihan% == 2 goto aplikasi_perhitungan
+        if %pilihan% == 3 goto menu_perbaikan_komputer
+        if %pilihan% == 4 goto menu_jaringan_komputer
+        if %pilihan% == 5 goto menu_aplikasi
+        if %pilihan% == 6 goto menu_setting
+        if %pilihan% == 0 exit
+
+        goto menu
+
+
+    :penilaian_mahasiswa
+        cls
+        set /p nim="NIM   : "
+        set /p nama="Nama  : "
+        set /p kelas="Kelas : "
+        set /p prodi="Prodi : "
+
+        cls
+        set mata_kuliah[1]=Kewirausahaan                & set sks[1]=2
+        set mata_kuliah[2]=Etika Profesi                & set sks[2]=2
+        set mata_kuliah[3]=Manajemen Jaringan           & set sks[3]=2
+        set mata_kuliah[4]=Sistem Operasi               & set sks[4]=2
+        set mata_kuliah[5]=Probabilitas Statistik       & set sks[5]=3
+        set mata_kuliah[6]=Manajemen Basis Data         & set sks[6]=3
+        set mata_kuliah[7]=Rekayasa Perangkat Lunak     & set sks[7]=3
+        set mata_kuliah[8]=Pemrograman Objek            & set sks[8]=4
+
+        :: Menginput nilai
+        for /L %%i in (1,1,8) do (
+            echo Mata Kuliah  : !mata_kuliah[%%i]!
+            echo SKS          : !sks[%%i]!
+
+            set /p nilai[%%i]="Nilai        : "
+            echo.
+            
+            if !nilai[%%i]! geq 81 ( if !nilai[%%i]! leq 100 ( set grade[%%i]=A  & set bobot[%%i]=4.00 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] )) 
+            if !nilai[%%i]! geq 76 ( if !nilai[%%i]! leq 80  ( set grade[%%i]=AB & set bobot[%%i]=3.50 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] ))
+            if !nilai[%%i]! geq 71 ( if !nilai[%%i]! leq 75  ( set grade[%%i]=B  & set bobot[%%i]=3.00 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] ))
+            if !nilai[%%i]! geq 66 ( if !nilai[%%i]! leq 70  ( set grade[%%i]=BC & set bobot[%%i]=2.50 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] ))
+            if !nilai[%%i]! geq 61 ( if !nilai[%%i]! leq 65  ( set grade[%%i]=C  & set bobot[%%i]=2.00 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] ))
+            if !nilai[%%i]! geq 56 ( if !nilai[%%i]! leq 60  ( set grade[%%i]=CD & set bobot[%%i]=1.50 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] ))
+            if !nilai[%%i]! geq 51 ( if !nilai[%%i]! leq 55  ( set grade[%%i]=D  & set bobot[%%i]=1.00 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] ))
+            if !nilai[%%i]! geq 0  ( if !nilai[%%i]! leq 50  ( set grade[%%i]=E  & set bobot[%%i]=0.00 & set /a total_bobot[%%i]=sks[%%i]*bobot[%%i] ))
+
+            set /a total_sks+=sks[%%i]
+            set /a total_bobot+=total_bobot[%%i]
+            
+        )
+
+
+        ::  Menyimpan teks ke dalam file txt
+        cls
+        echo. >> %nim%_%nama%.txt
+        echo [==================================================================] >> %nim%_%nama%.txt
+        echo    Mata Kuliah                     SKS     Nilai   Grade   Bobot     >> %nim%_%nama%.txt
+        echo [==================================================================] >> %nim%_%nama%.txt
+        echo. >> %nim%_%nama%.txt
+        for /L %%i in (1,1,8) do (
+            echo    !mata_kuliah[%%i]!    !sks[%%i]!        !nilai[%%i]!      !grade[%%i]!   !bobot[%%i]! >> %nim%_%nama%.txt
+        )
+        echo. >> %nim%_%nama%.txt
+        echo [==================================================================] >> %nim%_%nama%.txt
+        echo. >> %nim%_%nama%.txt
+
+        echo    NIM          :  %nim%          >> %nim%_%nama%.txt
+        echo    Nama         :  %nama%         >> %nim%_%nama%.txt
+        echo    Kelas        :  %kelas%        >> %nim%_%nama%.txt
+        echo    Prodi        :  %prodi%        >> %nim%_%nama%.txt
+        echo    Total SKS    :  %total_sks%    >> %nim%_%nama%.txt
+        echo    Total Bobot  :  %total_bobot%  >> %nim%_%nama%.txt
+
+        set /a ip=%total_bobot%/%total_sks%
+        echo    IP           :  %ip%           >> %nim%_%nama%.txt
+
+        echo Data Berhasil Disimpan . . .
+        echo.
+        pause
+
+
+        ::  Menampilkan isi file 
+        type %nim%_%nama%.txt
+        echo.
+        pause
+        goto menu
+
+
+    :aplikasi_perhitungan
+        cls
+        echo.
+        echo [=====================================================]
+        echo                Kalkulator Sederhana
+        echo               Ketik [x] Untuk Kembali
+        echo [=====================================================]
+        echo.
+
+        :loop
+            set /p input=
+            set /a hasil=%input%
+            echo %hasil%
+            echo.
+
+            if %input% == x  goto menu
+            goto loop
+
+
+    :menu_perbaikan_komputer
+        cls
+        echo.
+        echo [========================================================]
+        echo                 Menu Perbaikan Komputer
+        echo [========================================================]
+        echo.
+        echo    [1] Masalah Audio
+        echo    [2] Masalah Koneksi Internet
+        echo    [3] Masalah Printer
+        echo    [4] Masalah Windows Update
+        echo    [5] Masalah Koneksi Jaringan Kabel (Ethernet)
+        echo    [6] Masalah Bluetooth 
+        echo    [88] Kembali    [0] Keluar
+        echo.
+        echo [========================================================]
+        echo.
+
+        set /p perbaikan="Pilihan Anda : "
+
+        if %perbaikan% == 1  start msdt.exe -id AudioPlaybackDiagnostic
+        if %perbaikan% == 2  start msdt.exe -id NetworkDiagnosticsWeb
+        if %perbaikan% == 3  start msdt.exe -id PrinterDiagnostic
+        if %perbaikan% == 4  start msdt.exe -id WindowsUpdateDiagnostic
+        if %perbaikan% == 5  start msdt.exe -id NetworkDiagnosticsInbound
+        if %perbaikan% == 6  start msdt.exe -id BluetoothDiagnostic
+        if %perbaikan% == 88 goto menu
+        if %perbaikan% == 0  exit
+
+        goto menu_perbaikan_komputer
+        
+
+    :menu_jaringan_komputer
+        cls
+        echo.
+        echo [==================================================]
+        echo                Menu Jaringan Komputer
+        echo [==================================================]
+        echo.
+        echo    [1] Pengaturan Jaringan
+        echo    [2] Tampilkan Alamat IP
+        echo    [3] Periksa Koneksi Jaringan
+        echo    [4] Periksa Kecepatan Internet
+        echo    [88] Kembali     [0] Keluar
+        echo.
+        echo [==================================================]
+        echo.
+
+        set /p jaringan="Pilihan Anda : "
+
+        if %jaringan% == 1  start ms-settings:network
+        if %jaringan% == 2  ipconfig & pause
+        if %jaringan% == 3  ping -n 4 8.8.8.8 & pause
+        if %jaringan% == 4  "C:\speedtest\speedtest.exe" & pause
+        if %jaringan% == 88 goto menu
+        if %jaringan% == 0  exit
+
+        goto menu_jaringan_komputer
+
+
+    :menu_aplikasi
+        cls
+        echo.
+        echo [==================================================]
+        echo                     Menu Aplikasi
+        echo [==================================================]
+        echo.
+        echo    [1] Microsoft Office
+        echo    [2] Visual Studio Code
+        echo    [3] Google Chrome
+        echo    [4] Git Bash
+        echo    [5] Notepad
+        echo    [6] File Explorer
+        echo    [88] Kembali     [0] Keluar
+        echo.
+        echo [==================================================]
+        echo.
+
+        set /p aplikasi="Pilihan Anda : "
+
+        if %aplikasi% == 1  goto microsoft_office
+        if %aplikasi% == 2  goto visual_studio_code
+        if %aplikasi% == 3  goto google_chrome
+        if %aplikasi% == 4  goto git_bash
+        if %aplikasi% == 5  goto notepad
+        if %aplikasi% == 6  goto file_explorer
+        if %aplikasi% == 88 goto menu
+        if %aplikasi% == 0  exit
+
+        goto menu_aplikasi
+
+        :microsoft_office
+            cls
+            echo.
+            echo [=================================================]
+            echo                Microsoft Office
+            echo [=================================================]
+            echo.
+            echo    [1] Microsoft Word
+            echo    [2] Microsoft Power Point
+            echo    [3] Microsoft Excel
+            echo    [88] Kembali       [0] Exit
+            echo.
+            echo [=================================================]
+            echo.
+
+            set /p microsoft="Pilihan Anda : "
+
+            if %microsoft% == 1  start Winword.exe
+            if %microsoft% == 2  start powerpnt.exe
+            if %microsoft% == 3  start Excel.exe
+            if %microsoft% == 88 goto menu_aplikasi
+            if %microsoft% == 0  exit
+            
+            goto microsoft_office
+
+
+        :visual_studio_code
+            "C:\Users\user\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+            goto menu_aplikasi
+
+        :google_chrome
+            "C:\Program Files\Google\Chrome\Application\chrome.exe"
+            goto menu_aplikasi
+
+        :git_bash
+            "C:\Program Files\Git\git-bash.exe"
+            goto menu_aplikasi
+            
+        :notepad
+            start Notepad.exe
+            goto menu_aplikasi
+            
+        :file_explorer
+            start explorer.exe
+            goto menu_aplikasi
+
+
+    :menu_setting
+        cls
+        echo.
+        echo [==================================================]
+        echo                     Menu Setting
+        echo [==================================================]
+        echo.
+        echo    [1] Pengaturan Sistem
+        echo    [2] Pengaturan Tampilan
+        echo    [3] Pengaturan Suara
+        echo    [4] Pengaturan Tanggal Dan Waktu
+        echo    [5] Shutdown
+        echo    [6] Restart
+        echo    [88] Kembali     [0] Keluar
+        echo.
+        echo [==================================================]
+        echo.
+
+        set /p setting="Pilihan Anda : "
+
+        if %setting% == 1  start ms-settings:system
+        if %setting% == 2  start ms-settings:display
+        if %setting% == 3  start ms-settings:sound
+        if %setting% == 4  start ms-settings:dateandtime
+        if %setting% == 5  shutdown /s /f /t 0
+        if %setting% == 6  shutdown /r /t 0
+        if %setting% == 88 goto menu
+        if %setting% == 0  exit
+
+        goto menu_setting
+
+
+    endlocal
+                                        </pre>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/double/double-script.js"></script>
+</body>
+</html>

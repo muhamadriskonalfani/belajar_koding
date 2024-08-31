@@ -69,8 +69,8 @@ showAside.addEventListener('click', () => {
 // Show hidden code
 hiddenCodeBtn.forEach((button, index) => {
     button.addEventListener('click', () => {
-        hiddenCodeBtn.forEach((btn) => btn.classList.remove('btn-primary', 'text-white'));
-        hiddenCodeBtn[index].classList.add('btn-primary', 'text-white');
+        hiddenCodeBtn.forEach((btn) => btn.classList.remove('text-primary'));
+        hiddenCodeBtn[index].classList.add('text-primary');
         hiddenCodeBox.forEach((box) => box.classList.add('hide'));
         hiddenCodeBox[index].classList.remove('hide');
         setTimeout(() => {
@@ -115,12 +115,15 @@ hiddenTextBtn.forEach((button, index) => {
         if(hiddenText[index].classList.contains('hide')) {
             hiddenTextBtn[index].innerText = 'sembunyikan';
             hiddenText[index].classList.remove('hide');
+            hiddenText[index].style.height = '0';
             hiddenText[index].style.height = hiddenText[index].scrollHeight + 'px';
             
         } else {
             hiddenTextBtn[index].innerText = 'baca selengkapnya';
             hiddenText[index].style.height = '0';
-            hiddenText[index].classList.add('hide'); 
+            setTimeout(() => {
+                hiddenText[index].classList.add('hide'); 
+            }, 500)
         }
     });
 });

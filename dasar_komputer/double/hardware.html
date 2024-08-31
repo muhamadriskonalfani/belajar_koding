@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware</title>
+    
+    <!-- bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css custom link -->
+    <link rel="stylesheet" href="../../assets/double/double-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="grid-double">
+            <!-- Aside box -->
+            <div class="aside bg-light">
+                <div class="aside-content">
+                    <!-- Sub Materi -->
+                    <div class="pilih-daftar">
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="pilihDaftar(1)">Hardware</button> </li>
+                        </ul>
+                    </div>
+
+                    <!-- Hardware -->
+                    <div class="daftar hide">
+                        <button type="button" class="btn text-dark teks exit" onclick="closeDaftar()"><i class="fa fa-arrow-left"></i> Kembali</button>
+                        <ul class="list-unstyled">
+                            <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Apa Itu Hardware</button> </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Main box -->
+            <div class="main">
+                <!-- Show aside box -->
+                <div class="show-aside"><i class="fas fa-bars"></i></div>
+
+                <!-- Resize font -->
+                <div class="resize-font"><i class="fas fa-font"></i></div>
+                <div class="box-size">
+                    <div class="item-size translateX" onclick="resizeFont(18)">lg</div>
+                    <div class="item-size translateX" onclick="resizeFont(16)">md</div>
+                    <div class="item-size translateX" onclick="resizeFont(14)">sm</div>
+                    <div class="item-size translateX" onclick="resizeFont(12)">xm</div>
+                </div>
+                
+                <div class="main-content">
+                    <div class="logo">
+                        <img src="../assets/img/python.jpg" style="max-width: 400px;" alt="">
+                    </div>
+
+                    <!-- Hardware -->
+                    
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Apa Itu Python</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/double/double-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar C++</title>
+    
+    <!-- bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css custom link -->
+    <link rel="stylesheet" href="../../assets/single/single-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="grid-single">
+            <!-- Aside box -->
+            <div class="aside bg-light">
+                <div class="aside-content">
+                    <ul class="list-unstyled">
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Apa Itu Komputer</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">-</button> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main box -->
+            <div class="main">
+                <!-- Show aside box -->
+                <div class="show-aside"><i class="fas fa-bars"></i></div>
+
+                <!-- Resize font -->
+                <div class="resize-font"><i class="fas fa-font"></i></div>
+                <div class="box-size">
+                    <div class="item-size translateX" onclick="resizeFont(18)">lg</div>
+                    <div class="item-size translateX" onclick="resizeFont(16)">md</div>
+                    <div class="item-size translateX" onclick="resizeFont(14)">sm</div>
+                    <div class="item-size translateX" onclick="resizeFont(12)">xm</div>
+                </div>
+    
+                <div class="main-content">
+                    <div class="logo">
+                        <img src="../assets/img/html.png" style="max-width: 500px;" alt="">
+                    </div>
+
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Apa Itu Komputer</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                    <li>Bagian Utama Komputer</li>
+                                    <li>Jenis Komputer</li>
+                                    <li>Fungsi Komputer</li>
+                                    <li>Sistem Operasi</li>
+                                    <li>Penggunaan Komputer</li>
+                                    <li>Sejarah Komputer</li>
+                                    <li>Kecerdasan Buatan (AI)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Komputer adalah mesin yang dirancang untuk melakukan berbagai tugas seperti perhitungan, pemrosesan data, penyimpanan, dan manipulasi informasi. Komputer bekerja berdasarkan prinsip "input-proses-output".</p>
+                            </div>
+                        </div>
+
+                        <!-- Bagian Utama Komputer -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Bagian Utama Komputer</h5>
+                            <div class="teks">
+                                <p>Komputer terdiri dari beberapa komponen utama:</p>
+                                <ul style="list-style: decimal;">
+                                    <li><strong>Hardware</strong>: Bagian fisik dari komputer seperti CPU, RAM, hard drive, monitor, keyboard, dan mouse.</li>
+                                    <li><strong>Software</strong>: Program dan aplikasi yang berjalan di komputer, seperti sistem operasi (misalnya, Windows, macOS, Linux) dan aplikasi (misalnya, Microsoft Office, browser web, game).</li>
+                                    <li><strong>Firmware</strong>: Perangkat lunak yang tertanam pada perangkat keras dan bertindak sebagai penghubung antara perangkat keras dan perangkat lunak.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Jenis Komputer -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Jenis Komputer</h5>
+                            <div class="teks">
+                                <ul style="list-style: decimal;">
+                                    <li><strong>Komputer Desktop</strong>: Digunakan di rumah atau kantor, biasanya terdiri dari unit terpisah seperti monitor, CPU, dan periferal lainnya.</li>
+                                    <li><strong>Laptop</strong>: Komputer portabel yang menggabungkan monitor, keyboard, dan komponen lainnya dalam satu perangkat.</li>
+                                    <li><strong>Tablet</strong>: Komputer dengan layar sentuh tanpa keyboard fisik, lebih kecil dan lebih mudah dibawa daripada laptop.</li>
+                                    <li><strong>Server</strong>: Komputer khusus yang menyediakan layanan untuk komputer lain di jaringan.</li>
+                                    <li><strong>Superkomputer</strong>: Komputer berkecepatan tinggi yang digunakan untuk tugas yang membutuhkan kekuatan pemrosesan besar, seperti simulasi ilmiah atau analisis data yang rumit.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Fungsi Komputer -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Fungsi Komputer</h5>
+                            <div class="teks">
+                                <ul style="list-style: decimal;">
+                                    <li><strong>Pemrosesan Data</strong>: Mengolah data input menjadi output yang berarti.</li>
+                                    <li><strong>Penyimpanan Data</strong>: Komputer dapat menyimpan data dalam berbagai jenis penyimpanan seperti hard drive atau cloud.</li>
+                                    <li><strong>Komunikasi</strong>: Komputer dapat terhubung ke internet atau jaringan untuk berkomunikasi dengan perangkat lain.</li>
+                                    <li><strong>Otomasi Tugas</strong>: Komputer dapat menjalankan tugas-tugas otomatis, seperti pemrosesan kata, perhitungan, dan pengelolaan database.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sistem Operasi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Sistem Operasi</h5>
+                            <div class="teks">
+                                <p>Sistem operasi adalah perangkat lunak yang mengelola perangkat keras komputer dan menyediakan layanan umum untuk program aplikasi. Contoh sistem operasi adalah:</p>
+                                <ul style="list-style: decimal;">
+                                    <li><strong>Windows</strong>: Digunakan di banyak komputer desktop dan laptop.</li>
+                                    <li><strong>macOS</strong>: Sistem operasi eksklusif untuk komputer Apple.</li>
+                                    <li><strong>Linux</strong>: Sistem operasi open-source yang sering digunakan di server dan beberapa komputer pribadi.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Penggunaan Komputer -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Penggunaan Komputer</h5>
+                            <div class="teks">
+                                <ul style="list-style: decimal;">
+                                    <li><strong>Pendidikan</strong>: Komputer digunakan dalam pengajaran dan pembelajaran, baik di kelas maupun online.</li>
+                                    <li><strong>Bisnis</strong>: Digunakan untuk pengelolaan keuangan, komunikasi, pemasaran, dan produksi.</li>
+                                    <li><strong>Hiburan</strong>: Komputer digunakan untuk bermain game, menonton film, mendengarkan musik, dan berinteraksi di media sosial.</li>
+                                    <li><strong>Penelitian dan Ilmu Pengetahuan</strong>: Digunakan untuk simulasi, analisis data, dan eksperimen.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Sejarah Komputer -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Sejarah Komputer</h5>
+                            <div class="teks">
+                                <p>Komputer telah berkembang pesat dari generasi ke generasi:</p>
+                                <ul style="list-style: decimal;">
+                                    <li><strong>Generasi Pertama (1940-1956)</strong>: Menggunakan tabung vakum, besar dan panas.</li>
+                                    <li><strong>Generasi Kedua (1956-1963)</strong>: Menggunakan transistor, lebih kecil dan lebih efisien.</li>
+                                    <li><strong>Generasi Ketiga (1964-1971)</strong>: Menggunakan sirkuit terpadu (IC), lebih cepat dan lebih kecil.</li>
+                                    <li><strong>Generasi Keempat (1971-sekarang)</strong>: Menggunakan mikroprosesor, memungkinkan pembuatan komputer pribadi.</li>
+                                    <li><strong>Generasi Kelima (Masa Depan)</strong>: Fokus pada kecerdasan buatan dan komputasi kuantum.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Kecerdasan Buatan (AI) -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Kecerdasan Buatan (AI)</h5>
+                            <div class="teks">
+                                <p>Komputer modern semakin dilengkapi dengan teknologi kecerdasan buatan (AI), yang memungkinkan mereka untuk belajar dari data, mengenali pola, dan membuat keputusan secara otomatis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Apa Itu Komputer</h2>
+
+                        <!-- Daftar Isi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Daftar Isi</h5>
+                            <div class="teks">
+                                <ul>
+                                    <li>Definisi</li>
+                                    <li>Bagian Utama Komputer</li>
+                                    <li>Jenis Komputer</li>
+                                    <li>Fungsi Komputer</li>
+                                    <li>Sistem Operasi</li>
+                                    <li>Penggunaan Komputer</li>
+                                    <li>Sejarah Komputer</li>
+                                    <li>Kecerdasan Buatan (AI)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Komputer adalah mesin yang dirancang untuk melakukan berbagai tugas seperti perhitungan, pemrosesan data, penyimpanan, dan manipulasi informasi. Komputer bekerja berdasarkan prinsip "input-proses-output".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/single/single-script.js"></script>
+</body>
+</html>

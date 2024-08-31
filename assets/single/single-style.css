@@ -45,6 +45,14 @@ body {
     overflow: hidden;
 }
 
+.card, .card-body {
+    border: none;
+}
+
+pre {
+    color: green !important;
+}
+
 
 /* Aside */
 
@@ -108,7 +116,7 @@ body {
     position: fixed;
     bottom: .4rem;
     right: .5rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--white1);
     z-index: 5;
     transform: translateX(100vw);
@@ -119,8 +127,8 @@ body {
     content: '';
     position: absolute;
     background: var(--grey);
-    bottom: -6.7rem;
-    right: -6.7rem;
+    bottom: -7rem;
+    right: -7rem;
     width: 10rem;
     height: 10rem;
     z-index: -1;
@@ -130,7 +138,7 @@ body {
 .grid-single .main .main-content {
     width: 100%;
     min-height: 100vh;
-    padding-bottom: 5rem;
+    padding-bottom: 20rem;
 }
 
 .grid-single .main .main-content .logo {
@@ -178,19 +186,19 @@ body {
 /* Support Class */
 
 .judul1 {
-    font-size: 24px;
+    font-size: 24px !important;
 }
 
 .judul2 {
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
 .judul3 {
-    font-size: 16px;
+    font-size: 16px !important;
 }
 
 .teks {
-    font-size: 14px;
+    font-size: 14px !important;
     line-height: 24px;
 }
 
@@ -252,6 +260,10 @@ h6.h6 {
     transition: transform .2s;
 }
 
+.hiddenTextBtn.plain {
+    box-shadow: none;
+}
+
 .hiddenTextBtn:hover {
     transform: translateY(2px);
 }
@@ -263,12 +275,12 @@ h6.h6 {
 .hiddenText {
     display: block;
     /* height: 0; */
-    background: var(--bg-light);
+    background: var(--white1);
     transition: .5s;
 }
 
 .hiddenText.hide {
-    /* display: none; */
+    display: none;
 }
 
 
@@ -294,7 +306,7 @@ h6.h6 {
     position: fixed;
     top: .4rem;
     right: .5rem;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--white1);
     z-index: 4;
     transform: translateX(100vw);
@@ -305,8 +317,8 @@ h6.h6 {
     content: '';
     position: absolute;
     background: var(--grey);
-    top: -6.7rem;
-    right: -6.7rem;
+    top: -7rem;
+    right: -7rem;
     width: 10rem;
     height: 10rem;
     z-index: -1;
@@ -366,7 +378,7 @@ h6.h6 {
         position: fixed;
         top: .4rem;
         left: .5rem;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         color: var(--white1);
         z-index: 1;
         transform: translateX(-100vw);
@@ -377,8 +389,8 @@ h6.h6 {
         content: '';
         position: absolute;
         background: var(--grey);
-        top: -6.7rem;
-        left: -6.7rem;
+        top: -7rem;
+        left: -7rem;
         width: 10rem;
         height: 10rem;
         z-index: -1;

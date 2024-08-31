@@ -1,0 +1,2490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database MySQL</title>
+    
+    <!-- bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- css custom link -->
+    <link rel="stylesheet" href="../../../assets/single/single-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="grid-single">
+            <!-- Aside box -->
+            <div class="aside bg-light">
+                <div class="aside-content">
+                    <ul class="list-unstyled">
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(1)">Database</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(2)">DBMS MySQL</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(3)">Query MySQL</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(4)">DDL Atau Data Definition Language</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(5)">DML Atau Data Manipulation Language</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(6)">DCL Atau Data Control Language</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(7)">Export Dan Import MySQL</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(8)">Primary Key</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(9)">Foreign Key</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(10)">Operator Logika</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(11)">Agregat MySQL</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(12)">Statement Group By</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(13)">Pengurutan Data Order By</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(14)">Alias Column MySQL</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(15)">Pencarian String Like Query</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(16)">Select Limit</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(17)">On Delete Cascade</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(18)">Join Atau Penggabungan Tabel</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(19)">View Pada Tabel</button> </li>
+                        <li> <button type="button" class="btn text-dark teks" onclick="showPage(20)">Data Trigger</button> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main box -->
+            <div class="main">
+                <!-- Show aside box -->
+                <div class="show-aside"><i class="fas fa-bars"></i></div>
+
+                <!-- Resize font -->
+                <div class="resize-font"><i class="fas fa-font"></i></div>
+                <div class="box-size">
+                    <div class="item-size translateX" onclick="resizeFont(18)">lg</div>
+                    <div class="item-size translateX" onclick="resizeFont(16)">md</div>
+                    <div class="item-size translateX" onclick="resizeFont(14)">sm</div>
+                    <div class="item-size translateX" onclick="resizeFont(12)">xm</div>
+                </div>
+                
+                <div class="main-content">
+                    <div class="logo">
+                        <img src="../assets/img/mysql.png" style="max-width: 500px;" alt="">
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Database</h2>
+            
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Database adalah kumpulan informasi yang disimpan didalam media penyimpanan secara sistematik sehingga dapat diperiksa menggunakan suatu program untuk memperoleh informasi dari basis data tersebut.</p>
+                            </div>
+                        </div>
+            
+                        <!-- Database Meliputi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Database Meliputi</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li><h6>DBMS</h6></li>
+                                    <li><h6>Entitas / tabel</h6></li>
+                                    <li><h6>Atribut</h6></li>
+                                    <li><h6>Tupple / Record</h6></li>
+                                    <li><h6>Data value</h6></li>
+                                    <li><h6>Kunci / Key</h6></li>
+                                    <li><h6>Relasi</h6></li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <!-- Penjelasan -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Penjelasan</h5>
+                            <div class="teks">
+                                <ul style="list-style: decimal;">
+                                    <li><p><h6 class="d-inline">DBMS :</h6> Database Management System adalah aplikasi yang digunakan untuk mengoperasikan sebuah database. Contohnya MySQL, PostgreSQL, Oracle Database, dan sebagainya.</p></li>
+                                    <li><p><h6 class="d-inline">Entitas :</h6> Entitas juga bisa disebut sebagai nama table yang berada pada database.</p></li>
+                                    <li><p><h6 class="d-inline">Atribut :</h6> Atribut berada dalam sebuah entitas atau tabel, contoh tabel 'tb_mahasiswa' memiliki artibut 'id_mahasiswa', 'nama_mahasiswa', dan sebagainya.</p></li>
+                                    <li><p><h6 class="d-inline">Record :</h6> Record adalah rekaman suatu data yang meliputi semua atribut pada sebuah identitas. Record adalah semua data value dalam satu baris pada tabel.</p></li>
+                                    <li><p><h6 class="d-inline">Data Value :</h6> Data value adalah isi dari sebuah kolom pada tabel.</p></li>
+                                    <li><p><h6 class="d-inline">Key :</h6> Kunci atau Key adalah data value yang membedakan antara satu record dengan record yang lain, ada 2 jenis key yaitu.</p>
+                                        <ul style="list-style: circle;">
+                                            <li><p><h6 class="d-inline">PRIMARY KEY :</h6> Adalah kunci yang digunakan sebagai pembeda suatu record dengan record yang lain.</p></li>
+                                            <li><p><h6 class="d-inline">FOREIGN KEY :</h6> Adalah kunci yang digunakan untuk menghubungkan atribut 1 dengan atribut PRIMARY KEY di tabel lain.</p></li>
+                                        </ul>
+                                    </li>
+                                    <li><p><h6 class="d-inline">Relasi :</h6> Relasi adalah hubungan antar entitas atau tabel pada sebuah database.</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">DBMS MySQL</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>MySQL adalah sistem manajemen basis data relasional (RDBMS) yang populer dan sering digunakan untuk menyimpan, mengelola, dan mengambil data. Di dalam MySQL, ada yang dinamakan sebagai query. Query MySQL adalah perintah-perintah atau pernyataan yang digunakan untuk berinteraksi dengan basis data MySQL.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Query MySQL -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Query MySQL</h5>
+                            <div class="teks">
+                                <P>Berikut beberapa perintah dasar yang harus diketahui sebelum mengoperasikan sebuah database pada MySQL.</P>
+                                <ul style="list-style: circle;">
+                                    <li><p><h6 class="d-inline">Login :</h6> Hal pertama sebelum mengelola sebuah database adalah melakukan login. Anda bisa login sebagai user ataupun sebagai root.</p> <pre class="card bg-light codeA">mysql -u username -p</pre></li>
+                                    <li><p><h6 class="d-inline">Logout :</h6> Anda juga bisa melakukan logout untuk keluar dari user atau root.</p> <pre class="card bg-light codeA">exit</pre></li>
+                                    <li><p><h6 class="d-inline">Menampilkan semua database :</h6> Setelah login, Anda bisa menampilkan semua database dari user tersebut.</p> <pre class="card bg-light codeA">SHOW DATABASES;</pre></li>
+                                    <li><p><h6 class="d-inline">Memilih sebuah database :</h6> Sebelum mengelola sebuah database, Anda harus memilih database mana yang ingin Anda kelola.</p> <pre class="card bg-light codeA">USE dbname;</pre></li>
+                                    <li><p><h6 class="d-inline">Menampilkan semua tabel :</h6> Setelah memilih database, Anda bisa menampilkan semua tabel yang ada pada database tersebut.</p> <pre class="card bg-light codeA">SHOW TABLES;</pre></li>
+                                    <li><p><h6 class="d-inline">Menampilkan deskripsi tabel :</h6> Digunakan untuk menampilkan deskripsi dari sebuah tabel seperti atribut, tipe data, kunci, dan sebagainya.</p> <pre class="card bg-light codeA">DESC tbname;</pre></li>
+                                    <li><p><h6 class="d-inline">Menampilkan komposisi tabel :</h6> Digunakan untuk menampilkan perintah bagaimana sebuah tabel dibuat.</p> <pre class="card bg-light codeA">SHOW CREATE TABLE tbname</pre></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Query MySQL</h2>
+            
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Query adalah syntax atau perintah yang digunakan untuk mengakses dan menampilkan data pada sistem database. Query juga digunakan untuk membuat dan menghapus database atau tabel, menambahkan data value atau record, memberikan hak akses kepada user, membuat data saling berinteraksi, dan masih banyak lagi.</p>
+                            </div>
+                        </div>
+            
+                        <!-- Macam-Macam Query SQL -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Macam-Macam Query SQL</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li><h6>DDL atau data definition language</h6></li>
+                                    <li><h6>DML atau data manipulation language</h6></li>
+                                    <li><h6>DCL atau data control language</h6></li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <!-- DDL atau Data Definition Language -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">DDL atau Data Definition Language</h5>
+                            <div class="teks">
+                                <p>DDL atau Data Definition Language digunakan untuk mendefinisikan data pada database. Definisi lain, DDL digunakan untuk mengelola database, tabel, ataupun atribut pada tabel. Tidak sampai pada data value atau record.</p>
+                                <h6>Query pada DDL</h6>
+                                <ul style="list-style: circle;">
+                                    <li><p><h6 class="d-inline">CREATE :</h6> digunakan untuk membuat database maupun tabel</p></li>
+                                    <li><p><h6 class="d-inline">ALTER :</h6> digunakan untuk merubah stuktur tabel</p></li>
+                                    <li><p><h6 class="d-inline">DROP :</h6> digunakan untuk menghapus database maupun tabel</p></li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <!-- DML atau Data Manipulation Language -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">DML atau Data Manipulation Language</h5>
+                            <div class="teks">
+                                <p>DML atau Data Manipulation Language digunakan untuk memanipulasi data pada tabel yang telah dibuat. Definisi lain, DML digunakan untuk mengelola data value atau record. Seperti menampilkan, menambah, mengubah, dan menghapus data.</p>
+                                <h6>Query pada DML</h6>
+                                <ul style="list-style: circle;">
+                                    <li><p><h6 class="d-inline">SELECT :</h6> digunakan untuk menampilkan data value pada tabel</p></li>
+                                    <li><p><h6 class="d-inline">INSERT :</h6> digunakan untuk mengisi data value pada tabel</p></li>
+                                    <li><p><h6 class="d-inline">UPDATE :</h6> digunakan untuk mengubah data value pada tabel</p></li>
+                                    <li><p><h6 class="d-inline">DELETE :</h6> digunakan untuk menghapus data value pada tabel</p></li>
+                                </ul>
+                            </div>
+                        </div>
+            
+                        <!-- DCL atau Data Control Language -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">DCL atau Data Control Language</h5>
+                            <div class="teks">
+                                <p>DCL atau Data Control Language adalah bagian dari bahasa SQL yang digunakan untuk mengelola hak akses dan izin pengguna dalam sebuah basis data.</p> 
+                                <h6>Query pada DCL</h6>
+                                <ul style="list-style: circle;">
+                                    <li><p><h6 class="d-inline">GRANT :</h6> digunakan untuk mengizinkan user mengakses tabel dalam database</p></li>
+                                    <li><p><h6 class="d-inline">REVOKE :</h6> digunakan untuk membatalkan izin hak akses user</p></li>
+                                    <li><p><h6 class="d-inline">COMMIT :</h6> digunakan untuk menetapkan penyimpanan database</p></li>
+                                    <li><p><h6 class="d-inline">ROLLBACK :</h6> digunakan untuk membatalkan penyimpanan database</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">DDL Atau Data Definition Language</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>DDL atau Data Definition Language digunakan untuk mendefinisikan data pada database. Definisi lain, DDL digunakan untuk mengelola database, tabel, ataupun atribut pada tabel. Tidak sampai pada data value atau record.</p>
+                            </div>
+                        </div>
+        
+                        <!-- DDL Meliputi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">DDL Meliputi</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li><h6>CREATE</h6></li>
+                                    <li><h6>ALTER</h6></li>
+                                    <li><h6>DROP</h6></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- CREATE -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">CREATE</h5>
+                            <div class="teks">
+                                <p><i>CREATE</i> digunakan untuk membuat database atau tabel. contoh membuat database dengan nama 'db_kampus' dan tabel dengan nama 'tb_mahasiswa'.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: circle;" class="stick-list">
+                                            <li><p>Membuat database baru</p> <pre class="card bg-light codeA">CREATE DATABASE db_kampus;</pre></li>
+                                            <li><p>Membuat tabel baru</p> <pre class="card bg-light codeA">CREATE TABLE tb_mahasiswa;</pre></li>
+                                            <li><p>Membuat database atau tabel dengan 'IF NOT EXIST'</p> <pre class="card bg-light codeA">CREATE DATABASE IF NOT EXIST db_kampus;</pre> </li>
+                                        </ul>
+                                        <p><i>IF NOT EXIST digunakan untuk mengecek apakah ada database atau tabel dengan nama tersebut. jika ada maka tidak dibuat dan jika tidak ada maka dibuat</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- ALTER -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">ALTER</h5>
+                            <div class="teks">
+                                <p><i>ALTER</i> digunakan untuk mengganti nama tabel dan memanipulasi atribut tabel. contoh merubah nama tabel, menambah field, merubah tipe data, merubah nama field, dan menghapus field.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: circle;">
+                                            <li><p>Merubah nama tabel</p> <pre class="card bg-light codeA">ALTER TABLE mahasiswa RENAME tb_mahasiswa;</pre></li>
+                                            <li><p>Menambah field pada tabel</p> <pre class="card bg-light codeA">ALTER TABLE mahasiswa ADD prodi VARCHAR(20);</pre></li>
+                                            <li><p>Merubah tipe data </p> <pre class="card bg-light codeA">ALTER TABLE mahasiswa MODIFY prodi VARCHAR(30);</pre></li>
+                                            <li><p>Merubah nama field</p> <pre class="card bg-light codeA">ALTER TABLE mahasiswa CHANGE nama_lama nama_baru VARCHAR(20);</pre></li>
+                                            <li><p>Menghapus field pada tabel</p> <pre class="card bg-light codeA">ALTER TABLE mahasiswa DROP prodi;</pre></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- DROP -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">DROP</h5>
+                            <div class="teks">
+                                <p><i>DROP</i> digunakan untuk menghapus database maupun tabel. contoh database dengan nama 'db_kampus' dan tabel dengan nama 'tb_mahasiswa'.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menghapus database</p> <pre class="card bg-light codeA">DROP DATABASE db_kampus;</pre></li>
+                                            <li><p>Menghapus tabel</p> <pre class="card bg-light codeA">DROP TABLE tb_mahasiswa;</pre></li>
+                                            <li><p>Menghapus database atau tabel dengan 'IF EXIST'</p> <pre class="card bg-light codeA">DROP DATABASE IF EXIST db_kampus;</pre> </li>
+                                        </ul>
+                                        <p><i>IF EXIST digunakan untuk mengecek apakah ada database atau tabel dengan nama tersebut. jika ada maka akan dihapus</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">DML Atau Data Manipulation Language</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>DML atau Data Manipulation Language digunakan untuk memanipulasi data pada tabel yang telah dibuat. Definisi lain, DML digunakan untuk mengelola data value atau record. Seperti menampilkan, menambah, mengubah, dan menghapus data.</p>
+                            </div>
+                        </div>
+        
+                        <!-- DML Meliputi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">DML Meliputi</h5>
+                            <div class="teks">
+                                <ul style="list-style: circle;">
+                                    <li><h6>SELECT</h6></li>
+                                    <li><h6>INSERT</h6></li>
+                                    <li><h6>UPDATE</h6></li>
+                                    <li><h6>DELETE</h6></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- SELECT -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">SELECT</h5>
+                            <div class="teks">
+                                <p><i>SELECT</i> digunakan untuk menampilkan data value pada tabel. bisa menampilkan satu, beberapa, atau bahkan semua data value sekaligus.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menampilkan semua data value. tanda * artinya tampilkan semua</p> <pre class="card bg-light codeA">SELECT * FROM mahasiswa;</pre></li>
+                                            <li><p>Menampilkan semua nama_mahasiswa</p> <pre class="card bg-light codeA">SELECT nama_mahasiswa FROM tb_mahasiswa;</pre></li>
+                                            <li><p>Menampilkan semua nama_mahasiswa dan jenis_kelamin</p> <pre class="card bg-light codeA">SELECT nama_mahasiswa, jenis_kelamin FROM tb_mahasiswa;</pre></li>
+                                            <li><p>Menampilkan karakteristik apa saja yang ada di sebuah kolom dari tb_mahasiswa</p> <pre class="card bg-light codeA">SELECT DISTINCT jenis_kelamin FROM tb_mahasiswa;</pre></li>
+                                            <li><p>Menampilkan semua mahasiswa dengan jenis kelamin laki-laki</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa WHERE jenis_kelamin = "laki-laki";</pre></li>
+                                            <li><p>Menampilkan semua mahasiswa dengan usia antara 20 dan 22</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa WHERE usia BETWEEN 20 AND 22;</pre></li>
+                                            <li><p>Menampilkan semua nama mahasiswa dengan akhiran 'an'</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa WHERE nama_mahasiswa LIKE "%an";</pre></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- INSERT -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">INSERT</h5>
+                            <div class="teks">
+                                <p><i>INSERT</i> digunakan untuk memasukan record baru ke dalam tabel. bisa satu record atau bahkan banyak record sekaligus.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menambah satu record</p> <pre class="card bg-light codeA">INSERT INTO mahasiswa VALUES ('20121092', 'Budi', 'Informatika');</pre></li>
+                                            <li><p>Menambah dua atau lebih record</p> <pre class="card bg-light codeA">INSERT INTO mahasiswa VALUES ('20121092', 'Budi', 'Informatika'), ('20121093', 'Dita', 'Informatika'), ('20121094', 'Andi', 'Informatika');</pre></li>
+                                        </ul>
+                                        <p><i>Ketika memasukan data, usahakan data tersebut sesuai dengan urutan fieldnya. perhatikan nama, tipe data, dan jumlah karakternya</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- UPDATE -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">UPDATE</h5>
+                            <div class="teks">
+                                <p><i>UPDATE</i> digunakan untuk mengganti data lama dengan data baru menggunakan primary key. Bisa mengganti satu data atau bahkan banyak data sekaligus.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: circle;">
+                                            <li><p>Merubah data value prodi dari 'DKV' dirubah menjadi 'TI'</p> <pre class="card bg-light codeA">UPDATE mahasiswa SET prodi = 'TI' WHERE nim = 20121092;</pre></li>
+                                            <li><p>Merubah data value prodi dari 'DKV' dirubah menjadi 'TI', dan nama mahasiswa dari 'alexander' dirubah menjadi 'bobby'</p> <pre class="card bg-light codeA">UPDATE mahasiswa SET prodi = 'TI', nama_mahasiswa = 'booby' WHERE nim = 20121092;</pre></li>
+                                        </ul>
+                                        <p><i>Penting untuk memberikan primary key karena jika tidak maka semua data pada tabel akan berubah</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- DELETE -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">DELETE</h5>
+                            <div class="teks">
+                                <p><i>DELETE</i> digunakan untuk menghapus data value pada tabel. bisa menghapus satu, beberapa, atau bahkan semua data value sekaligus.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menghapus satu record pada tabel</p> <pre class="card bg-light codeA">DELETE FROM mahasiswa WHERE nim = 20121092;</pre></li>
+                                            <li><p>Menghapus semua record mahasiswa yang jenis kelaminya laki-laki</p> <pre class="card bg-light codeA">DELETE FROM mahasiswa WHERE jenis_kelamin = 'laki-laki';</pre></li>
+                                            <li><p>Menghapus semua record pada tabel</p> <pre class="card bg-light codeA">DELETE FROM mahasiswa;</pre></li>
+                                        </ul>
+                                        <p><i>Penting untuk memberikan nama bagian tabel yang akan dihapus karena jika tidak maka semua data value pada tabel akan dihapus</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">DCL Atau Data Control Language</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>DCL atau Data Control Language, adalah bagian dari bahasa SQL yang digunakan untuk mengelola hak akses dan izin pengguna dalam sebuah basis data. DCL digunakan untuk mengatur perizinan seperti GRANT (memberikan hak akses kepada user lain) dan REVOKE (mencabut hak akses yang telah diberikan) terhadap objek-objek dalam basis data.</p>
+                            </div>
+                        </div>
+        
+                        <!-- GRANT -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">GRANT</h5>
+                            <div class="teks">
+                                <p>Perintah ini digunakan untuk memberikan izin akses kepada pengguna atau peran tertentu pada objek-objek dalam basis data. Izin-izin ini dapat mencakup hak untuk melakukan operasi tertentu seperti SELECT, INSERT, UPDATE, DELETE, dll.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <p>
+                                            <h6>Penulisan GRANT</h6>
+                                            <pre class="card bg-light codeA">GRANT tipe_izin ON nama_database.nama_tabel TO 'nama_user'@'localhost';</pre>
+                                            <p><i>GRANT dilakukan di dalam root. pastikan untuk membuat user terlebih dahulu. untuk mengecek apakah sudah berhasil, bisa keluar dari root dan login sebagai user</i></p>
+                                        </p>
+                                        <hr>
+            
+                                        <h6>Berikut beberapa contoh pemberian hak akses kepada user</h6> 
+                                        <ul style="list-style: circle;">
+                                            <li><p>Memberikan satu hak akses, contoh hak akses CREATE</p> <pre class="card bg-light codeA">GRANT CREATE ON nama_database.nama_tabel TO 'nama_user'@'localhost';</pre></li>
+                                            <li><p>Memberikan dua atau lebih hak akses, contoh hak akses CREATE dan DROP</p> <pre class="card bg-light codeA">GRANT CREATE, DROP ON nama_database.nama_tabel TO 'nama_user'@'localhost';</pre></li>
+                                            <li><p>Memberikan semua hak akses</p> <pre class="card bg-light codeA">GRANT ALL ON nama_database.nama_tabel TO 'nama_user'@'localhost';</pre></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- REVOKE -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">REVOKE</h5>
+                            <div class="teks">
+                                <p>Perintah ini digunakan untuk mencabut izin akses yang telah diberikan sebelumnya kepada pengguna atau peran pada objek-objek dalam basis data.</p>
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <p>
+                                            <h6>Penulisan REVOKE</h6>
+                                            <pre class="card bg-light codeA">REVOKE ALL ON nama_database.nama_tabel FROM 'nama_user'@'localhost';</pre>
+                                            <p><i>REVOKE dilakukan di dalam root. tentukan tipe izin, database, tabel, dan user sebelum melakukan REVOKE</i></p>
+                                        </p>
+                                        <hr>
+                
+                                        <h6>Berikut beberapa cara mencabut atau menarik kembali hak akses dari user</h6> 
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menarik satu hak akses, contoh menarik akses CREATE</p> <pre class="card bg-light codeA">REVOKE CREATE ON nama_database.nama_tabel FROM 'nama_user'@'localhost';</pre></li>
+                                            <li><p>Menarik dua atau lebih hak akses, contoh menarik akses CREATE dan DROP</p> <pre class="card bg-light codeA">REVOKE CREATE, DROP ON nama_database.nama_tabel FROM 'nama_user'@'localhost';</pre></li>
+                                            <li><p>Menarik semua hak akses</p> <pre class="card bg-light codeA">REVOKE ALL ON nama_database.nama_tabel FROM 'nama_user'@'localhost';</pre></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- COMMIT -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">COMMIT</h5>
+                            <div class="teks">
+                                <p>COMMIT adalah pernyataan yang digunakan untuk mengakhiri transaksi yang sedang berjalan dan secara permanen menyimpan semua perubahan yang telah dilakukan dalam transaksi tersebut ke dalam basis data.</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <dl>
+                                            <dd>
+                                                <h6>Contoh penggunaan perintah COMMIT</h6>
+                                            </dd>
+                                            <dd>
+                                                <p>Misalnya, Saya ingin menambahkan sebuah data ke dalam tabel yang saya buat.</p>
+                                                <ul style="list-style: circle;">
+                                                    <li><p>Pertama, ketikan perintah 'START TRANSACTION'</p> <pre class="card bg-light codeA">START TRANSACTION;</pre></li>
+                                                    <li><p>Setelah itu masukan data value</p> <pre class="card bg-light codeA">INSERT INTO nama_tabel VALUES ('1', 'Alexander', 'laki-laki', 'jawa tengah');</pre></li>
+                                                    <li><p>Selanjutnya ketikan perintah 'COMMIT' untuk menyimpan perubahan yang terjadi</p> <pre class="card bg-light codeA">COMMIT;</pre></li>
+                                                </ul>
+                                                <p><i>Dengan menggunakan 'transaction' saat melakukan perintah insert, update, delete maka transaksi sebenarnya belum dilakukan secara permanen. Artinya operasi tersebut masih bisa di rollback atau dibatalkan.</i></p>
+                                            </dd>
+                                        </dl>
+                                        <hr>
+            
+                                        <dl>
+                                            <dd>
+                                                <h6>Contoh lain penggunaan COMMIT</h6>
+                                            </dd>
+                                            <dd>
+                                                <pre class="card bg-light codeB">
+            
+    BEGIN;  -- Mulai transaksi
+    UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
+    UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
+    COMMIT; -- Akhiri transaksi dan simpan perubahan
+                                                </pre>
+                                                <p><i>Dalam contoh di atas, pernyataan COMMIT mengonfirmasi bahwa kedua pembaruan saldo berhasil dilakukan dan perubahan tersebut disimpan secara permanen ke dalam basis data.</i></p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- ROLLBACK -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">ROLLBACK</h5>
+                            <div class="teks">
+                                <p>ROLLBACK adalah pernyataan yang digunakan untuk membatalkan semua perubahan yang terjadi selama transaksi yang sedang berjalan. Ketika terjadi kesalahan dan Anda ingin mengembalikan basis data ke keadaan sebelum transaksi dimulai, Anda dapat menggunakan pernyataan ROLLBACK.</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <dl>
+                                            <dd>
+                                                <h6>Contoh penggunaan perintah ROLLBACK</h6>
+                                            </dd>
+                                            <dd>
+                                                <p>Misalnya, Saya menghapus data yang salah dan Saya ingin mengembalikan data tersebut</p>
+                                                <ul style="list-style: circle;">
+                                                    <li><p>Pertama, ketikan perintah 'START TRANSACTION'</p> <pre class="card bg-light codeA">START TRANSACTION;</pre></li>
+                                                    <li><p>Terjadi kesalahan menghapus data</p> <pre class="card bg-light codeA">DELETE FROM nama_tabel WHERE nim = 1;</pre></li>
+                                                    <li><p>Selanjutnya ketikan perintah ROLLBACK untuk mengembalikan data</p> <pre class="card bg-light codeA">ROLLBACK;</pre></li>
+                                                    <li><p>Data yang dihapus berhasil dikembalikan seperti semula</p></li>
+                                                </ul>
+                                                <p>Perintah rollback digunakan untuk mengembalikan data pada database ke bentuk awal. Perintah rollback sama fungsinya dengan perintah undo atau ctrl + Z pada keyboard, jadi apabila ada data yang dihapus maka bisa dikembalikan seperti semula dengan menggunakan perintah rollback.</p>
+                                            </dd>
+                                        </dl>
+                                        <hr>
+                                        
+                                        <dl>
+                                            <dd>
+                                                <h6>Contoh lain penggunaan ROLLBACK</h6>
+                                            </dd>
+                                            <dd>
+                                                <pre class="card bg-light codeB">
+            
+    BEGIN;  -- Mulai transaksi
+    UPDATE inventory SET stock = stock - 10 WHERE product_id = 123;
+    UPDATE orders SET status = 'completed' WHERE order_id = 456;
+    -- Kesalahan terjadi di sini
+    ROLLBACK; -- Batalkan semua perubahan dalam transaksi
+                                                </pre>
+                                                <p><i>Dalam contoh di atas, karena terjadi kesalahan setelah pembaruan inventaris tetapi sebelum pembaruan pesanan, pernyataan ROLLBACK akan membatalkan pembaruan inventaris dan mengembalikan basis data ke keadaan sebelum transaksi dimulai.</i></p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Jenis Tipe Izin -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Jenis Tipe Izin</h5>
+                            <div class="teks">
+                                <p>Berikut beberapa jenis tipe izin yang bisa anda gunakan untuk melakukan GRANT dan REVOKE.</p>
+                                <ul style="list-style: circle;">
+                                    <li><p><h6 class="d-inline">ALL PRIVILEGES :</h6> Memberikan full akses</p></li>
+                                    <li><p><h6 class="d-inline">CREATE :</h6> Memberikan akses membuat database atau tabel</p></li>
+                                    <li><p><h6 class="d-inline">DROP :</h6> Memberikan akses menghapus database atau tabel</p></li>
+                                    <li><p><h6 class="d-inline">SELECT :</h6> Memberikan akses melihat database atau tabel</p></li>
+                                    <li><p><h6 class="d-inline">INSERT :</h6> Memberikan akses menambah record di tabel</p></li>
+                                    <li><p><h6 class="d-inline">UPDATE :</h6> Memberikan akses merubah record di tabel</p></li>
+                                    <li><p><h6 class="d-inline">DELETE :</h6> Memberikan akses menghapus record di tabel</p></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- User -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">User</h5>
+                            <div class="teks">
+                                <p>Pengguna (user) dalam konteks basis data merujuk pada individu atau entitas yang memiliki akses ke basis data dan diizinkan untuk melakukan operasi seperti query dan manipulasi data tertentu sesuai dengan hak akses yang diberikan.</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <p>Berikut langkah-langkah untuk membuat user.</p>
+                                        <ul style="list-style: decimal;">
+                                            <li><p><h6 class="d-inline">Login ke MySQL :</h6> Pertama, buka terminal dan login ke server MySQL dengan hak akses administratif (biasanya dengan akun root).</p> <pre class="card bg-light codeA">mysql -u root -p</pre></li>
+                                            <li><p><h6 class="d-inline">Buat User baru :</h6> Gunakan perintah 'CREATE USER' untuk membuat user baru. Gantilah 'username' dengan nama pengguna yang Anda ingin buat, dan 'password' dengan kata sandi yang akan digunakan oleh pengguna ini.</p> <pre class="card bg-light codeA">CREATE USER 'nama_user'@'localhost' IDENTIFIED BY 'password_user';</pre> <p><i>Tidak boleh ada spasi diantara simbol '@'.</i></p></li>
+                                            <li><p><h6 class="d-inline">Berikan Hak Akses :</h6> Setelah membuat user, Anda perlu memberikan hak akses tertentu ke pengguna tersebut. Gunakan perintah 'GRANT' untuk memberikan izin-izin yang diinginkan.</p> <pre class="card bg-light codeA">GRANT tipe_izin ON dbname.* TO 'username'@'localhost';</pre></li>
+                                            <li><p><h6 class="d-inline">Terapkan Perubahan :</h6> Setelah memberikan izin-izin, jangan lupa untuk menerapkan perubahan dengan perintah 'FLUSH PRIVILEGES'.</p> <pre class="card bg-light codeA">FLUSH PRIVILEGES;</pre> <p><i>Jika Anda tidak menjalankan 'FLUSH PRIVILEGES', pengguna mungkin tidak memiliki akses yang diharapkan atau perubahan izin yang Anda lakukan mungkin tidak akan berlaku.</i></p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <!-- Grant Dan Revoke -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Grant Dan Revoke</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6>Membuat user dan memberikan hak akses</h6>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dt>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: decimal;">
+                                                <li><p>Masuk ke MySQL dengan akun root</p> <pre class="card bg-light codeA">mysql -u root -p</pre></li>
+                                                <li><p>Buat user dan password</p> <pre class="card bg-light codeA">CREATE USER 'Alexander'@'localhost' IDENTIFIED BY 'passwordsaya';</pre></li>
+                                                <li><p>Tentukan database, table, dan tipe izin yang ingin diberikan</p></li>
+                                                <li><p>Lakukan perintah grant ke user</p> <pre class="card bg-light codeA">GRANT ALL PRIVILEGES ON db_kampus.tb_mahasiswa TO 'Alexander'@'localhost';</pre></li>
+                                                <li><p>Hak akses telah diberikan, untuk melihatnya pertama keluar dari root</p> <pre class="card bg-light codeA">EXIT</pre></li>
+                                                <li><p>Selanjutnya masuk sebagai user, enter dan masukan password-nya</p> <pre class="card bg-light codeA">mysql -u Alexander -p</pre></li>
+                                                <li><p>Tampilkan semua database</p> <pre class="card bg-light codeA">SHOW DATABASES;</pre></li>
+                                                <li><p>Dan selanjutnya anda bisa melakukan apapun dengan database tersebut sesuai dengan hak akses yang diberikan dari root</p></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6>Menarik kembali hak akses dari user</h6>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dt>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: decimal;">
+                                                <li><p>Masuk sebagai root</p> <pre class="card bg-light codeA">mysql -u root -p</pre></li>
+                                                <li><p>Lakukan perintah revoke dari user</p> <pre class="card bg-light codeA">REVOKE ALL PRIVILEGES ON db_kampus.tb_mahasiswa FROM 'Alexander'@'localhost';</pre></li>
+                                                <li><p>Hak akses telah ditarik dari user</p></li>
+                                                <li><p>Untuk mengecek apakah sudah berhasil, bisa keluar dari root dan masuk sebagai user</p> <pre class="card bg-light codeA">mysql - Alexander -p</pre></li>
+                                                <li><p>Tampilkan demua database</p> <pre class="card bg-light codeA">SHOW DATABASES;</pre></li>
+                                                <li><p>Database sudah tidak ada didalam user</p></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Export Dan Import MySQL</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Ekspor dan impor database adalah proses untuk menyimpan data dari suatu sistem basis data ke dalam file, lalu mengambil data tersebut dari file tersebut dan memasukkannya ke dalam sistem basis data lainnya. Ini berguna saat Anda ingin berbagi data antara berbagai sistem, mencadangkan data, atau mengganti sistem basis data.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Ekspor Database -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Ekspor Database</h5>
+                            <div class="teks">
+                                <p>Ekspor database adalah proses mencadangkan data dari sistem basis data tertentu ke dalam bentuk file eksternal dan nantinya dapat di impor kembali ke sistem basis data yang sama atau berbeda.</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <p>Berikut langkah-langkah ekspor database maupun tabel.</p>
+                                        <ul style="list-style: decimal;">
+                                            <li><p><h6 class="d-inline">Pilih Database :</h6> Pilih database yang ingin Anda ekspor.</p></li>
+                                            <li><p><h6 class="d-inline">Pilih Tabel :</h6> Jika Anda hanya ingin meng-ekspor bagian tertentu dari database pilih tabel-tabel yang ingin Anda ekspor.</p></li>
+                                            <li>
+                                                <p><h6 class="d-inline">Ekspor :</h6> Gunakan perintah 'mysqldump' untuk ekspor data.</p>
+                                                <p>Ekspor database <pre class="card bg-light codeA">mysqldump -u username -p dbname > backup.sql</pre></p>
+                                                <p>Ekspor table <pre class="card bg-light codeA">mysqldump -u username -p dbname tbname ... > backup.sql</pre></p>
+                                                <ul style="list-style: circle;">
+                                                    <li><p class="d-inline">Ganti <h6 class="d-inline">'username'</h6> dengan nama user MySQL Anda.</p></li>
+                                                    <li><p class="d-inline">Ganti <h6 class="d-inline">'dbname'</h6> dengan nama database yang ingin anda ekspor (untuk ekspor database).</p></li>
+                                                    <li><p class="d-inline">Ganti <h6 class="d-inline">'tbname'</h6> dengan nama tabel yang ingin anda ekspor (untuk ekspor tabel). Bisa lebih dari satu tabel.</p></li>
+                                                    <li><p><h6 class="d-inline">'backup.sql'</h6> adalah nama file tempat anda menyimpan database maupun tabel yang di ekspor.</p></li>
+                                                    <li><p>Anda akan diminta untuk memasukkan kata sandi MySQL setelah menjalankan perintah ini.</p></li>
+                                                </ul>
+                                            </li>
+                                            <li><p><h6 class="d-inline">Simpan File :</h6> File backup.sql akan berisi database atau tabel yang nantinya dapat di impor kembali ke sistem basis data yang sama atau berbeda.</p></li>
+                                        </ul>
+            
+                                        <p>Penting untuk mengingat dimana anda menyimpan file 'backup.sql' ini karena nantinya akan digunakan untuk proses impor. Anda bisa membuat folder baru dengan nama 'ekspor' untuk menyimpan file-file backup tersebut.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Impor Database -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Impor Database</h5>
+                            <div class="teks">
+                                <p>Impor database adalah proses memasukkan data yang sebelumnya diekspor dari sistem basis data lain ke dalam sistem basis data yang sedang Anda gunakan.</p>
+        
+                                <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                <div class="hiddenTextBox">
+                                    <div class="hiddenText">
+                                        <p>Berikut langkah-langkah impor database maupun tabel.</p>
+                                        <ul style="list-style: decimal;">
+                                            <li><p><h6 class="d-inline">Pilih Database :</h6> Pilih database yang anda inginkan jika anda ingin meng-impor tabel (database yang sudah ada sebelumnya).</p></li>
+                                            <li><p><h6 class="d-inline">Buat Database :</h6> Buat database baru jika anda ingin meng-impor database.</p></li>
+                                            <li><p><h6 class="d-inline">Cari file yang ingin di impor :</h6> Masuk ke direktori 'ekspor' yang sebelumnya dibuat.</p>
+                                                <p><pre class="card bg-light codeA">cd c/ekspor/</pre></p>
+                                            </li>
+                                            <li><p><h6 class="d-inline">Pilih file yang ingin di impor :</h6> Setelah masuk ke direktori 'ekspor' anda bisa cek di dalamnya apakah ada file yang ingin anda impor.</p> 
+                                                <p><pre class="card bg-light codeA">dir</pre></p>
+                                            </li>
+                                            <li><p><h6 class="d-inline">Impor :</h6> Gunakan perintah SQL yang sesuai untuk mengimpor data dari file.</p>
+                                                <p><pre class="card bg-light codeA">mysql -u username -p dbname < backup.sql</pre></p>
+                                                <ul style="list-style: circle;">
+                                                    <li><p class="d-inline">Ganti <h6 class="d-inline">'username'</h6> dengan nama user MySQL Anda.</p></li>
+                                                    <li><p class="d-inline">Ganti <h6 class="d-inline">'dbname'</h6> dengan nama database tempat anda akan menyimpan database maupun tabel yang di impor.</p></li>
+                                                    <li><p><h6 class="d-inline">'backup.sql'</h6> adalah nama file tempat database maupun tabel yang di ekspor sebelumnya untuk di impor.</p></li>
+                                                    <li><p>Anda akan diminta untuk memasukkan kata sandi MySQL setelah menjalankan perintah ini.</p></li>
+                                                </ul>
+                                            </li>
+                                            <li><p><h6 class="d-inline">Verifikasi :</h6> Pastikan bahwa data telah diimpor dengan benar dengan memeriksa tabel dan rekaman.</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Primary Key</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Primary key digunakan untuk membedakan antara identitas satu dengan identitas yang lainya dalam sebuah tabel atau entitas. Untuk value atribut primary key tidak boleh kosong atau null dan satu tabel hanya punya satu primary key.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Membuat Primary Key -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Membuat Primary Key</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Berikut adalah beberapa cara untuk membuat atribut PRIMARY KEY. Contohnya membuat atribut PRIMARY KEY dengan nama 'id_mahasiswa' pada tabel 'tb_mahasiswa'</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Membuat atribut PRIMARY KEY saat membuat tabel</p> <pre class="card bg-light codeA">CREATE TABLE tb_mahasiswa ( id_mahasiswa INT(10) NOT NULL PRIMARY KEY );</pre></li>
+                                                <li><p>Menambahkan atribut PRIMARY KEY pada tabel</p> <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa ADD id_mahasiswa INT(10) NOT NULL PRIMARY KEY FIRST;</pre></li>
+                                                <li><p>Mengubah atribut biasa menjadi atribut PRIMARY KEY</p> <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa CHANGE id_mahasiswa id_mahasiswa INT(10) NOT NULL PRIMARY KEY FIRST;</pre></li>
+                                                <li><p>Menambahkan PRIMARY KEY pada atribut biasa</p> <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa ADD PRIMARY KEY (id_mahasiswa);</pre></li>
+                                                <li><p>Menghapus PRIMARY KEY pada atribut</p> <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa DROP PRIMARY KEY;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- Increment dan Decrement -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Increment dan Decrement</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>PRIMARY KEY bisa diberi INCREMENT ataupun DECREMENT. Penggunaan INCREMENT atau DECREMENT berfungsi memberikan nomor urut pada data yang baru dimasukan. Semisal 'id_mahasiswa' diberi AUTO_INCREMENT</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <h6>Contoh Query</h6>
+                                            <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa CHANGE id_mahasiswa id_mahasiswa INT(10) NOT NULL AUTO_INCREMENT;</pre>
+                                            <i>Atribut 'id_mahasiswa' telah diberi AUTO_INCREMENT. Selanjutnya jika ingin menambahkan record baru maka atribut 'id_mahasiswa' boleh dikosongkan, dia akan terisi sendiri dengan nomor urut setiap record baru ditambahkan.</i>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- Reset auto increment -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Reset Auto Increment</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>AUTO INCREMENT membuat suatu atribut memiliki data dengan nomor urut, namun saat ada data yang dihapus maka akan ada nomor urut yang hilang, dengan itu untuk membuat nomor manjadi urut kembali maka bisa dilakukan dengan cara berikut</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Apabila data yang dihapus adalah data terakhir dan ingin mengembalikan nomor urut untuk data baru</p>
+                                            <ul style="list-style: circle;">
+                                                <li><p>Reset AUTO INCREMENT kembali ke nilai 0 <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa AUTO_INCREMENT = 0;</pre></p></li>
+                                            </ul>
+            
+                                            <p>Apabila banyak data yang dihapus di tengah-tengah data maka reset atribut saja</p>
+                                            <ul style="list-style: circle;">
+                                                <li><p>Pertama hapus atribut tersebut</p> <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa DROP id_mahasiswa;</pre> </li>
+                                                <li><p>Setelah itu buat atribut baru dengan AUTO INCREMENT dan ditaruh didepan</p> <pre class="card bg-light codeA">ALTER TABLE tb_mahasiswa ADD id_mahasiswa INT(10) NOT NULL PRIMARY KEY AUTO_INCREMENT FIRST;</pre> </li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Foreign Key</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>FOREIGN KEY adalah kunci asing pada sebuah atribut dalam sebuah tabel yang menghubungkan atribut satu dengan atribut lain pada tabel yang berbeda. FOREIGN KEY digunakan untuk membangun hubungan antara dua tabel dalam sebuah basis data.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Membuat Foreign Key -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Membuat Foreign Key</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Misalkan ada dua tabel 'Pelanggan' dan 'Pesanan'. Setiap pesanan harus dikaitkan dengan seorang pelanggan. Anda dapat membuat atribut 'id_pelanggan' dalam tabel 'Pesanan' sebagai FOREIGN KEY yang merujuk pada atribut 'id_pelanggan' dalam tabel 'Pelanggan'. Jadi setiap pesanan terkait dengan pelanggan tertentu dalam database.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Berikut langkah-langkah untuk membuat FOREIGN KEY</p>
+                                            <ul style="list-style: decimal;">
+                                                <li><p><h6 class="d-inline">Buat dua tabel :</h6> Contoh 'tb_pelanggan' dan 'tb_pesanan'.</p>
+                                                    <pre class="card bg-light codeB">
+            
+    CREATE TABLE tb_pelanggan (
+        id_pelanggan VARCHAR(10) NOT NULL PRIMARY KEY   
+    );
+                                                    </pre>
+            
+                                                    <pre class="card bg-light codeB">
+            
+    CREATE TABLE tb_pesanan (
+        id_pesanan VARCHAR(10) NOT NULL PRIMARY KEY,    
+        id_pelanggan VARCHAR(10) NOT NULL
+    );
+                                                    </pre>
+                                                </li>
+                                                <li><p><h6 class="d-inline">Buat FOREIGN KEY :</h6> Hubungkan 'id_pelanggan' pada 'tb_pesanan' ke 'id_pelanggan' yang ada di 'tb_pelanggan'.</p> <pre class="card bg-light codeA">ALTER TABLE tb_pesanan ADD FOREIGN KEY (id_pelanggan) REFERENCES tb_pelanggan (id_pelanggan);</pre></li>
+                                                <li><p><h6 class="d-inline">Deskripsikan Tabel :</h6> Deskripsikan tabel untuk melihat hasilnya.</p>
+                                                    <pre class="card bg-light codeA">DESC tb_pesanan;</pre>
+                                                </li>
+                                                <li><p><h6 class="d-inline">FOREIGN KEY berhasil dibuat :</h6> Sekarang atribut 'id_pelanggan' pada tabel 'tb_pesanan' sudah menjadi FOREIGN KEY.</p></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- Menghapus Foreign Key -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Menghapus Foreign Key</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Selanjutnya adalah langkah-langkah menghapus FOREIGN KEY. Menghapus FOREIGN KEY dapat dilakukan apabila FOREIGN KEY yang dibuat salah atau tidak lagi dibutuhkan.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Berikut langkah-langkah untuk menghapus FOREIGN KEY</p>
+                                            <ul style="list-style: circle;">
+                                                <li><p><h6 class="d-inline">Tampilkan komponen dari tabel 'tb_pesanan' :</h6> Kita butuh untuk mengetahui CONSTRAINT dari atribut FOREIGN KEY-nya.</p> <pre class="card bg-light codeA">SHOW CREATE TABLE tb_pesanan;</pre></li>
+                                                <li><p><h6 class="d-inline">Hapus CONSTRAINT :</h6> Hapus CONSTRAINT dari atribut FOREIGN KEY</p> <pre class="card bg-light codeA">ALTER TABLE tb_pesanan DROP FOREIGN KEY kode_constraint_tabel;</pre></li>
+                                                <li><p><h6 class="d-inline">Tampilkan komponen tabel 'tb_pesanan' :</h6> Yang tadinya ada CONSTRAINT berubah menjadi KEY, KEY ini harus dihapus.</p> <pre class="card bg-light codeA">SHOW CREATE TABLE tb_pesanan;</pre></li>
+                                                <li><p><h6 class="d-inline">Hapus KEY :</h6> Selanjutnya hapus KEY dari 'id_pelanggan'.</p> <pre class="card bg-light codeA">ALTER TABLE tb_pesanan DROP KEY id_pelanggan;</pre></li>
+                                                <li><p><h6 class="d-inline">Hapus FOREIGN KEY berhasil :</h6> Sekarang atribut 'id_pelanggan' pada tabel 'tb_pesanan' bukan lagi menjadi FOREIGN KEY.</p></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Operator Logika</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Operator Logika pada MySql digunakan untuk melakukan operasi logika atau pembandingan antara dua atau lebih nilai atau ekspresi dalam sebuah query.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Operator Logika -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Operator Logika</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">1. Not [!=] :</h6> Not artinya bukan bagian, jadi data yang bukan bagian dari persyaratan maka dia akan ditampilkan</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE NOT jenis_kelamin = 'laki-laki';</pre>
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE jenis_kelamin != 'laki-laki';</pre>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">2. And [&&] :</h6> And artinya dan, jadi data yang memenuhi dua persyaratan maka dia akan ditampilkan</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE jenis_kelamin = 'laki-laki' AND usia = 22;</pre>
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE jenis_kelamin = 'laki-laki' && usia = 22;</pre>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">3. Or [||] :</h6> Or artinya atau, jadi jika ada data yang memenuhi salah satu dari dua persyaratan maka dia akan ditampilkan</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE jenis_kelamin = 'laki-laki' OR usia = 22;</pre>
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE jenis_kelamin = 'laki-laki' || usia = 22;</pre>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">4. Between :</h6> Between digunakan sebagai range atau pembatas</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE usia BETWEEN 22 AND 24;</pre>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">5. Like :</h6> Like digunakan untuk mencari data lewat suatu karakteristik misalkan nama mahasiswa yang diawali dengan nama adi, atau nama mahasiswa yang diakhiri dengan nama anto</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE nama_mahasiswa LIKE "adi%";</pre>
+                                            <pre class="card bg-light codeA">SELECT * FROM mahasiswa WHERE nama_mahasiswa LIKE "%anto";</pre>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Agregat MySQL</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Pada MySql Agregat digunakan untuk menampilkan beberapa hal seperti jumlah suatu data, mencari nilai rata-rata, nilai maximum, nilai minimum, dan sebagainya.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Agregat MySQL -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Agregat MySQL</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">1. COUNT :</h6> COUNT atrinya hitung, dia digunakan untuk menghitung jumlah dari record</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Menampilkan jumlah semua record pada tabel</p> <pre class="card bg-light codeA">SELECT COUNT(*) FROM tb_mahasiswa;</pre></li>
+                                                <li><p>Menampilkan jumlah mahasiswa laki-laki</p> <pre class="card bg-light codeA">SELECT COUNT(*) FROM tb_mahasiswa WHERE jenis_kelamin = 'laki-laki';</pre></li>
+                                                <li><p>Menampilkan jumlah mahasiswa laki-laki dengan kolom alias</p> <pre class="card bg-light codeA">SELECT COUNT(*) AS 'Mahasiswa laki-laki' FROM tb_mahasiswa WHERE jenis_kelamin = 'laki-laki';</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">2. SUM :</h6> SUM artinya dijumlah, dia digunakan untuk menjumlahkan total semua data, misal jumlah total harga</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Menampilkan jumlah total harga</p> <pre class="card bg-light codeA">SELECT SUM(harga_barang) FROM tb_mahasiswa;</pre></li>
+                                                <li><p>Menampilkan harga_barang menjadi harga</p> <pre class="card bg-light codeA">SELECT SUM(harga_barang) AS 'harga' FROM tb_mahasiswa;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">3. AVERAGE :</h6> AVERAGE artinya rata-rata, dia digunakan untuk menghitung nilai rata-rata dari semua data pada tabel.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Menampilkan rata-rata nilai mahasiswa</p> <pre class="card bg-light codeA">SELECT AVG(nilai_mahasiswa) FROM tb_mahasiswa;</pre></li>
+                                                <li><p>Menampilkan nilai_mahasiswa menjadi nilai</p> <pre class="card bg-light codeA">SELECT AVG(nilai_mahasiswa) AS 'nilai' FROM tb_mahasiswa;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">4. MIN :</h6> MIN atau minimum digunakan untuk menampilkan nilai terkecil dari semua data pada tabel.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Menampilkan mahasiswa paling muda</p> <pre class="card bg-light codeA">SELECT MIN(usia_mhs) FROM tb_mahasiswa;</pre></li>
+                                                <li><p>Menampilkan usia_mhs menjadi paling muda</p> <pre class="card bg-light codeA">SELECT MIN(usia_mhs) AS 'paling muda' FROM tb_mahasiswa;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">5. MAX :</h6> MAX atau maximum digunakan untuk menampilkan nilai terbesar dari semua data pada tabel.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Menampilkan mahasiswa paling tua</p> <pre class="card bg-light codeA">SELECT MAX(usia_mhs) FROM tb_mahasiswa;</pre></li>
+                                                <li><p>Menampilkan usia_mhs menjadi paling tua</p> <pre class="card bg-light codeA">SELECT MAX(usia_mhs) AS 'paling tua' FROM tb_mahasiswa;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Statement Group By</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Statement group by berfungsi untuk pengelompokan data berdasarkan kriteria tertentu. Statement group by hampir sama dengan distinct namun distinct jarang diikuti dengan fungsi agregat sedangkan group by diikuti dengan fungsi agregat.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Statement Group By -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Statement Group By</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Berikut beberapa contoh penggunaan Statement GROUP BY.</p>
+                                    </dd>
+                                    <dd>
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menampilkan apa saja jenis kelamin mahasiswa pada tabel</p> <pre class="card bg-light codeA">SELECT jenis_kelamin FROM tb_mahasiswa GROUP BY jenis_kelamin;</pre></li>
+                                            <li><p>Menampilkan jenis kelamin dengan statement group by dan fungsi agregat</p> <pre class="card bg-light codeA">SELECT jenis_kelamin, COUNT(*) AS 'Jumlah Mahasiswa' FROM tb_mahasiswa GROUP BY jenis_kelamin;</pre></li>
+                                            <li><p>Menampilkan apa saja usia mahasiswa pada tabel</p> <pre class="card bg-light codeA">SELECT usia_mahasiswa FROM tb_mahasiswa GROUP BY usia_mahasiswa;</pre></li>
+                                            <li><p>Menampilkan usia dengan statement group by dan fungsi agregat</p> <pre class="card bg-light codeA">SELECT usia_mahasiswa, COUNT(*) AS 'Jumlah Mahasiswa' FROM tb_mahasiswa GROUP BY usia_mahasiswa;</pre></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Pengurutan Data Order By</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Order by bisa digunakan dengan 2 cara yaitu ascending dan descending. ascending diurutkan dari kecil ke besar dan descending diurutkan dari besar ke kecil. data yang diurutkan bisa angka maupun alphabet.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Penggunaan Order By -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Penggunaan Order By</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="h6">Order By Ascending</h6></p>
+                                    </dd>
+                                    <dd>
+                                        <ul style="list-style: circle;">
+                                            <li><p>Mengurutkan usia mahasiswa dari kecil ke besar</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa ORDER BY usia_mahasiswa ASC;</pre></li>
+                                            <li><p>Mengurutkan nama mahasiswa dari A - Z</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa ORDER BY nama_mahasiswa ASC;</pre></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="h6">Order By Descending</h6></p>
+                                    </dd>
+                                    <dd>
+                                        <ul style="list-style: circle;">
+                                            <li><p>Mengurutkan usia mahasiswa dari besar ke kecil</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa ORDER BY usia_mahasiswa DESC;</pre></li>
+                                            <li><p>Mengurutkan nama mahasiswa dari Z - A</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa ORDER BY nama_mahasiswa DESC;</pre></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Alias Column MySQL</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Kolom alias digunakan untuk mengubah nama atribut yang ditampilkan menjadi sesuai dengan yang kita inginkan. Semisal kita ingin menampilkan atribut 'nama_mahasiswa' dan kita bisa menampilkannya sebagai 'nama'.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Alias Column MySQL -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Alias Column MySQL</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Berikut beberapa contoh penggunaan kolom alias.</p>
+                                    </dd>
+                                    <dd>
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menampilkan 'nama_mahasiswa' menjadi 'nama'</p> <pre class="card bg-light codeA">SELECT nama_mahasiswa AS 'nama' FROM tb_mahasiswa;</pre></li>
+                                            <li><p>Menampilkan dua kolom alias</p> <pre class="card bg-light codeA">SELECT nama_mahasiswa AS 'nama', jenis_kelamin AS 'jkel' FROM tb_mahasiswa;</pre></li>
+                                            <li><p>Menampilkan jenis kelamin apa saja yang ada ditabel</p> <pre class="card bg-light codeA">SELECT DISTINCT (jenis_kelamin) AS 'jenis kelamin mahasiswa' FROM tb_mahasiswa;</pre></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Pencarian String Like Query</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Query like digunakan untuk melakukan pencarian suatu data dengan karakteristik tertentu misalkan mencari nama mahasiswa dengan nama awalan 'an', maka semua mahasiswa dengan nama awalan 'an' akan ditampilkan. Contohnya seperti andi, anna, anya, dsb.</p>
+                            </div>
+                        </div>
+        
+                        <!-- String Like -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">String Like</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Berikut beberapa contoh penggunaan query LIKE.</p>
+                                    </dd>
+                                    <dd>
+                                        <ul style="list-style: circle;">
+                                            <li><p>Mencari nama mahasiswa dengan nama awalan 'an'</p> <pre class="card bg-light codeA">SELECT * FORM tb_mahasiswa WHERE nama_mahasiswa LIKE 'an%';</pre></li>
+                                            <li><p>Mencari nama mahasiswa dengan nama akhiran 'di'</p> <pre class="card bg-light codeA">SELECT * FORM tb_mahasiswa WHERE nama_mahasiswa LIKE '%di';</pre></li>
+                                            <li><p>Mencari nama mahasiswa dengan nama tengah 'an'</p> <pre class="card bg-light codeA">SELECT * FORM tb_mahasiswa WHERE nama_mahasiswa LIKE '%an%';</pre></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Select Limit</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Query limit berfungsi untuk membatasi data yang ditampilkan dari banyak data. Query ini sangat berguna apabila kita memiliki banyak data dan kita ingin menampilkan beberapa data saja, dengan query limit ini kita bisa menampilkan data dengan jumlah yang kita tentukan.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Select Limit -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Select Limit</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Berikut beberapa contoh penggunaan query LIMIT.</p>
+                                    </dd>
+                                    <dd>
+                                        <ul style="list-style: circle;">
+                                            <li><p>Menampilkan 5 data mahasiswa</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa LIMIT 5;</pre></li>
+                                            <li><p>Menampilkan 5 data mahasiswa laki-laki</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa WHERE jenis_kelamin = 'laki-laki' LIMIT 5;</pre></li>
+                                            <li><p>Menampilkan 3 data mahasiswa termuda</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa ORDER BY usia_mahasiswa ASC LIMIT 3;</pre></li>
+                                            <li><p>Menampilkan 3 data mahasiswa perempuan termuda</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa WHERE jenis_kelamin = 'perempuan' ORDER BY usia_mahasiswa ASC LIMIT 3;</pre></li>
+                                            <li><p>Menampilkan data mahasiswa dari index ke 2 sampai ke 7</p> <pre class="card bg-light codeA">SELECT * FROM tb_mahasiswa LIMIT 2, 7;</pre></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">On Delete Cascade</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>On DELETE CASCADE adalah sebuah fitur yang ada dalam basis data yang digunakan untuk menjaga integritas referensial antara tabel-tabel dalam basis data relasional. Integritas referensial adalah prinsip yang memastikan bahwa hubungan antara data dalam tabel-tabel terjaga dengan benar.</p>
+                            </div>
+                        </div>
+        
+                        <!-- ON DELETE CASCADE -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">ON DELETE CASCADE</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Berikut adalah contoh sederhana kode SQL untuk membuat dua tabel yang memiliki hubungan referensial dengan pengaturan On DELETE CASCADE</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeB">
+            
+    -- Membuat tabel 'tb_pesanan'
+    CREATE TABLE tb_pesanan (
+        id_pesanan INT PRIMARY KEY,
+        nama_pelanggan VARCHAR(50)
+    );
+    
+    -- Membuat tabel 'tb_produk_pesanan' dengan hubungan referensial ke tabel 'tb_pesanan'
+    CREATE TABLE tb_produk_pesanan (
+        id_produk INT PRIMARY KEY,
+        id_pesanan INT,
+        nama_produk VARCHAR(50),
+        quantity INT,
+        FOREIGN KEY (id_pesanan) REFERENCES tb_pesanan(id_pesanan) ON DELETE CASCADE
+    );
+                                            </pre>
+                    
+                                            <ul style="list-style: circle;">
+                                                <li><i>Tabel 'tb_pesanan' mempunyai atribut 'id_pesanan' sebagai PRIMARY KEY.</i></li>
+                                                <li><i>Tabel 'tb_produk_pesanan' mempunyai atribut 'id_produk' sebagai PRIMARY KEY dan 'id_pesanan' sebagai FOREIGN KEY yang merujuk pada tabel 'tb_pesanan'.</i></li>
+                                                <li><i>Pengaturan ON DELETE CASCADE diterapkan pada kunci asing 'id_pesanan' di tabel 'tb_produk_pesanan'</i></li>
+                                                <li><i>Jadi jika sebuah pesanan dihapus dari tabel 'tb_pesanan', semua data produk pesanan yang terkait akan dihapus secara otomatis dari tabel 'tb_produk_pesanan'.</i></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- Implementasi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Implementasi</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p>Ada dua buah tabel yaitu 'tb_pesanan' dan 'tb_produk_pesanan', jika sebuah pesanan dihapus dari tabel 'tb_pesanan', maka semua data produk pesanan yang terkait akan dihapus secara otomatis dari tabel 'tb_produk_pesanan'.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6>Tabel 'tb_pesanan'</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>nama_pelanggan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Ucup</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>Alex</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>Dudung</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="col-md-6">
+                                                    <h6>Tabel 'tb_produk_pesanan'</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_produk</th>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>nama_produk</th>
+                                                                    <th>quantity</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>101</td>
+                                                                    <td>1</td>
+                                                                    <td>Produk A</td>
+                                                                    <td>2</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>102</td>
+                                                                    <td>1</td>
+                                                                    <td>Produk B</td>
+                                                                    <td>3</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>103</td>
+                                                                    <td>2</td>
+                                                                    <td>Produk C</td>
+                                                                    <td>1</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <p>Misalnya, Ada satu pesanan yang dibatalkan, contoh pesanan dengan 'id_pesanan' = 1 dibatalkan <pre class="card bg-light codeA">DELETE FROM tb_pesanan WHERE id_pesanan = 1;</pre></p>
+            
+                                            <p>Maka semua data pada tabel 'tb_produk_pesanan' yang terkait dengan data yang baru dihapus secara otomatis akan ikut terhapus.</p>
+            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6>Tabel 'tb_pesanan'</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>nama_pelanggan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>Alex</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>Dudung</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="col-md-6">
+                                                    <h6>Tabel 'tb_produk_pesanan'</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_produk</th>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>nama_produk</th>
+                                                                    <th>quantity</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>103</td>
+                                                                    <td>2</td>
+                                                                    <td>Produk C</td>
+                                                                    <td>1</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Join Atau Penggabungan Tabel</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>JOIN atau penggabungan adalah operasi yang digunakan untuk menggabungkan baris dari dua atau lebih tabel berdasarkan kolom-kolom tertentu yang memiliki nilai-nilai yang sesuai. Operasi JOIN memungkinkan Anda untuk mengambil data dari beberapa tabel yang terkait dan menghasilkan hasil yang tergabung berdasarkan hubungan antara data tersebut.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Jenis-Jenis Penggabungan Tabel -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Jenis-Jenis Penggabungan Tabel</h5>
+                            <div class="teks">
+                                <p>Ada beberapa jenis operasi JOIN yang umum digunakan</p>
+                                <ul style="list-style: circle;">
+                                    <li><h6>INNER JOIN</h6></li>
+                                    <li><h6>LEFT JOIN</h6></li>
+                                    <li><h6>RIGHT JOIN</h6></li>
+                                    <li><h6>FULL JOIN</h6></li>
+                                    <li><h6>SELF JOIN</h6></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <!-- INNER JOIN -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">INNER JOIN</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">INNER JOIN</h6> Menggabungkan baris dari dua tabel berdasarkan nilai-nilai yang cocok di kedua tabel. Hanya baris yang memiliki nilai cocok di kedua tabel yang akan muncul dalam hasilnya.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Misalnya, Saya ingin menggabungkan tabel untuk mendapatkan daftar pesanan bersama dengan informasi pelanggan yang berhubungan dengan setiap pesanan.</p>
+            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6>tb_pelanggan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>nama_pelanggan</th>
+                                                                    <th>kota</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Ucup</td>
+                                                                    <td>Jakarta</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>Alex</td>
+                                                                    <td>Surabaya</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>Dudung</td>
+                                                                    <td>Bandung</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="col-md-6">
+                                                    <h6>tb_pesanan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>total_pesanan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>101</td>
+                                                                    <td>1</td>
+                                                                    <td>500000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>102</td>
+                                                                    <td>3</td>
+                                                                    <td>750000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>103</td>
+                                                                    <td>2</td>
+                                                                    <td>300000</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <p>Dengan menggunakan INNER JOIN pada kolom 'id_pelanggan', kita dapat menggabungkan informasi dari kedua tabel berdasarkan nilai yang cocok</p>
+                                            <pre class="card bg-light codeB">
+            
+    SELECT tb_pelanggan.nama_pelanggan, tb_pesanan.id_pesanan, tb_pesanan.total_pesanan     
+    FROM tb_pelanggan
+    INNER JOIN tb_pesanan ON tb_pelanggan.IDPelanggan = tb_pesanan.IDPelanggan;
+                                            </pre>
+                                            
+                                            <p>Hasil INNER JOIN</p>
+                                            <div class="table-scroll">
+                                                <table class="table table-bordered table-hover" style="max-width: 500px;">
+                                                    <thead class="bg-secondary">
+                                                        <tr>
+                                                            <th>nama_pelanggan</th>
+                                                            <th>id_pesanan</th>
+                                                            <th>total_pesanan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ucup</td>
+                                                            <td>101</td>
+                                                            <td>500000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Dudung</td>
+                                                            <td>102</td>
+                                                            <td>750000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Alex</td>
+                                                            <td>103</td>
+                                                            <td>300000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- LEFT JOIN -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">LEFT JOIN</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">LEFT JOIN</h6> Menggabungkan semua baris dari tabel kiri dengan baris yang cocok dari tabel kanan. Jika tidak ada nilai yang cocok di tabel kanan, kolom-kolom dari tabel kanan akan diisi dengan nilai NULL.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Misalnya, Saya ingin menggabungkan tabel dengan menggunakan LEFT JOIN untuk mendapatkan daftar semua pelanggan beserta pesanan yang mereka buat, bahkan jika pelanggan belum pernah melakukan pesanan.</p>
+            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6>tb_pelanggan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>nama_pelanggan</th>
+                                                                    <th>kota</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Ucup</td>
+                                                                    <td>Jakarta</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>Alex</td>
+                                                                    <td>Surabaya</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>Dudung</td>
+                                                                    <td>Bandung</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="col-md-6">
+                                                    <h6>tb_pesanan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>total_pesanan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>101</td>
+                                                                    <td>1</td>
+                                                                    <td>500000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>102</td>
+                                                                    <td>3</td>
+                                                                    <td>750000</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <p>Dengan menggunakan LEFT JOIN pada kolom 'id_pelanggan', kita dapat menggabungkan informasi dari kedua tabel.</p>
+                                            <pre class="card bg-light codeB">
+            
+    SELECT tb_pelanggan.nama_pelanggan, tb_pesanan.id_pesanan, tb_pesanan.total_pesanan     
+    FROM tb_pelanggan
+    LEFT JOIN tb_pesanan ON tb_pelanggan.IDPelanggan = tb_pesanan.IDPelanggan;
+                                            </pre>
+                                            
+                                            <p>Hasil LEFT JOIN</p>
+                                            <div class="table-scroll">
+                                                <table class="table table-bordered table-hover" style="max-width: 500px;">
+                                                    <thead class="bg-secondary">
+                                                        <tr>
+                                                            <th>nama_pelanggan</th>
+                                                            <th>id_pesanan</th>
+                                                            <th>total_pesanan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ucup</td>
+                                                            <td>101</td>
+                                                            <td>500000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Dudung</td>
+                                                            <td>102</td>
+                                                            <td>750000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Alex</td>
+                                                            <td>NULL</td>
+                                                            <td>NULL</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- RIGHT JOIN -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">RIGHT JOIN</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">RIGHT JOIN</h6> Kebalikan dari LEFT JOIN. Menggabungkan semua baris dari tabel kanan dengan baris yang cocok dari tabel kiri. Jika tidak ada nilai yang cocok di tabel kiri, kolom-kolom dari tabel kiri akan diisi dengan nilai NULL.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Misalnya, Saya ingin menggabungkan tabel dengan menggunakan RIGHT JOIN untuk mendapatkan daftar semua pesanan beserta informasi pelanggan yang berhubungan, bahkan jika tidak semua pesanan memiliki pelanggan terkait.</p>
+            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6>tb_pelanggan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>nama_pelanggan</th>
+                                                                    <th>kota</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Ucup</td>
+                                                                    <td>Jakarta</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>3</td>
+                                                                    <td>Dudung</td>
+                                                                    <td>Bandung</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="col-md-6">
+                                                    <h6>tb_pesanan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>total_pesanan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>101</td>
+                                                                    <td>1</td>
+                                                                    <td>500000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>102</td>
+                                                                    <td>3</td>
+                                                                    <td>750000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>103</td>
+                                                                    <td>2</td>
+                                                                    <td>300000</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <p>Dengan menggunakan RIGHT JOIN pada kolom 'id_pelanggan', kita dapat menggabungkan informasi dari kedua.</p>
+                                            <pre class="card bg-light codeB">
+            
+    SELECT tb_pelanggan.nama_pelanggan, tb_pesanan.id_pesanan, tb_pesanan.total_pesanan     
+    FROM tb_pelanggan
+    RIGHT JOIN tb_pesanan ON tb_pelanggan.IDPelanggan = tb_pesanan.IDPelanggan;
+                                            </pre>
+                                            
+                                            <p>Hasil RIGHT JOIN</p>
+                                            <div class="table-scroll">
+                                                <table class="table table-bordered table-hover" style="max-width: 500px;">
+                                                    <thead class="bg-secondary">
+                                                        <tr>
+                                                            <th>nama_pelanggan</th>
+                                                            <th>id_pesanan</th>
+                                                            <th>total_pesanan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ucup</td>
+                                                            <td>101</td>
+                                                            <td>500000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Dudung</td>
+                                                            <td>102</td>
+                                                            <td>750000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NULL</td>
+                                                            <td>103</td>
+                                                            <td>300000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- FULL JOIN -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">FULL JOIN</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">FULL JOIN</h6> Menggabungkan semua baris dari kedua tabel, termasuk baris yang tidak cocok di kedua sisi. Jika tidak ada nilai yang cocok, kolom-kolom yang tidak cocok akan diisi dengan nilai NULL.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Misalnya, Saya ingin menggabungkan tabel dengan menggunakan FULL JOIN untuk mendapatkan daftar semua pelanggan dan semua pesanan, serta menggabungkannya bersama-sama dengan informasi yang berhubungan.</p>
+            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h6>tb_pelanggan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>nama_pelanggan</th>
+                                                                    <th>kota</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>Ucup</td>
+                                                                    <td>Jakarta</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>2</td>
+                                                                    <td>Alex</td>
+                                                                    <td>Surabaya</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="col-md-6">
+                                                    <h6>tb_pesanan</h6>
+                                                    <div class="table-scroll">
+                                                        <table class="table table-bordered table-hover">
+                                                            <thead class="bg-secondary">
+                                                                <tr>
+                                                                    <th>id_pesanan</th>
+                                                                    <th>id_pelanggan</th>
+                                                                    <th>total_pesanan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>101</td>
+                                                                    <td>1</td>
+                                                                    <td>500000</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>103</td>
+                                                                    <td>2</td>
+                                                                    <td>300000</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+            
+                                            <p>Dengan menggunakan INNER JOIN pada kolom 'id_pelanggan', kita dapat menggabungkan informasi dari kedua tabel berdasarkan nilai yang cocok</p>
+                                            <pre class="card bg-light codeB">
+            
+    SELECT tb_pelanggan.nama_pelanggan, tb_pesanan.id_pesanan, tb_pesanan.total_pesanan     
+    FROM tb_pelanggan
+    FULL JOIN tb_pesanan ON tb_pelanggan.IDPelanggan = tb_pesanan.IDPelanggan;
+                                            </pre>
+                                            
+                                            <p>Hasil INNER JOIN</p>
+                                            <div class="table-scroll">
+                                                <table class="table table-bordered table-hover" style="max-width: 500px;">
+                                                    <thead class="bg-secondary">
+                                                        <tr>
+                                                            <th>nama_pelanggan</th>
+                                                            <th>id_pesanan</th>
+                                                            <th>total_pesanan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ucup</td>
+                                                            <td>101</td>
+                                                            <td>500000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>NULL</td>
+                                                            <td>NULL</td>
+                                                            <td>NULL</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Alex</td>
+                                                            <td>103</td>
+                                                            <td>300000</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- SELF JOIN -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">SELF JOIN</h5>
+                            <div class="teks">
+                                <dl>
+                                    <dd>
+                                        <p><h6 class="d-inline">SELF JOIN</h6> Menggabungkan baris dari tabel yang sama. Ini sering digunakan untuk menggabungkan data hierarkis atau relasi antara entitas dalam satu tabel.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <p>Misalnya, Saya punya sebuah tabel 'tb_karyawan' yang berisi informasi tentang karyawan dan kolom 'id_atasan' yang menghubungkan setiap karyawan dengan atasan mereka (mengacu pada id_karyawan).</p>
+            
+                                            <h6>tb_karyawan</h6>
+                                            <div class="table-scroll">
+                                                <table class="table table-bordered table-hover" style="max-width: 500px;">
+                                                    <thead class="bg-secondary">
+                                                        <tr>
+                                                            <th>id_karyawan</th>
+                                                            <th>nama_karyawan</th>
+                                                            <th>id_atasan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Ucup</td>
+                                                            <td>NULL</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Dudung</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Alex</td>
+                                                            <td>2</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+            
+                                            <p>Sekarang, Saya ingin menggabungkan tabel ini dengan menggunakan SELF JOIN untuk mendapatkan daftar nama karyawan beserta nama atasan mereka.</p>
+                                            <pre class="card bg-light codeB">
+            
+    SELECT A.nama_karyawan AS Karyawan, B.nama_karyawan AS atasan       
+    FROM tb_karyawan A
+    LEFT JOIN tb_karyawan B ON A.id_atasan = B.id_karyawan;
+                                            </pre>
+                                            
+                                            <p>Hasil SELF JOIN</p>
+                                            <div class="table-scroll">
+                                                <table class="table table-bordered table-hover" style="max-width: 500px;">
+                                                    <thead class="bg-secondary">
+                                                        <tr>
+                                                            <th>Karyawan</th>
+                                                            <th>Atasan</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Ucup</td>
+                                                            <td>NULL</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Dudung</td>
+                                                            <td>Ucup</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Alex</td>
+                                                            <td>Dudung</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+        
+                        <!-- Statement On dan Using -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Statement ON dan USING</h5>
+                            <div class="teks">
+                                <p>Statement ON dan USING digunakan untuk menghubungkan tabel berdasarkan kolom-kolom tertentu. Meskipun keduanya memiliki tujuan yang sama, namun ada perbedaan dalam cara mereka digunakan.</p>
+        
+                                <dl>
+                                    <dd>
+                                        <h6 class="h6">1. Statement ON</h6>
+                                        <p>digunakan untuk menghubungkan tabel dengan membandingkan atribut dengan nama yang sama ataupun berbeda.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Menampilkan semua data dari 'tb_produk' dan 'tb_brand'</p> <pre class="card bg-light codeA">SELECT * FROM tb_produk INNER JOIN tb_brand ON tb_produk.id_brand = tb_brand.id;</pre></li>
+                                                <li><p>Menampilkan beberapa atribut saja</p> <pre class="card bg-light codeA">SELECT nama_produk, nama_brand FROM tb_produk INNER JOIN tb_brand ON tb_produk.id_brand = tb_brand.id;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dd>
+                                        <h6 class="h6">2. Statement USING</h6>
+                                        <p>hanya digunakan untuk menghubungkan tabel dengan nama atribut yang sama.</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: circle;">
+                                                <li><p>Menampilkan semua data dari 'tb_produk' dan 'tb_brand'</p> <pre class="card bg-light codeA">SELECT * FROM tb_produk INNER JOIN tb_brand USING(id_brand);</pre></li>
+                                                <li><p>Menampilkan beberapa atribut saja</p> <pre class="card bg-light codeA">SELECT nama_produk, nama_brand FROM tb_produk INNER JOIN tb_brand USING(id_brand);</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">View Pada Tabel</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>View adalah perintah untuk membuat tabel virtual yang menyimpan kode SQL, dengan view kita bisa membuat kode SQL yang komplex menjadi satu tabel yang sederhana. Tabel view tidak bisa menambah data, menghapus data, ataupun mengahapus tabel, dia hanya bisa ditampilkan saja.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Membuat Tabel View -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Membuat Tabel View</h5>
+                            <div class="teks">
+                                <p>Berikut beberapa contoh membuat tabel view</p>
+        
+                                <dl>
+                                    <dd>
+                                        <h6 class="h6">Membuat tabel view dari 2 tabel</h6>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: decimal;">
+                                                <li><p>Siapkan 2 tabel yang sudah diberi data value</p></li>
+                                                <li><p>Ketikan kodenya</p>
+                                                    <pre class="card bg-light codeB">
+                                                    
+    CREATE TABLE v_mhs
+    AS SELECT 
+    mahasiswa.nim AS'NIM',
+    mahasiswa.nama_mhs AS'NAMA',
+    prodi.nama_prodi AS'PRODI'
+    FROM mahasiswa, prodi  
+    WHERE mahasiswa.id_prodi = prodi.id_prodi;
+                                                    </pre>
+                                                </li>
+                                                <li><p>Tampilkan deskripsi tabel</p> <pre class="card bg-light codeA">DESC v_mhs;</pre></li>
+                                                <li><p>Tampilkan tabel view</p> <pre class="card bg-light codeA">SELECT * FROM v-mhs;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+                                
+                                <dl>
+                                    <dd>
+                                        <h6 class="h6">Membuat tabel view dari 3 tabel</h6>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: decimal;">
+                                                <li><p>Siapkan 3 tabel yang sudah diberi data value</p></li>
+                                                <li><p>Ketikan kodenya</p>
+                                                    <pre class="card bg-light codeB">
+                                                    
+    CREATE TABLE v_lap
+    AS SELECT 
+    mahasiswa.nim AS'NIM',
+    prodi.nama_prodi AS'PRODI',
+    kelas.nama_kelas AS'KELAS'
+    FROM mahasiswa, prodi, kelas 
+    WHERE mahasiswa.id_prodi = prodi.id_prodi AND prodi.id_kelas = kelas.id_kelas;
+                                                    </pre>
+                                                </li>
+                                                <li><p>Tampilkan deskripsi tabel</p> <pre class="card bg-light codeA">DESC v_lap;</pre></li>
+                                                <li><p>Tampilkan tabel view</p> <pre class="card bg-light codeA">SELECT * FROM v_lap;</pre></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dd>
+                                        <h6 class="h6">Menampilkan tanpa membuat tabel view</h6>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <ul style="list-style: decimal;">
+                                                <li><p>Siapkan 3 tabel yang sudah diberi data value</p></li>
+                                                <li><p>Ketikan kodenya</p>
+                                                    <pre class="card bg-light codeB">
+                                                    
+    SELECT nama_produk, nama_kategori, nama_brand, harga, stok  
+    FROM tb_produk, tb_kategori, tb_brand
+    WHERE tb_produk.id_kategori = tb_kategori.id_kategori AND tb_produk.id_brand = tb_brand.id_brand;
+                                                    </pre>
+                                                </li>
+                                                <li><p>Anda berhasil menampilkan beberapa kolom tabel tanpa membuat tabel view</p></li>
+                                            </ul>
+                                            
+                                            <p>Dengan demikian Anda dapat menampilkan beberapa kolom tabel dari tabel yang berbeda-beda tanpa membuat tabel view dan tanpa membuat FOREIGN KEY.</p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="card card-body materi hide">
+                        <h2 class="judul1">Data Trigger</h2>
+                        
+                        <!-- Definisi -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Definisi</h5>
+                            <div class="teks">
+                                <p>Data trigger dalam basis data adalah mekanisme yang memungkinkan tindakan otomatis terjadi saat suatu peristiwa tertentu terjadi pada tabel.</p>
+                                <p>Data trigger adalah bagian dari kode yang diaktifkan oleh suatu peristiwa tertentu, seperti pengisian data, pembaruan data, atau penghapusan data. Ketika peristiwa ini terjadi, trigger akan dieksekusi dan menjalankan serangkaian tindakan yang telah ditentukan sebelumnya.</p>
+                            </div>
+                        </div>
+        
+                        <!-- Penggunaan Data Trigger -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Penggunaan Data Trigger</h5>
+                            <div class="teks">
+                                <div>
+                                    <h6 class="h6">1. Validasi Data :</h6>
+                                    <p>Anda dapat membuat trigger yang memeriksa apakah data yang dimasukkan ke dalam tabel memenuhi persyaratan atau tidak. Misalnya, trigger untuk memastikan bahwa nilai tanggal yang dimasukkan adalah di masa depan, atau bahwa sebuah nilai tidak melebihi batas dari yang ditentukan.</p>
+        
+                                    <dl>
+                                        <dd>
+                                            <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        </dd>
+                                        <dd class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <pre class="card bg-light codeB">
+            
+    DELIMITER //
+    CREATE TRIGGER validate_future_date
+    BEFORE INSERT ON nama_tabel
+    FOR EACH ROW
+    BEGIN
+        IF NEW.tanggal < CURDATE() THEN
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Tanggal harus di masa depan';
+        END IF;
+    END;
+    //
+    DELIMITER ;                                            
+                                                </pre>
+            
+                                                <ul style="list-style: circle;">
+                                                    <li><p><h6 class="d-inline">'validate_future_date'</h6>  adalah nama trigger yang Anda tentukan.</p></li>
+                                                    <li><p><h6 class="d-inline">'BEFORE INSERT ON nama_tabel'</h6>  menunjukkan bahwa trigger akan diaktifkan sebelum data dimasukkan ke dalam tabel dengan nama 'nama_tabel'.</p></li>
+                                                    <li><p><h6 class="d-inline">'FOR EACH ROW'</h6>  menunjukkan bahwa trigger akan dieksekusi untuk setiap baris yang dimasukkan.</p></li>
+                                                    <li><p><h6 class="d-inline">'NEW.tanggal'</h6>  merujuk pada nilai yang akan dimasukkan ke dalam kolom 'tanggal'.</p></li>
+                                                    <li><p><h6 class="d-inline">'CURDATE()'</h6>  mengembalikan tanggal saat ini.</p></li>
+                                                    <li><p><h6 class="d-inline">'SIGNAL SQLSTATE '45000''</h6>  digunakan untuk memicu pengecualian dengan kode kesalahan khusus.</p></li>
+                                                    <li><p><h6 class="d-inline">'SET MESSAGE_TEXT = 'Tanggal harus di masa depan''</h6>  menetapkan pesan kesalahan yang akan ditampilkan jika kondisi tidak terpenuhi.</p></li>
+                                                </ul>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <hr>
+                                </div>
+                                
+                                <div>
+                                    <h6 class="h6">2. Log Pembaruan :</h6>
+                                    <p>Trigger juga dapat digunakan untuk mencatat setiap kali data dalam tabel diubah. Dengan cara ini, Anda dapat melacak siapa yang melakukan perubahan, kapan perubahan itu terjadi, dan apa yang diubah.</p>
+        
+                                    <dl>
+                                        <dd>
+                                            <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        </dd>
+                                        <dd class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <pre class="card bg-light codeB">
+                                                            
+    DELIMITER //
+    CREATE TRIGGER log_data_changes
+    AFTER UPDATE ON nama_tabel
+    FOR EACH ROW
+    BEGIN
+        INSERT INTO log_pembaruan (tabel, kolom, nilai_sebelum, nilai_setelah, waktu_pembaruan)
+        VALUES ('nama_tabel', 'kolom_yang_diubah', OLD.kolom_yang_diubah, NEW.kolom_yang_diubah, NOW());
+    END;
+    //
+    DELIMITER ;
+                                                </pre>
+            
+                                                <ul style="list-style: circle;">
+                                                    <li><p><h6 class="d-inline">'log_data_changes'</h6>  adalah nama trigger yang Anda tentukan.</p></li>
+                                                    <li><p><h6 class="d-inline">'AFTER UPDATE ON nama_tabel'</h6>  menunjukkan bahwa trigger akan diaktifkan setelah data diperbarui pada tabel dengan nama nama_tabel.</p></li>
+                                                    <li><p><h6 class="d-inline">'FOR EACH ROW'</h6>  menunjukkan bahwa trigger akan dieksekusi untuk setiap baris yang diperbarui.</p></li>
+                                                    <li><p><h6 class="d-inline">'INSERT INTO log_pembaruan'</h6>  adalah perintah untuk memasukkan data pembaruan ke dalam tabel log_pembaruan.</p></li>
+                                                    <li><p><h6 class="d-inline">'OLD.kolom_yang_diubah' dan 'NEW.kolom_yang_diubah'</h6>  adalah nilai sebelum dan sesudah dari kolom yang diubah.</p></li>
+                                                    <li><p><h6 class="d-inline">'NOW()'</h6>  digunakan untuk mengambil waktu saat ini saat pembaruan terjadi.</p></li>
+                                                </ul>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <hr>
+                                </div>
+                                
+                                <div>
+                                    <h6 class="h6">3. Penghitungan Otomatis :</h6> 
+                                    <p>Trigger dapat digunakan untuk menghitung atau mengagregasi data secara otomatis saat ada perubahan dalam tabel yang relevan. Misalnya, trigger dapat menghitung jumlah produk yang tersedia setiap kali ada transaksi penjualan.</p>
+                                
+                                    <dl>
+                                        <dd>
+                                            <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        </dd>
+                                        <dd class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <pre class="card bg-light codeB">
+                                                            
+    DELIMITER //
+    CREATE TRIGGER update_stock_count
+    AFTER INSERT ON transaksi_penjualan
+    FOR EACH ROW
+    BEGIN
+        DECLARE product_id INT;
+        
+        SET product_id = NEW.product_id;
+        
+        UPDATE stok_produk
+        SET jumlah = jumlah - 1
+        WHERE id = product_id;
+    END;
+    //
+    DELIMITER ;
+                                                </pre>
+            
+                                                <ul style="list-style: circle;">
+                                                    <li><p><h6 class="d-inline">'update_stock_count'</h6>  adalah nama trigger yang Anda tentukan.</p></li>
+                                                    <li><p><h6 class="d-inline">'AFTER INSERT ON transaksi_penjualan'</h6>  menunjukkan bahwa trigger akan diaktifkan setelah data dimasukkan ke dalam tabel transaksi_penjualan.</p></li>
+                                                    <li><p><h6 class="d-inline">'FOR EACH ROW'</h6>  menunjukkan bahwa trigger akan dieksekusi untuk setiap baris yang dimasukkan.</p></li>
+                                                    <li><p><h6 class="d-inline">'DECLARE product_id INT;'</h6>  mendeklarasikan variabel product_id yang akan digunakan dalam trigger.</p></li>
+                                                    <li><p><h6 class="d-inline">'SET product_id = NEW.product_id;'</h6>  mengatur nilai product_id dengan nilai dari kolom product_id dalam baris yang dimasukkan.</p></li>
+                                                    <li><p><h6 class="d-inline">'UPDATE stok_produk'</h6>  adalah perintah untuk memperbarui tabel stok produk.</p></li>
+                                                    <li><p><h6 class="d-inline">'SET jumlah = jumlah - 1'</h6>  mengurangkan jumlah stok produk.</p></li>
+                                                    <li><p><h6 class="d-inline">'WHERE id = product_id;'</h6>  mengatur kondisi di mana pembaruan stok hanya dilakukan untuk produk dengan id yang sesuai dengan product_id yang baru saja dimasukkan.</p></li>
+                                                </ul>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <hr>
+                                </div>
+                                
+                                <div>
+                                    <h6 class="h6">4. Pemberitahuan dan Notifikasi :</h6>
+                                    <p>Anda bisa menggunakan trigger untuk mengirimkan pemberitahuan atau notifikasi ke sistem lain atau pengguna ketika suatu peristiwa penting terjadi, seperti ketika stok suatu produk hampir habis.</p>
+        
+                                    <dl>
+                                        <dd>
+                                            <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        </dd>
+                                        <dd class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <pre class="card bg-light codeB">
+                                                        
+    DELIMITER //
+    CREATE TRIGGER low_stock_notification
+    AFTER UPDATE ON stok_produk
+    FOR EACH ROW
+    BEGIN
+        IF NEW.jumlah <= 10 THEN
+            INSERT INTO notifikasi (pesan, waktu)
+            VALUES ('Stok produk dengan ID ' + NEW.id + ' hampir habis', NOW());
+        END IF;
+    END;
+    //
+    DELIMITER ;
+                                                </pre>
+            
+                                                <ul style="list-style: circle;">
+                                                    <li><p><h6 class="d-inline">'low_stock_notification'</h6>  adalah nama trigger yang Anda tentukan.</p></li>
+                                                    <li><p><h6 class="d-inline">'AFTER UPDATE ON stok_produk'</h6>  menunjukkan bahwa trigger akan diaktifkan setelah data diperbarui pada tabel stok_produk.</p></li>
+                                                    <li><p><h6 class="d-inline">'FOR EACH ROW'</h6>  menunjukkan bahwa trigger akan dieksekusi untuk setiap baris yang diperbarui.</p></li>
+                                                    <li><p><h6 class="d-inline">'IF NEW.jumlah <= 10 THEN'</h6>  adalah kondisi di mana kita akan mengirimkan pemberitahuan jika stok produk kurang dari atau sama dengan 10.</p></li>
+                                                    <li><p><h6 class="d-inline">'INSERT INTO notifikasi'</h6>  adalah perintah untuk memasukkan data pemberitahuan ke dalam tabel notifikasi.</p></li>
+                                                    <li><p><h6 class="d-inline">'VALUES ('Stok produk dengan ID ' + NEW.id + ' hampir habis', NOW());'</h6>  mengatur pesan pemberitahuan yang akan dimasukkan ke dalam tabel, beserta waktu pemberitahuan.</p></li>
+                                                </ul>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <hr>
+                                </div>
+                                
+                                <div>
+                                    <h6 class="h6">5. Enforce Aturan Bisnis :</h6>
+                                    <p>Trigger bisa membantu Anda memastikan bahwa aturan bisnis yang penting diikuti dengan konsisten. Misalnya, Anda dapat membuat trigger yang mencegah penghapusan data pelanggan yang memiliki tagihan belum terselesaikan.</p>
+        
+                                    <dl>
+                                        <dd>
+                                            <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                        </dd>
+                                        <dd class="hiddenTextBox">
+                                            <div class="hiddenText">
+                                                <pre class="card bg-light codeB">
+                                                            
+    DELIMITER //
+    CREATE TRIGGER prevent_customer_deletion
+    BEFORE DELETE ON pelanggan
+    FOR EACH ROW
+    BEGIN
+        DECLARE unpaid_bill INT;
+
+        SELECT COUNT(*) INTO unpaid_bill
+        FROM tagihan
+        WHERE pelanggan_id = OLD.id AND status = 'Belum Lunas';
+
+        IF unpaid_bill > 0 THEN
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Tidak dapat menghapus pelanggan dengan tagihan belum lunas';
+        END IF;
+    END;
+    //
+    DELIMITER ;
+                                                </pre>
+            
+                                                <ul style="list-style: circle;">
+                                                    <li><p><h6 class="d-inline">'prevent_customer_deletion'</h6>  adalah nama trigger yang Anda tentukan.</p></li>
+                                                    <li><p><h6 class="d-inline">'BEFORE DELETE ON pelanggan'</h6>  menunjukkan bahwa trigger akan diaktifkan sebelum data dihapus dari tabel pelanggan.</p></li>
+                                                    <li><p><h6 class="d-inline">'FOR EACH ROW'</h6>  menunjukkan bahwa trigger akan dieksekusi untuk setiap baris yang akan dihapus.</p></li>
+                                                    <li><p><h6 class="d-inline">'DECLARE unpaid_bill INT;'</h6>  mendeklarasikan variabel unpaid_bill yang akan digunakan dalam trigger.</p></li>
+                                                    <li><p><h6 class="d-inline">'SELECT COUNT(*) INTO unpaid_bill'</h6>  menghitung jumlah tagihan yang belum lunas untuk pelanggan yang akan dihapus.</p></li>
+                                                    <li><p><h6 class="d-inline">'WHERE pelanggan_id = OLD.id AND status = 'Belum Lunas';'</h6>  adalah kondisi untuk menghitung tagihan yang belum lunas untuk pelanggan yang akan dihapus.</p></li>
+                                                    <li><p><h6 class="d-inline">'IF unpaid_bill > 0 THEN'</h6>  adalah kondisi di mana trigger akan mencegah penghapusan jika ada tagihan yang belum lunas.</p></li>
+                                                    <li><p><h6 class="d-inline">'SIGNAL SQLSTATE '45000''</h6>  digunakan untuk memicu pengecualian dengan kode kesalahan khusus.</p></li>
+                                                    <li><p><h6 class="d-inline">'SET MESSAGE_TEXT = 'Tidak dapat menghapus pelanggan dengan tagihan belum lunas';'</h6>  menetapkan pesan kesalahan yang akan ditampilkan jika kondisi tidak terpenuhi.</p></li>
+                                                </ul>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Contoh Data Trigger Sederhana -->
+                        <div class="card card-body mb-4">
+                            <h5 class="judul2">Contoh Data Trigger Sederhana</h5>
+                            <div class="teks">
+                                <p>Berikut adalah contoh sederhana penggunaan data trigger pada database penjualan. Di dalamnya ada tabel 'tb_produk' untuk pendataan produk atau barang, dan ada table 'produk_log' untuk mencatat setiap perubahan pada 'tb_produk'. Berikut beberapa data trigger-nya.</p>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">1. Insert Produk</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Trigger ini akan dieksekusi jika terjadi even 'insert' pada tabel 'tb_produk'</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeB">
+            
+    DELIMITER $$
+    CREATE TRIGGER insert_produk AFTER INSERT ON tb_produk FOR EACH ROW 
+    BEGIN
+        INSERT INTO produk_log (keterangan, waktu, nama_produk, harga, stok) 
+        VALUES('Tambah produk', NOW(), NEW.nama_produk, NEW.harga, NEW.stok);
+    END $$
+    DELIMITER ;
+                                            </pre>
+                                            
+                                            <ul style="list-style: circle;">
+                                                <li><p><h6 class="d-inline">'CREATE TRIGGER insert_produk'</h6> membuat trigger dengan nama 'insert_produk'</p></li>
+                                                <li><p><h6 class="d-inline">'AFTER INSERT ON tb_produk'</h6> trigger dieksekusi setelah 'insert' pada tabel 'tb_produk'</p></li>
+                                                <li><p><h6 class="d-inline">'FOR EACH ROW'</h6> trigger akan dieksekusi untuk setiap baris yang dimasukkan</p></li>
+                                                <li><p><h6 class="d-inline">'INSERT INTO produk_log'</h6> trigger akan memasukan record baru ke dalam tabel 'produk_log'</p></li>
+                                                <li><p><h6 class="d-inline">'NOW()'</h6> mengambil tanggal dan waktu sekarang</p></li>
+                                                <li><p><h6 class="d-inline">'NEW.nama_atribut'</h6> mengambil value atribut yang baru dimasukan</p></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">2. Update Produk</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Trigger ini akan dieksekusi jika terjadi even 'update' pada tabel 'tb_produk'</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeB">
+            
+    DELIMITER $$
+    CREATE TRIGGER update_produk AFTER UPDATE ON tb_produk FOR EACH ROW 
+    BEGIN
+        INSERT INTO produk_log (keterangan, waktu, nama_produk, harga, stok) 
+        VALUES('Ubah produk', NOW(), NEW.nama_produk, NEW.harga, NEW.stok);
+    END $$
+    DELIMITER ;
+                                            </pre>
+            
+                                            <ul style="list-style: circle;">
+                                                <li><p><h6 class="d-inline">'CREATE TRIGGER update_produk'</h6> membuat trigger dengan nama 'update_produk'</p></li>
+                                                <li><p><h6 class="d-inline">'AFTER UPDATE ON tb_produk'</h6> trigger dieksekusi setelah 'update' pada tabel 'tb_produk'</p></li>
+                                                <li><p><h6 class="d-inline">'FOR EACH ROW'</h6> trigger akan dieksekusi untuk setiap baris yang dimasukkan</p></li>
+                                                <li><p><h6 class="d-inline">'INSERT INTO produk_log'</h6> trigger akan memasukan record baru ke dalam tabel 'produk_log'</p></li>
+                                                <li><p><h6 class="d-inline">'NOW()'</h6> mengambil tanggal dan waktu sekarang</p></li>
+                                                <li><p><h6 class="d-inline">'NEW.nama_atribut'</h6> mengambil value atribut yang baru dimasukan</p></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <hr>
+        
+                                <dl>
+                                    <dt class="mb-2">
+                                        <h6 class="h6">3. Delete Produk</h6>
+                                    </dt>
+                                    <dd>
+                                        <p>Trigger ini akan dieksekusi jika terjadi even 'delete' pada tabel 'tb_produk'</p>
+                                        <h6 class="btn btn-sm text-dark hiddenTextBtn teks">sembunyikan</h6>
+                                    </dd>
+                                    <dd class="hiddenTextBox">
+                                        <div class="hiddenText">
+                                            <pre class="card bg-light codeB">
+            
+    DELIMITER $$
+    CREATE TRIGGER delete_produk AFTER DELETE ON tb_produk FOR EACH ROW 
+    BEGIN
+        INSERT INTO produk_log (keterangan, waktu, nama_produk, harga, stok) 
+        VALUES('Hapus produk', NOW(), OLD.nama_produk, OLD.harga, OLD.stok);
+    END $$
+    DELIMITER ;
+                                            </pre>
+            
+                                            <ul style="list-style: circle;">
+                                                <li><p><h6 class="d-inline">'CREATE TRIGGER delete_produk'</h6> membuat trigger dengan nama 'delete_produk'</p></li>
+                                                <li><p><h6 class="d-inline">'AFTER DELETE ON tb_produk'</h6> trigger dieksekusi setelah 'delete' pada tabel 'tb_produk'</p></li>
+                                                <li><p><h6 class="d-inline">'FOR EACH ROW'</h6> trigger akan dieksekusi untuk setiap baris yang dimasukkan</p></li>
+                                                <li><p><h6 class="d-inline">'INSERT INTO produk_log'</h6> trigger akan memasukan record baru ke dalam tabel 'produk_log'</p></li>
+                                                <li><p><h6 class="d-inline">'NOW()'</h6> mengambil tanggal dan waktu sekarang</p></li>
+                                                <li><p><h6 class="d-inline">'OLD.nama_atribut'</h6> mengambil value atribut yang sudah ada sebelumnya</p></li>
+                                            </ul>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/single/single-script.js"></script>
+</body>
+</html>
